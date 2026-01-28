@@ -1,0 +1,8 @@
+# Ignore sql wal/db files
+*.sqlite-wal
+*.sqlite-shm
+*.db-wal
+*.db-shm
+# Ignore qch (too large file size)
+*.qch
+

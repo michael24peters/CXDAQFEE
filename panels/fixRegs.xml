@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<panel version="14">
+ <properties>
+  <prop name="Name">
+   <prop name="en_US.utf8"></prop>
+  </prop>
+  <prop name="Size">500 400</prop>
+  <prop name="BackColor">_3DFace</prop>
+  <prop name="RefPoint">130 100</prop>
+  <prop name="InitAndTermRef">True</prop>
+  <prop name="SendClick">False</prop>
+  <prop name="RefFileName"></prop>
+  <prop name="DPI">96</prop>
+  <prop name="PDPI">96.02363367799113</prop>
+  <prop name="layoutType">None</prop>
+ </properties>
+ <shapes>
+  <shape Name="PUSH_BUTTON1" shapeType="PUSH_BUTTON" layerId="0">
+   <properties>
+    <prop name="serialId">0</prop>
+    <prop name="Type"></prop>
+    <prop name="RefPoint">130 100</prop>
+    <prop name="Enable">True</prop>
+    <prop name="Visible">True</prop>
+    <prop name="ForeColor">_ButtonText</prop>
+    <prop name="BackColor">_Button</prop>
+    <prop name="TabOrder">0</prop>
+    <prop name="ToolTipText">
+     <prop name="en_US.utf8"></prop>
+    </prop>
+    <prop name="layoutAlignment">AlignNone</prop>
+    <prop name="snapMode">Point</prop>
+    <prop name="Font">
+     <prop name="en_US.utf8">Sans Serif,9,-1,5,50,0,0,0,0,0</prop>
+    </prop>
+    <prop name="Location">130 96</prop>
+    <prop name="Size">121 23</prop>
+    <prop name="BorderStyle">Styled</prop>
+    <prop name="Text">
+     <prop name="en_US.utf8">PUSH_BUTTON1</prop>
+    </prop>
+   </properties>
+   <events>
+    <script name="Clicked" isEscaped="1"><![CDATA[main(mapping event)
+{
+  dyn_string regs = dpNames(&quot;*top_1.**.settings&quot;, &quot;HwTypeGBTcodexb_decoding_top&quot;);
+//   dyn_string regs = dpNames(&quot;CXDAQFEE:test.decoder_6.reset.settings&quot;, &quot;HwTypeGBTcodexb_decoding_top&quot;);
+//   dyn_string regs = dpNames(&quot;CXDAQFEE:test.dct_5.xadc_do_out.settings&quot;, &quot;HwTypeGBTcodexb_decoding_top&quot;);
+  dyn_string settings;
+  string type;
+
+  uint base1 = 0x910000u;
+  uint base2 = 0x1910000u;
+  uint dct0_offset = 0x1000;
+  uint dct1_offset = 0x2000;
+  uint dct2_offset = 0x3000;
+  uint dct3_offset = 0x4000;
+  uint dct4_offset = 0x5000;
+  uint dct5_offset = 0x6000;
+  uint dct6_offset = 0x7000;
+
+  dpGet(regs, settings);
+
+  for(int i=1; i&lt;=dynlen(regs); ++i) {
+    string aux = regs[i];
+    strreplace(aux, &quot;.settings&quot;, &quot;&quot;);
+    type = dpTypeRefName(aux);
+
+    if (type!=&quot;HwRegisterLBUS&quot;) continue;
+
+    string currAddr = strsplit(settings[i], &quot;,&quot;)[1];
+    uint newAddr;
+    string rest = substr(settings[i], strpos(settings[i], &quot;,&quot;));
+
+    newAddr = (uint)currAddr + base1;
+    DebugTN((uint)currAddr, base1, newAddr);
+
+    if (strpos(regs[i], &quot;.dct_0&quot;)&gt;0) {
+DebugTN(&quot;0&quot;);
+      newAddr = newAddr + dct0_offset;
+    }
+    else if (strpos(regs[i], &quot;.dct_1&quot;)&gt;0) {
+DebugTN(&quot;1&quot;);
+      newAddr = newAddr + dct1_offset;
+    }
+    else if (strpos(regs[i], &quot;.dct_2&quot;)&gt;0) {
+DebugTN(&quot;2&quot;);
+      newAddr = newAddr + dct2_offset;
+    }
+    else if (strpos(regs[i], &quot;.dct_3&quot;)&gt;0) {
+DebugTN(&quot;3&quot;);
+      newAddr = newAddr + dct3_offset;
+    }
+    else if (strpos(regs[i], &quot;.dct_4&quot;)&gt;0) {
+DebugTN(&quot;4&quot;);
+      newAddr = newAddr + dct4_offset;
+    }
+    else if (strpos(regs[i], &quot;.dct_5&quot;)&gt;0) {
+DebugTN(&quot;5&quot;, newAddr);
+      newAddr = newAddr + dct5_offset;
+DebugTN((uint)currAddr, base1, newAddr, dct5_offset);
+    }
+    else if (strpos(regs[i], &quot;.dct_6&quot;)&gt;0) {
+DebugTN(&quot;6&quot;);
+      newAddr = newAddr + dct6_offset;
+    }
+
+    DebugTN(regs[i], settings[i], currAddr, newAddr, rest, type);
+    string newSettings = newAddr+rest;
+    dpSet(regs[i], newSettings);
+  }
+}]]></script>
+   </events>
+  </shape>
+ </shapes>
+</panel>

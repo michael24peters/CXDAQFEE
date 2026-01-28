@@ -1,0 +1,24 @@
+
+=== SEVERE WARNING ============================================================
+ line 1073:  object: DAQ::DAQ is_of_class ASS_DAQ_Domain_v2_CLASS
+  class ASS_DAQ_DOMAIN_V2_CLASS is not declared 
+
+=== SEVERE WARNING ============================================================
+ line 1278:  object: DATAFLOW::DATAFLOW is_of_class ASS_DATAFLOWTop_CLASS
+  class ASS_DATAFLOWTOP_CLASS is not declared 
+
+=== SEVERE WARNING ============================================================
+ line 1284:  object: MiniDAQ is_of_class TOP_MiniDAQTop_CLASS
+  class TOP_MINIDAQTOP_CLASS is not declared 
+
+=== SEVERE WARNING ============================================================
+ line 1288:  object: MiniDAQ_RunInfo is_of_class RunInfo_CLASS
+  class RUNINFO_CLASS is not declared 
+
+=== SEVERE WARNING ============================================================
+ line 1290:  objectset: RUNINFO_FWSETSTATES is_of_class VOID {MiniDAQ_RunInfo }
+ Object MINIDAQ_RUNINFO is not declared 
+
+=== SEVERE WARNING ============================================================
+ line 1291:  objectset: RUNINFO_FWSETACTIONS is_of_class VOID {MiniDAQ_RunInfo }
+ Object MINIDAQ_RUNINFO is not declared 

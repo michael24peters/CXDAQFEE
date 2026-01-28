@@ -1,0 +1,70 @@
+#uses "HwTypeGENERICTOPFrontEnd_DU.ctl"
+FEE_top_cxsol01_Top_TOPFrontEnd_install()
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("top_cxsol01/Top/TOPFrontEnd");
+   if(!globalExists("HwTypeGENERICTOPFrontEnd_DU_CurrDUActions"))
+   {
+      addGlobal("HwTypeGENERICTOPFrontEnd_DU_CurrDUActions",DYN_STRING_VAR);
+      fwDU_getAllActions("HwTypeGENERICTOPFrontEnd_DU",HwTypeGENERICTOPFrontEnd_DU_CurrDUActions);
+   }
+   HwTypeGENERICTOPFrontEnd_DU_initialize("FEE", devdp);
+   fwDU_setDefaultParameters("FEE", devdp);
+   if(dpConnect("cbFEE_top_cxsol01_Top_TOPFrontEnd_valueChanged",
+      devdp+".P_FE_ENB_1:_online.._value",
+      devdp+".P_FE_ENB_2:_online.._value",
+      devdp+".S_FE_SYNCH_CNT:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect state");
+   if(dpConnect("cbFEE_top_cxsol01_Top_TOPFrontEnd_doCommand",false,
+     "FEE|top_cxsol01/Top/TOPFrontEnd.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect command");
+}
+
+FEE_top_cxsol01_Top_TOPFrontEnd_uninstall(string dp, int running)
+{
+   string devdp;
+
+DebugTN("uninstalling FEE top_cxsol01/Top/TOPFrontEnd");
+   if(running) return;
+   devdp = ""+fwDU_getPhysicalName("top_cxsol01/Top/TOPFrontEnd");
+   if(dpDisconnect("cbFEE_top_cxsol01_Top_TOPFrontEnd_valueChanged",
+      devdp+".P_FE_ENB_1:_online.._value",
+      devdp+".P_FE_ENB_2:_online.._value",
+      devdp+".S_FE_SYNCH_CNT:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpDisconnect state");
+   if(dpDisconnect("cbFEE_top_cxsol01_Top_TOPFrontEnd_doCommand",
+     "FEE|top_cxsol01/Top/TOPFrontEnd.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugN("Bad dpDisconnect command");
+}
+
+cbFEE_top_cxsol01_Top_TOPFrontEnd_valueChanged(
+      string dp1, int x1,
+      string dp2, int x2,
+      string dp3, int x3   )
+{
+   string state;
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("top_cxsol01/Top/TOPFrontEnd");
+   fwDU_convertValue("FEE","top_cxsol01/Top/TOPFrontEnd");
+   HwTypeGENERICTOPFrontEnd_DU_valueChanged("FEE", devdp,
+      x1,
+      x2,
+      x3, state );
+   fwDU_setState("FEE", devdp, state);
+}
+
+cbFEE_top_cxsol01_Top_TOPFrontEnd_doCommand(string dp, string command)
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("top_cxsol01/Top/TOPFrontEnd");
+   command = fwDU_convertCommand("FEE","top_cxsol01/Top/TOPFrontEnd","HwTypeGENERICTOPFrontEnd_DU", HwTypeGENERICTOPFrontEnd_DU_CurrDUActions, command);
+   HwTypeGENERICTOPFrontEnd_DU_doCommand("FEE", devdp, command);
+}
+

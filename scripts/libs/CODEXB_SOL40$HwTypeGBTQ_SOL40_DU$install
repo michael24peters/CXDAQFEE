@@ -1,0 +1,3697 @@
+#uses "HwTypeGBTQ_SOL40_DU.ctl"
+CODEXB_SOL40_cxsol01_Link00_install()
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link00");
+   if(!globalExists("HwTypeGBTQ_SOL40_DU_CurrDUActions"))
+   {
+      addGlobal("HwTypeGBTQ_SOL40_DU_CurrDUActions",DYN_STRING_VAR);
+      fwDU_getAllActions("HwTypeGBTQ_SOL40_DU",HwTypeGBTQ_SOL40_DU_CurrDUActions);
+   }
+   HwTypeGBTQ_SOL40_DU_initialize("CODEXB_SOL40", devdp);
+   fwDU_setDefaultParameters("CODEXB_SOL40", devdp);
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link00_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect state");
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link00_doCommand",false,
+     "CODEXB_SOL40|cxsol01/Link00.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect command");
+}
+
+CODEXB_SOL40_cxsol01_Link00_uninstall(string dp, int running)
+{
+   string devdp;
+
+DebugTN("uninstalling CODEXB_SOL40 cxsol01/Link00");
+   if(running) return;
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link00");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link00_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpDisconnect state");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link00_doCommand",
+     "CODEXB_SOL40|cxsol01/Link00.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugN("Bad dpDisconnect command");
+}
+
+cbCODEXB_SOL40_cxsol01_Link00_valueChanged(
+      string dp1, int x1,
+      string dp2, int x2,
+      string dp3, int x3,
+      string dp4, int x4,
+      string dp5, int x5   )
+{
+   string state;
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link00");
+   fwDU_convertValue("CODEXB_SOL40","cxsol01/Link00");
+   HwTypeGBTQ_SOL40_DU_valueChanged("CODEXB_SOL40", devdp,
+      x1,
+      x2,
+      x3,
+      x4,
+      x5, state );
+   fwDU_setState("CODEXB_SOL40", devdp, state);
+}
+
+cbCODEXB_SOL40_cxsol01_Link00_doCommand(string dp, string command)
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link00");
+   command = fwDU_convertCommand("CODEXB_SOL40","cxsol01/Link00","HwTypeGBTQ_SOL40_DU", HwTypeGBTQ_SOL40_DU_CurrDUActions, command);
+   HwTypeGBTQ_SOL40_DU_doCommand("CODEXB_SOL40", devdp, command);
+}
+
+CODEXB_SOL40_cxsol01_Link01_install()
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link01");
+   if(!globalExists("HwTypeGBTQ_SOL40_DU_CurrDUActions"))
+   {
+      addGlobal("HwTypeGBTQ_SOL40_DU_CurrDUActions",DYN_STRING_VAR);
+      fwDU_getAllActions("HwTypeGBTQ_SOL40_DU",HwTypeGBTQ_SOL40_DU_CurrDUActions);
+   }
+   HwTypeGBTQ_SOL40_DU_initialize("CODEXB_SOL40", devdp);
+   fwDU_setDefaultParameters("CODEXB_SOL40", devdp);
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link01_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect state");
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link01_doCommand",false,
+     "CODEXB_SOL40|cxsol01/Link01.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect command");
+}
+
+CODEXB_SOL40_cxsol01_Link01_uninstall(string dp, int running)
+{
+   string devdp;
+
+DebugTN("uninstalling CODEXB_SOL40 cxsol01/Link01");
+   if(running) return;
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link01");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link01_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpDisconnect state");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link01_doCommand",
+     "CODEXB_SOL40|cxsol01/Link01.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugN("Bad dpDisconnect command");
+}
+
+cbCODEXB_SOL40_cxsol01_Link01_valueChanged(
+      string dp1, int x1,
+      string dp2, int x2,
+      string dp3, int x3,
+      string dp4, int x4,
+      string dp5, int x5   )
+{
+   string state;
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link01");
+   fwDU_convertValue("CODEXB_SOL40","cxsol01/Link01");
+   HwTypeGBTQ_SOL40_DU_valueChanged("CODEXB_SOL40", devdp,
+      x1,
+      x2,
+      x3,
+      x4,
+      x5, state );
+   fwDU_setState("CODEXB_SOL40", devdp, state);
+}
+
+cbCODEXB_SOL40_cxsol01_Link01_doCommand(string dp, string command)
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link01");
+   command = fwDU_convertCommand("CODEXB_SOL40","cxsol01/Link01","HwTypeGBTQ_SOL40_DU", HwTypeGBTQ_SOL40_DU_CurrDUActions, command);
+   HwTypeGBTQ_SOL40_DU_doCommand("CODEXB_SOL40", devdp, command);
+}
+
+CODEXB_SOL40_cxsol01_Link02_install()
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link02");
+   if(!globalExists("HwTypeGBTQ_SOL40_DU_CurrDUActions"))
+   {
+      addGlobal("HwTypeGBTQ_SOL40_DU_CurrDUActions",DYN_STRING_VAR);
+      fwDU_getAllActions("HwTypeGBTQ_SOL40_DU",HwTypeGBTQ_SOL40_DU_CurrDUActions);
+   }
+   HwTypeGBTQ_SOL40_DU_initialize("CODEXB_SOL40", devdp);
+   fwDU_setDefaultParameters("CODEXB_SOL40", devdp);
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link02_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect state");
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link02_doCommand",false,
+     "CODEXB_SOL40|cxsol01/Link02.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect command");
+}
+
+CODEXB_SOL40_cxsol01_Link02_uninstall(string dp, int running)
+{
+   string devdp;
+
+DebugTN("uninstalling CODEXB_SOL40 cxsol01/Link02");
+   if(running) return;
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link02");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link02_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpDisconnect state");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link02_doCommand",
+     "CODEXB_SOL40|cxsol01/Link02.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugN("Bad dpDisconnect command");
+}
+
+cbCODEXB_SOL40_cxsol01_Link02_valueChanged(
+      string dp1, int x1,
+      string dp2, int x2,
+      string dp3, int x3,
+      string dp4, int x4,
+      string dp5, int x5   )
+{
+   string state;
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link02");
+   fwDU_convertValue("CODEXB_SOL40","cxsol01/Link02");
+   HwTypeGBTQ_SOL40_DU_valueChanged("CODEXB_SOL40", devdp,
+      x1,
+      x2,
+      x3,
+      x4,
+      x5, state );
+   fwDU_setState("CODEXB_SOL40", devdp, state);
+}
+
+cbCODEXB_SOL40_cxsol01_Link02_doCommand(string dp, string command)
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link02");
+   command = fwDU_convertCommand("CODEXB_SOL40","cxsol01/Link02","HwTypeGBTQ_SOL40_DU", HwTypeGBTQ_SOL40_DU_CurrDUActions, command);
+   HwTypeGBTQ_SOL40_DU_doCommand("CODEXB_SOL40", devdp, command);
+}
+
+CODEXB_SOL40_cxsol01_Link03_install()
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link03");
+   if(!globalExists("HwTypeGBTQ_SOL40_DU_CurrDUActions"))
+   {
+      addGlobal("HwTypeGBTQ_SOL40_DU_CurrDUActions",DYN_STRING_VAR);
+      fwDU_getAllActions("HwTypeGBTQ_SOL40_DU",HwTypeGBTQ_SOL40_DU_CurrDUActions);
+   }
+   HwTypeGBTQ_SOL40_DU_initialize("CODEXB_SOL40", devdp);
+   fwDU_setDefaultParameters("CODEXB_SOL40", devdp);
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link03_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect state");
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link03_doCommand",false,
+     "CODEXB_SOL40|cxsol01/Link03.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect command");
+}
+
+CODEXB_SOL40_cxsol01_Link03_uninstall(string dp, int running)
+{
+   string devdp;
+
+DebugTN("uninstalling CODEXB_SOL40 cxsol01/Link03");
+   if(running) return;
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link03");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link03_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpDisconnect state");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link03_doCommand",
+     "CODEXB_SOL40|cxsol01/Link03.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugN("Bad dpDisconnect command");
+}
+
+cbCODEXB_SOL40_cxsol01_Link03_valueChanged(
+      string dp1, int x1,
+      string dp2, int x2,
+      string dp3, int x3,
+      string dp4, int x4,
+      string dp5, int x5   )
+{
+   string state;
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link03");
+   fwDU_convertValue("CODEXB_SOL40","cxsol01/Link03");
+   HwTypeGBTQ_SOL40_DU_valueChanged("CODEXB_SOL40", devdp,
+      x1,
+      x2,
+      x3,
+      x4,
+      x5, state );
+   fwDU_setState("CODEXB_SOL40", devdp, state);
+}
+
+cbCODEXB_SOL40_cxsol01_Link03_doCommand(string dp, string command)
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link03");
+   command = fwDU_convertCommand("CODEXB_SOL40","cxsol01/Link03","HwTypeGBTQ_SOL40_DU", HwTypeGBTQ_SOL40_DU_CurrDUActions, command);
+   HwTypeGBTQ_SOL40_DU_doCommand("CODEXB_SOL40", devdp, command);
+}
+
+CODEXB_SOL40_cxsol01_Link04_install()
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link04");
+   if(!globalExists("HwTypeGBTQ_SOL40_DU_CurrDUActions"))
+   {
+      addGlobal("HwTypeGBTQ_SOL40_DU_CurrDUActions",DYN_STRING_VAR);
+      fwDU_getAllActions("HwTypeGBTQ_SOL40_DU",HwTypeGBTQ_SOL40_DU_CurrDUActions);
+   }
+   HwTypeGBTQ_SOL40_DU_initialize("CODEXB_SOL40", devdp);
+   fwDU_setDefaultParameters("CODEXB_SOL40", devdp);
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link04_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect state");
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link04_doCommand",false,
+     "CODEXB_SOL40|cxsol01/Link04.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect command");
+}
+
+CODEXB_SOL40_cxsol01_Link04_uninstall(string dp, int running)
+{
+   string devdp;
+
+DebugTN("uninstalling CODEXB_SOL40 cxsol01/Link04");
+   if(running) return;
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link04");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link04_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpDisconnect state");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link04_doCommand",
+     "CODEXB_SOL40|cxsol01/Link04.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugN("Bad dpDisconnect command");
+}
+
+cbCODEXB_SOL40_cxsol01_Link04_valueChanged(
+      string dp1, int x1,
+      string dp2, int x2,
+      string dp3, int x3,
+      string dp4, int x4,
+      string dp5, int x5   )
+{
+   string state;
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link04");
+   fwDU_convertValue("CODEXB_SOL40","cxsol01/Link04");
+   HwTypeGBTQ_SOL40_DU_valueChanged("CODEXB_SOL40", devdp,
+      x1,
+      x2,
+      x3,
+      x4,
+      x5, state );
+   fwDU_setState("CODEXB_SOL40", devdp, state);
+}
+
+cbCODEXB_SOL40_cxsol01_Link04_doCommand(string dp, string command)
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link04");
+   command = fwDU_convertCommand("CODEXB_SOL40","cxsol01/Link04","HwTypeGBTQ_SOL40_DU", HwTypeGBTQ_SOL40_DU_CurrDUActions, command);
+   HwTypeGBTQ_SOL40_DU_doCommand("CODEXB_SOL40", devdp, command);
+}
+
+CODEXB_SOL40_cxsol01_Link05_install()
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link05");
+   if(!globalExists("HwTypeGBTQ_SOL40_DU_CurrDUActions"))
+   {
+      addGlobal("HwTypeGBTQ_SOL40_DU_CurrDUActions",DYN_STRING_VAR);
+      fwDU_getAllActions("HwTypeGBTQ_SOL40_DU",HwTypeGBTQ_SOL40_DU_CurrDUActions);
+   }
+   HwTypeGBTQ_SOL40_DU_initialize("CODEXB_SOL40", devdp);
+   fwDU_setDefaultParameters("CODEXB_SOL40", devdp);
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link05_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect state");
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link05_doCommand",false,
+     "CODEXB_SOL40|cxsol01/Link05.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect command");
+}
+
+CODEXB_SOL40_cxsol01_Link05_uninstall(string dp, int running)
+{
+   string devdp;
+
+DebugTN("uninstalling CODEXB_SOL40 cxsol01/Link05");
+   if(running) return;
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link05");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link05_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpDisconnect state");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link05_doCommand",
+     "CODEXB_SOL40|cxsol01/Link05.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugN("Bad dpDisconnect command");
+}
+
+cbCODEXB_SOL40_cxsol01_Link05_valueChanged(
+      string dp1, int x1,
+      string dp2, int x2,
+      string dp3, int x3,
+      string dp4, int x4,
+      string dp5, int x5   )
+{
+   string state;
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link05");
+   fwDU_convertValue("CODEXB_SOL40","cxsol01/Link05");
+   HwTypeGBTQ_SOL40_DU_valueChanged("CODEXB_SOL40", devdp,
+      x1,
+      x2,
+      x3,
+      x4,
+      x5, state );
+   fwDU_setState("CODEXB_SOL40", devdp, state);
+}
+
+cbCODEXB_SOL40_cxsol01_Link05_doCommand(string dp, string command)
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link05");
+   command = fwDU_convertCommand("CODEXB_SOL40","cxsol01/Link05","HwTypeGBTQ_SOL40_DU", HwTypeGBTQ_SOL40_DU_CurrDUActions, command);
+   HwTypeGBTQ_SOL40_DU_doCommand("CODEXB_SOL40", devdp, command);
+}
+
+CODEXB_SOL40_cxsol01_Link06_install()
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link06");
+   if(!globalExists("HwTypeGBTQ_SOL40_DU_CurrDUActions"))
+   {
+      addGlobal("HwTypeGBTQ_SOL40_DU_CurrDUActions",DYN_STRING_VAR);
+      fwDU_getAllActions("HwTypeGBTQ_SOL40_DU",HwTypeGBTQ_SOL40_DU_CurrDUActions);
+   }
+   HwTypeGBTQ_SOL40_DU_initialize("CODEXB_SOL40", devdp);
+   fwDU_setDefaultParameters("CODEXB_SOL40", devdp);
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link06_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect state");
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link06_doCommand",false,
+     "CODEXB_SOL40|cxsol01/Link06.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect command");
+}
+
+CODEXB_SOL40_cxsol01_Link06_uninstall(string dp, int running)
+{
+   string devdp;
+
+DebugTN("uninstalling CODEXB_SOL40 cxsol01/Link06");
+   if(running) return;
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link06");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link06_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpDisconnect state");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link06_doCommand",
+     "CODEXB_SOL40|cxsol01/Link06.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugN("Bad dpDisconnect command");
+}
+
+cbCODEXB_SOL40_cxsol01_Link06_valueChanged(
+      string dp1, int x1,
+      string dp2, int x2,
+      string dp3, int x3,
+      string dp4, int x4,
+      string dp5, int x5   )
+{
+   string state;
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link06");
+   fwDU_convertValue("CODEXB_SOL40","cxsol01/Link06");
+   HwTypeGBTQ_SOL40_DU_valueChanged("CODEXB_SOL40", devdp,
+      x1,
+      x2,
+      x3,
+      x4,
+      x5, state );
+   fwDU_setState("CODEXB_SOL40", devdp, state);
+}
+
+cbCODEXB_SOL40_cxsol01_Link06_doCommand(string dp, string command)
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link06");
+   command = fwDU_convertCommand("CODEXB_SOL40","cxsol01/Link06","HwTypeGBTQ_SOL40_DU", HwTypeGBTQ_SOL40_DU_CurrDUActions, command);
+   HwTypeGBTQ_SOL40_DU_doCommand("CODEXB_SOL40", devdp, command);
+}
+
+CODEXB_SOL40_cxsol01_Link07_install()
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link07");
+   if(!globalExists("HwTypeGBTQ_SOL40_DU_CurrDUActions"))
+   {
+      addGlobal("HwTypeGBTQ_SOL40_DU_CurrDUActions",DYN_STRING_VAR);
+      fwDU_getAllActions("HwTypeGBTQ_SOL40_DU",HwTypeGBTQ_SOL40_DU_CurrDUActions);
+   }
+   HwTypeGBTQ_SOL40_DU_initialize("CODEXB_SOL40", devdp);
+   fwDU_setDefaultParameters("CODEXB_SOL40", devdp);
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link07_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect state");
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link07_doCommand",false,
+     "CODEXB_SOL40|cxsol01/Link07.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect command");
+}
+
+CODEXB_SOL40_cxsol01_Link07_uninstall(string dp, int running)
+{
+   string devdp;
+
+DebugTN("uninstalling CODEXB_SOL40 cxsol01/Link07");
+   if(running) return;
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link07");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link07_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpDisconnect state");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link07_doCommand",
+     "CODEXB_SOL40|cxsol01/Link07.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugN("Bad dpDisconnect command");
+}
+
+cbCODEXB_SOL40_cxsol01_Link07_valueChanged(
+      string dp1, int x1,
+      string dp2, int x2,
+      string dp3, int x3,
+      string dp4, int x4,
+      string dp5, int x5   )
+{
+   string state;
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link07");
+   fwDU_convertValue("CODEXB_SOL40","cxsol01/Link07");
+   HwTypeGBTQ_SOL40_DU_valueChanged("CODEXB_SOL40", devdp,
+      x1,
+      x2,
+      x3,
+      x4,
+      x5, state );
+   fwDU_setState("CODEXB_SOL40", devdp, state);
+}
+
+cbCODEXB_SOL40_cxsol01_Link07_doCommand(string dp, string command)
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link07");
+   command = fwDU_convertCommand("CODEXB_SOL40","cxsol01/Link07","HwTypeGBTQ_SOL40_DU", HwTypeGBTQ_SOL40_DU_CurrDUActions, command);
+   HwTypeGBTQ_SOL40_DU_doCommand("CODEXB_SOL40", devdp, command);
+}
+
+CODEXB_SOL40_cxsol01_Link08_install()
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link08");
+   if(!globalExists("HwTypeGBTQ_SOL40_DU_CurrDUActions"))
+   {
+      addGlobal("HwTypeGBTQ_SOL40_DU_CurrDUActions",DYN_STRING_VAR);
+      fwDU_getAllActions("HwTypeGBTQ_SOL40_DU",HwTypeGBTQ_SOL40_DU_CurrDUActions);
+   }
+   HwTypeGBTQ_SOL40_DU_initialize("CODEXB_SOL40", devdp);
+   fwDU_setDefaultParameters("CODEXB_SOL40", devdp);
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link08_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect state");
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link08_doCommand",false,
+     "CODEXB_SOL40|cxsol01/Link08.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect command");
+}
+
+CODEXB_SOL40_cxsol01_Link08_uninstall(string dp, int running)
+{
+   string devdp;
+
+DebugTN("uninstalling CODEXB_SOL40 cxsol01/Link08");
+   if(running) return;
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link08");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link08_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpDisconnect state");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link08_doCommand",
+     "CODEXB_SOL40|cxsol01/Link08.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugN("Bad dpDisconnect command");
+}
+
+cbCODEXB_SOL40_cxsol01_Link08_valueChanged(
+      string dp1, int x1,
+      string dp2, int x2,
+      string dp3, int x3,
+      string dp4, int x4,
+      string dp5, int x5   )
+{
+   string state;
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link08");
+   fwDU_convertValue("CODEXB_SOL40","cxsol01/Link08");
+   HwTypeGBTQ_SOL40_DU_valueChanged("CODEXB_SOL40", devdp,
+      x1,
+      x2,
+      x3,
+      x4,
+      x5, state );
+   fwDU_setState("CODEXB_SOL40", devdp, state);
+}
+
+cbCODEXB_SOL40_cxsol01_Link08_doCommand(string dp, string command)
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link08");
+   command = fwDU_convertCommand("CODEXB_SOL40","cxsol01/Link08","HwTypeGBTQ_SOL40_DU", HwTypeGBTQ_SOL40_DU_CurrDUActions, command);
+   HwTypeGBTQ_SOL40_DU_doCommand("CODEXB_SOL40", devdp, command);
+}
+
+CODEXB_SOL40_cxsol01_Link09_install()
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link09");
+   if(!globalExists("HwTypeGBTQ_SOL40_DU_CurrDUActions"))
+   {
+      addGlobal("HwTypeGBTQ_SOL40_DU_CurrDUActions",DYN_STRING_VAR);
+      fwDU_getAllActions("HwTypeGBTQ_SOL40_DU",HwTypeGBTQ_SOL40_DU_CurrDUActions);
+   }
+   HwTypeGBTQ_SOL40_DU_initialize("CODEXB_SOL40", devdp);
+   fwDU_setDefaultParameters("CODEXB_SOL40", devdp);
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link09_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect state");
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link09_doCommand",false,
+     "CODEXB_SOL40|cxsol01/Link09.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect command");
+}
+
+CODEXB_SOL40_cxsol01_Link09_uninstall(string dp, int running)
+{
+   string devdp;
+
+DebugTN("uninstalling CODEXB_SOL40 cxsol01/Link09");
+   if(running) return;
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link09");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link09_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpDisconnect state");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link09_doCommand",
+     "CODEXB_SOL40|cxsol01/Link09.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugN("Bad dpDisconnect command");
+}
+
+cbCODEXB_SOL40_cxsol01_Link09_valueChanged(
+      string dp1, int x1,
+      string dp2, int x2,
+      string dp3, int x3,
+      string dp4, int x4,
+      string dp5, int x5   )
+{
+   string state;
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link09");
+   fwDU_convertValue("CODEXB_SOL40","cxsol01/Link09");
+   HwTypeGBTQ_SOL40_DU_valueChanged("CODEXB_SOL40", devdp,
+      x1,
+      x2,
+      x3,
+      x4,
+      x5, state );
+   fwDU_setState("CODEXB_SOL40", devdp, state);
+}
+
+cbCODEXB_SOL40_cxsol01_Link09_doCommand(string dp, string command)
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link09");
+   command = fwDU_convertCommand("CODEXB_SOL40","cxsol01/Link09","HwTypeGBTQ_SOL40_DU", HwTypeGBTQ_SOL40_DU_CurrDUActions, command);
+   HwTypeGBTQ_SOL40_DU_doCommand("CODEXB_SOL40", devdp, command);
+}
+
+CODEXB_SOL40_cxsol01_Link10_install()
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link10");
+   if(!globalExists("HwTypeGBTQ_SOL40_DU_CurrDUActions"))
+   {
+      addGlobal("HwTypeGBTQ_SOL40_DU_CurrDUActions",DYN_STRING_VAR);
+      fwDU_getAllActions("HwTypeGBTQ_SOL40_DU",HwTypeGBTQ_SOL40_DU_CurrDUActions);
+   }
+   HwTypeGBTQ_SOL40_DU_initialize("CODEXB_SOL40", devdp);
+   fwDU_setDefaultParameters("CODEXB_SOL40", devdp);
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link10_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect state");
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link10_doCommand",false,
+     "CODEXB_SOL40|cxsol01/Link10.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect command");
+}
+
+CODEXB_SOL40_cxsol01_Link10_uninstall(string dp, int running)
+{
+   string devdp;
+
+DebugTN("uninstalling CODEXB_SOL40 cxsol01/Link10");
+   if(running) return;
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link10");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link10_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpDisconnect state");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link10_doCommand",
+     "CODEXB_SOL40|cxsol01/Link10.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugN("Bad dpDisconnect command");
+}
+
+cbCODEXB_SOL40_cxsol01_Link10_valueChanged(
+      string dp1, int x1,
+      string dp2, int x2,
+      string dp3, int x3,
+      string dp4, int x4,
+      string dp5, int x5   )
+{
+   string state;
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link10");
+   fwDU_convertValue("CODEXB_SOL40","cxsol01/Link10");
+   HwTypeGBTQ_SOL40_DU_valueChanged("CODEXB_SOL40", devdp,
+      x1,
+      x2,
+      x3,
+      x4,
+      x5, state );
+   fwDU_setState("CODEXB_SOL40", devdp, state);
+}
+
+cbCODEXB_SOL40_cxsol01_Link10_doCommand(string dp, string command)
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link10");
+   command = fwDU_convertCommand("CODEXB_SOL40","cxsol01/Link10","HwTypeGBTQ_SOL40_DU", HwTypeGBTQ_SOL40_DU_CurrDUActions, command);
+   HwTypeGBTQ_SOL40_DU_doCommand("CODEXB_SOL40", devdp, command);
+}
+
+CODEXB_SOL40_cxsol01_Link11_install()
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link11");
+   if(!globalExists("HwTypeGBTQ_SOL40_DU_CurrDUActions"))
+   {
+      addGlobal("HwTypeGBTQ_SOL40_DU_CurrDUActions",DYN_STRING_VAR);
+      fwDU_getAllActions("HwTypeGBTQ_SOL40_DU",HwTypeGBTQ_SOL40_DU_CurrDUActions);
+   }
+   HwTypeGBTQ_SOL40_DU_initialize("CODEXB_SOL40", devdp);
+   fwDU_setDefaultParameters("CODEXB_SOL40", devdp);
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link11_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect state");
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link11_doCommand",false,
+     "CODEXB_SOL40|cxsol01/Link11.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect command");
+}
+
+CODEXB_SOL40_cxsol01_Link11_uninstall(string dp, int running)
+{
+   string devdp;
+
+DebugTN("uninstalling CODEXB_SOL40 cxsol01/Link11");
+   if(running) return;
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link11");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link11_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpDisconnect state");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link11_doCommand",
+     "CODEXB_SOL40|cxsol01/Link11.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugN("Bad dpDisconnect command");
+}
+
+cbCODEXB_SOL40_cxsol01_Link11_valueChanged(
+      string dp1, int x1,
+      string dp2, int x2,
+      string dp3, int x3,
+      string dp4, int x4,
+      string dp5, int x5   )
+{
+   string state;
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link11");
+   fwDU_convertValue("CODEXB_SOL40","cxsol01/Link11");
+   HwTypeGBTQ_SOL40_DU_valueChanged("CODEXB_SOL40", devdp,
+      x1,
+      x2,
+      x3,
+      x4,
+      x5, state );
+   fwDU_setState("CODEXB_SOL40", devdp, state);
+}
+
+cbCODEXB_SOL40_cxsol01_Link11_doCommand(string dp, string command)
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link11");
+   command = fwDU_convertCommand("CODEXB_SOL40","cxsol01/Link11","HwTypeGBTQ_SOL40_DU", HwTypeGBTQ_SOL40_DU_CurrDUActions, command);
+   HwTypeGBTQ_SOL40_DU_doCommand("CODEXB_SOL40", devdp, command);
+}
+
+CODEXB_SOL40_cxsol01_Link12_install()
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link12");
+   if(!globalExists("HwTypeGBTQ_SOL40_DU_CurrDUActions"))
+   {
+      addGlobal("HwTypeGBTQ_SOL40_DU_CurrDUActions",DYN_STRING_VAR);
+      fwDU_getAllActions("HwTypeGBTQ_SOL40_DU",HwTypeGBTQ_SOL40_DU_CurrDUActions);
+   }
+   HwTypeGBTQ_SOL40_DU_initialize("CODEXB_SOL40", devdp);
+   fwDU_setDefaultParameters("CODEXB_SOL40", devdp);
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link12_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect state");
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link12_doCommand",false,
+     "CODEXB_SOL40|cxsol01/Link12.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect command");
+}
+
+CODEXB_SOL40_cxsol01_Link12_uninstall(string dp, int running)
+{
+   string devdp;
+
+DebugTN("uninstalling CODEXB_SOL40 cxsol01/Link12");
+   if(running) return;
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link12");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link12_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpDisconnect state");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link12_doCommand",
+     "CODEXB_SOL40|cxsol01/Link12.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugN("Bad dpDisconnect command");
+}
+
+cbCODEXB_SOL40_cxsol01_Link12_valueChanged(
+      string dp1, int x1,
+      string dp2, int x2,
+      string dp3, int x3,
+      string dp4, int x4,
+      string dp5, int x5   )
+{
+   string state;
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link12");
+   fwDU_convertValue("CODEXB_SOL40","cxsol01/Link12");
+   HwTypeGBTQ_SOL40_DU_valueChanged("CODEXB_SOL40", devdp,
+      x1,
+      x2,
+      x3,
+      x4,
+      x5, state );
+   fwDU_setState("CODEXB_SOL40", devdp, state);
+}
+
+cbCODEXB_SOL40_cxsol01_Link12_doCommand(string dp, string command)
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link12");
+   command = fwDU_convertCommand("CODEXB_SOL40","cxsol01/Link12","HwTypeGBTQ_SOL40_DU", HwTypeGBTQ_SOL40_DU_CurrDUActions, command);
+   HwTypeGBTQ_SOL40_DU_doCommand("CODEXB_SOL40", devdp, command);
+}
+
+CODEXB_SOL40_cxsol01_Link13_install()
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link13");
+   if(!globalExists("HwTypeGBTQ_SOL40_DU_CurrDUActions"))
+   {
+      addGlobal("HwTypeGBTQ_SOL40_DU_CurrDUActions",DYN_STRING_VAR);
+      fwDU_getAllActions("HwTypeGBTQ_SOL40_DU",HwTypeGBTQ_SOL40_DU_CurrDUActions);
+   }
+   HwTypeGBTQ_SOL40_DU_initialize("CODEXB_SOL40", devdp);
+   fwDU_setDefaultParameters("CODEXB_SOL40", devdp);
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link13_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect state");
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link13_doCommand",false,
+     "CODEXB_SOL40|cxsol01/Link13.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect command");
+}
+
+CODEXB_SOL40_cxsol01_Link13_uninstall(string dp, int running)
+{
+   string devdp;
+
+DebugTN("uninstalling CODEXB_SOL40 cxsol01/Link13");
+   if(running) return;
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link13");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link13_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpDisconnect state");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link13_doCommand",
+     "CODEXB_SOL40|cxsol01/Link13.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugN("Bad dpDisconnect command");
+}
+
+cbCODEXB_SOL40_cxsol01_Link13_valueChanged(
+      string dp1, int x1,
+      string dp2, int x2,
+      string dp3, int x3,
+      string dp4, int x4,
+      string dp5, int x5   )
+{
+   string state;
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link13");
+   fwDU_convertValue("CODEXB_SOL40","cxsol01/Link13");
+   HwTypeGBTQ_SOL40_DU_valueChanged("CODEXB_SOL40", devdp,
+      x1,
+      x2,
+      x3,
+      x4,
+      x5, state );
+   fwDU_setState("CODEXB_SOL40", devdp, state);
+}
+
+cbCODEXB_SOL40_cxsol01_Link13_doCommand(string dp, string command)
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link13");
+   command = fwDU_convertCommand("CODEXB_SOL40","cxsol01/Link13","HwTypeGBTQ_SOL40_DU", HwTypeGBTQ_SOL40_DU_CurrDUActions, command);
+   HwTypeGBTQ_SOL40_DU_doCommand("CODEXB_SOL40", devdp, command);
+}
+
+CODEXB_SOL40_cxsol01_Link14_install()
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link14");
+   if(!globalExists("HwTypeGBTQ_SOL40_DU_CurrDUActions"))
+   {
+      addGlobal("HwTypeGBTQ_SOL40_DU_CurrDUActions",DYN_STRING_VAR);
+      fwDU_getAllActions("HwTypeGBTQ_SOL40_DU",HwTypeGBTQ_SOL40_DU_CurrDUActions);
+   }
+   HwTypeGBTQ_SOL40_DU_initialize("CODEXB_SOL40", devdp);
+   fwDU_setDefaultParameters("CODEXB_SOL40", devdp);
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link14_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect state");
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link14_doCommand",false,
+     "CODEXB_SOL40|cxsol01/Link14.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect command");
+}
+
+CODEXB_SOL40_cxsol01_Link14_uninstall(string dp, int running)
+{
+   string devdp;
+
+DebugTN("uninstalling CODEXB_SOL40 cxsol01/Link14");
+   if(running) return;
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link14");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link14_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpDisconnect state");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link14_doCommand",
+     "CODEXB_SOL40|cxsol01/Link14.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugN("Bad dpDisconnect command");
+}
+
+cbCODEXB_SOL40_cxsol01_Link14_valueChanged(
+      string dp1, int x1,
+      string dp2, int x2,
+      string dp3, int x3,
+      string dp4, int x4,
+      string dp5, int x5   )
+{
+   string state;
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link14");
+   fwDU_convertValue("CODEXB_SOL40","cxsol01/Link14");
+   HwTypeGBTQ_SOL40_DU_valueChanged("CODEXB_SOL40", devdp,
+      x1,
+      x2,
+      x3,
+      x4,
+      x5, state );
+   fwDU_setState("CODEXB_SOL40", devdp, state);
+}
+
+cbCODEXB_SOL40_cxsol01_Link14_doCommand(string dp, string command)
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link14");
+   command = fwDU_convertCommand("CODEXB_SOL40","cxsol01/Link14","HwTypeGBTQ_SOL40_DU", HwTypeGBTQ_SOL40_DU_CurrDUActions, command);
+   HwTypeGBTQ_SOL40_DU_doCommand("CODEXB_SOL40", devdp, command);
+}
+
+CODEXB_SOL40_cxsol01_Link15_install()
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link15");
+   if(!globalExists("HwTypeGBTQ_SOL40_DU_CurrDUActions"))
+   {
+      addGlobal("HwTypeGBTQ_SOL40_DU_CurrDUActions",DYN_STRING_VAR);
+      fwDU_getAllActions("HwTypeGBTQ_SOL40_DU",HwTypeGBTQ_SOL40_DU_CurrDUActions);
+   }
+   HwTypeGBTQ_SOL40_DU_initialize("CODEXB_SOL40", devdp);
+   fwDU_setDefaultParameters("CODEXB_SOL40", devdp);
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link15_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect state");
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link15_doCommand",false,
+     "CODEXB_SOL40|cxsol01/Link15.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect command");
+}
+
+CODEXB_SOL40_cxsol01_Link15_uninstall(string dp, int running)
+{
+   string devdp;
+
+DebugTN("uninstalling CODEXB_SOL40 cxsol01/Link15");
+   if(running) return;
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link15");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link15_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpDisconnect state");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link15_doCommand",
+     "CODEXB_SOL40|cxsol01/Link15.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugN("Bad dpDisconnect command");
+}
+
+cbCODEXB_SOL40_cxsol01_Link15_valueChanged(
+      string dp1, int x1,
+      string dp2, int x2,
+      string dp3, int x3,
+      string dp4, int x4,
+      string dp5, int x5   )
+{
+   string state;
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link15");
+   fwDU_convertValue("CODEXB_SOL40","cxsol01/Link15");
+   HwTypeGBTQ_SOL40_DU_valueChanged("CODEXB_SOL40", devdp,
+      x1,
+      x2,
+      x3,
+      x4,
+      x5, state );
+   fwDU_setState("CODEXB_SOL40", devdp, state);
+}
+
+cbCODEXB_SOL40_cxsol01_Link15_doCommand(string dp, string command)
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link15");
+   command = fwDU_convertCommand("CODEXB_SOL40","cxsol01/Link15","HwTypeGBTQ_SOL40_DU", HwTypeGBTQ_SOL40_DU_CurrDUActions, command);
+   HwTypeGBTQ_SOL40_DU_doCommand("CODEXB_SOL40", devdp, command);
+}
+
+CODEXB_SOL40_cxsol01_Link16_install()
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link16");
+   if(!globalExists("HwTypeGBTQ_SOL40_DU_CurrDUActions"))
+   {
+      addGlobal("HwTypeGBTQ_SOL40_DU_CurrDUActions",DYN_STRING_VAR);
+      fwDU_getAllActions("HwTypeGBTQ_SOL40_DU",HwTypeGBTQ_SOL40_DU_CurrDUActions);
+   }
+   HwTypeGBTQ_SOL40_DU_initialize("CODEXB_SOL40", devdp);
+   fwDU_setDefaultParameters("CODEXB_SOL40", devdp);
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link16_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect state");
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link16_doCommand",false,
+     "CODEXB_SOL40|cxsol01/Link16.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect command");
+}
+
+CODEXB_SOL40_cxsol01_Link16_uninstall(string dp, int running)
+{
+   string devdp;
+
+DebugTN("uninstalling CODEXB_SOL40 cxsol01/Link16");
+   if(running) return;
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link16");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link16_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpDisconnect state");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link16_doCommand",
+     "CODEXB_SOL40|cxsol01/Link16.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugN("Bad dpDisconnect command");
+}
+
+cbCODEXB_SOL40_cxsol01_Link16_valueChanged(
+      string dp1, int x1,
+      string dp2, int x2,
+      string dp3, int x3,
+      string dp4, int x4,
+      string dp5, int x5   )
+{
+   string state;
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link16");
+   fwDU_convertValue("CODEXB_SOL40","cxsol01/Link16");
+   HwTypeGBTQ_SOL40_DU_valueChanged("CODEXB_SOL40", devdp,
+      x1,
+      x2,
+      x3,
+      x4,
+      x5, state );
+   fwDU_setState("CODEXB_SOL40", devdp, state);
+}
+
+cbCODEXB_SOL40_cxsol01_Link16_doCommand(string dp, string command)
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link16");
+   command = fwDU_convertCommand("CODEXB_SOL40","cxsol01/Link16","HwTypeGBTQ_SOL40_DU", HwTypeGBTQ_SOL40_DU_CurrDUActions, command);
+   HwTypeGBTQ_SOL40_DU_doCommand("CODEXB_SOL40", devdp, command);
+}
+
+CODEXB_SOL40_cxsol01_Link17_install()
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link17");
+   if(!globalExists("HwTypeGBTQ_SOL40_DU_CurrDUActions"))
+   {
+      addGlobal("HwTypeGBTQ_SOL40_DU_CurrDUActions",DYN_STRING_VAR);
+      fwDU_getAllActions("HwTypeGBTQ_SOL40_DU",HwTypeGBTQ_SOL40_DU_CurrDUActions);
+   }
+   HwTypeGBTQ_SOL40_DU_initialize("CODEXB_SOL40", devdp);
+   fwDU_setDefaultParameters("CODEXB_SOL40", devdp);
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link17_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect state");
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link17_doCommand",false,
+     "CODEXB_SOL40|cxsol01/Link17.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect command");
+}
+
+CODEXB_SOL40_cxsol01_Link17_uninstall(string dp, int running)
+{
+   string devdp;
+
+DebugTN("uninstalling CODEXB_SOL40 cxsol01/Link17");
+   if(running) return;
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link17");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link17_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpDisconnect state");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link17_doCommand",
+     "CODEXB_SOL40|cxsol01/Link17.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugN("Bad dpDisconnect command");
+}
+
+cbCODEXB_SOL40_cxsol01_Link17_valueChanged(
+      string dp1, int x1,
+      string dp2, int x2,
+      string dp3, int x3,
+      string dp4, int x4,
+      string dp5, int x5   )
+{
+   string state;
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link17");
+   fwDU_convertValue("CODEXB_SOL40","cxsol01/Link17");
+   HwTypeGBTQ_SOL40_DU_valueChanged("CODEXB_SOL40", devdp,
+      x1,
+      x2,
+      x3,
+      x4,
+      x5, state );
+   fwDU_setState("CODEXB_SOL40", devdp, state);
+}
+
+cbCODEXB_SOL40_cxsol01_Link17_doCommand(string dp, string command)
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link17");
+   command = fwDU_convertCommand("CODEXB_SOL40","cxsol01/Link17","HwTypeGBTQ_SOL40_DU", HwTypeGBTQ_SOL40_DU_CurrDUActions, command);
+   HwTypeGBTQ_SOL40_DU_doCommand("CODEXB_SOL40", devdp, command);
+}
+
+CODEXB_SOL40_cxsol01_Link18_install()
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link18");
+   if(!globalExists("HwTypeGBTQ_SOL40_DU_CurrDUActions"))
+   {
+      addGlobal("HwTypeGBTQ_SOL40_DU_CurrDUActions",DYN_STRING_VAR);
+      fwDU_getAllActions("HwTypeGBTQ_SOL40_DU",HwTypeGBTQ_SOL40_DU_CurrDUActions);
+   }
+   HwTypeGBTQ_SOL40_DU_initialize("CODEXB_SOL40", devdp);
+   fwDU_setDefaultParameters("CODEXB_SOL40", devdp);
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link18_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect state");
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link18_doCommand",false,
+     "CODEXB_SOL40|cxsol01/Link18.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect command");
+}
+
+CODEXB_SOL40_cxsol01_Link18_uninstall(string dp, int running)
+{
+   string devdp;
+
+DebugTN("uninstalling CODEXB_SOL40 cxsol01/Link18");
+   if(running) return;
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link18");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link18_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpDisconnect state");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link18_doCommand",
+     "CODEXB_SOL40|cxsol01/Link18.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugN("Bad dpDisconnect command");
+}
+
+cbCODEXB_SOL40_cxsol01_Link18_valueChanged(
+      string dp1, int x1,
+      string dp2, int x2,
+      string dp3, int x3,
+      string dp4, int x4,
+      string dp5, int x5   )
+{
+   string state;
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link18");
+   fwDU_convertValue("CODEXB_SOL40","cxsol01/Link18");
+   HwTypeGBTQ_SOL40_DU_valueChanged("CODEXB_SOL40", devdp,
+      x1,
+      x2,
+      x3,
+      x4,
+      x5, state );
+   fwDU_setState("CODEXB_SOL40", devdp, state);
+}
+
+cbCODEXB_SOL40_cxsol01_Link18_doCommand(string dp, string command)
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link18");
+   command = fwDU_convertCommand("CODEXB_SOL40","cxsol01/Link18","HwTypeGBTQ_SOL40_DU", HwTypeGBTQ_SOL40_DU_CurrDUActions, command);
+   HwTypeGBTQ_SOL40_DU_doCommand("CODEXB_SOL40", devdp, command);
+}
+
+CODEXB_SOL40_cxsol01_Link19_install()
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link19");
+   if(!globalExists("HwTypeGBTQ_SOL40_DU_CurrDUActions"))
+   {
+      addGlobal("HwTypeGBTQ_SOL40_DU_CurrDUActions",DYN_STRING_VAR);
+      fwDU_getAllActions("HwTypeGBTQ_SOL40_DU",HwTypeGBTQ_SOL40_DU_CurrDUActions);
+   }
+   HwTypeGBTQ_SOL40_DU_initialize("CODEXB_SOL40", devdp);
+   fwDU_setDefaultParameters("CODEXB_SOL40", devdp);
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link19_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect state");
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link19_doCommand",false,
+     "CODEXB_SOL40|cxsol01/Link19.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect command");
+}
+
+CODEXB_SOL40_cxsol01_Link19_uninstall(string dp, int running)
+{
+   string devdp;
+
+DebugTN("uninstalling CODEXB_SOL40 cxsol01/Link19");
+   if(running) return;
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link19");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link19_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpDisconnect state");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link19_doCommand",
+     "CODEXB_SOL40|cxsol01/Link19.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugN("Bad dpDisconnect command");
+}
+
+cbCODEXB_SOL40_cxsol01_Link19_valueChanged(
+      string dp1, int x1,
+      string dp2, int x2,
+      string dp3, int x3,
+      string dp4, int x4,
+      string dp5, int x5   )
+{
+   string state;
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link19");
+   fwDU_convertValue("CODEXB_SOL40","cxsol01/Link19");
+   HwTypeGBTQ_SOL40_DU_valueChanged("CODEXB_SOL40", devdp,
+      x1,
+      x2,
+      x3,
+      x4,
+      x5, state );
+   fwDU_setState("CODEXB_SOL40", devdp, state);
+}
+
+cbCODEXB_SOL40_cxsol01_Link19_doCommand(string dp, string command)
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link19");
+   command = fwDU_convertCommand("CODEXB_SOL40","cxsol01/Link19","HwTypeGBTQ_SOL40_DU", HwTypeGBTQ_SOL40_DU_CurrDUActions, command);
+   HwTypeGBTQ_SOL40_DU_doCommand("CODEXB_SOL40", devdp, command);
+}
+
+CODEXB_SOL40_cxsol01_Link20_install()
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link20");
+   if(!globalExists("HwTypeGBTQ_SOL40_DU_CurrDUActions"))
+   {
+      addGlobal("HwTypeGBTQ_SOL40_DU_CurrDUActions",DYN_STRING_VAR);
+      fwDU_getAllActions("HwTypeGBTQ_SOL40_DU",HwTypeGBTQ_SOL40_DU_CurrDUActions);
+   }
+   HwTypeGBTQ_SOL40_DU_initialize("CODEXB_SOL40", devdp);
+   fwDU_setDefaultParameters("CODEXB_SOL40", devdp);
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link20_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect state");
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link20_doCommand",false,
+     "CODEXB_SOL40|cxsol01/Link20.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect command");
+}
+
+CODEXB_SOL40_cxsol01_Link20_uninstall(string dp, int running)
+{
+   string devdp;
+
+DebugTN("uninstalling CODEXB_SOL40 cxsol01/Link20");
+   if(running) return;
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link20");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link20_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpDisconnect state");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link20_doCommand",
+     "CODEXB_SOL40|cxsol01/Link20.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugN("Bad dpDisconnect command");
+}
+
+cbCODEXB_SOL40_cxsol01_Link20_valueChanged(
+      string dp1, int x1,
+      string dp2, int x2,
+      string dp3, int x3,
+      string dp4, int x4,
+      string dp5, int x5   )
+{
+   string state;
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link20");
+   fwDU_convertValue("CODEXB_SOL40","cxsol01/Link20");
+   HwTypeGBTQ_SOL40_DU_valueChanged("CODEXB_SOL40", devdp,
+      x1,
+      x2,
+      x3,
+      x4,
+      x5, state );
+   fwDU_setState("CODEXB_SOL40", devdp, state);
+}
+
+cbCODEXB_SOL40_cxsol01_Link20_doCommand(string dp, string command)
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link20");
+   command = fwDU_convertCommand("CODEXB_SOL40","cxsol01/Link20","HwTypeGBTQ_SOL40_DU", HwTypeGBTQ_SOL40_DU_CurrDUActions, command);
+   HwTypeGBTQ_SOL40_DU_doCommand("CODEXB_SOL40", devdp, command);
+}
+
+CODEXB_SOL40_cxsol01_Link21_install()
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link21");
+   if(!globalExists("HwTypeGBTQ_SOL40_DU_CurrDUActions"))
+   {
+      addGlobal("HwTypeGBTQ_SOL40_DU_CurrDUActions",DYN_STRING_VAR);
+      fwDU_getAllActions("HwTypeGBTQ_SOL40_DU",HwTypeGBTQ_SOL40_DU_CurrDUActions);
+   }
+   HwTypeGBTQ_SOL40_DU_initialize("CODEXB_SOL40", devdp);
+   fwDU_setDefaultParameters("CODEXB_SOL40", devdp);
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link21_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect state");
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link21_doCommand",false,
+     "CODEXB_SOL40|cxsol01/Link21.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect command");
+}
+
+CODEXB_SOL40_cxsol01_Link21_uninstall(string dp, int running)
+{
+   string devdp;
+
+DebugTN("uninstalling CODEXB_SOL40 cxsol01/Link21");
+   if(running) return;
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link21");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link21_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpDisconnect state");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link21_doCommand",
+     "CODEXB_SOL40|cxsol01/Link21.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugN("Bad dpDisconnect command");
+}
+
+cbCODEXB_SOL40_cxsol01_Link21_valueChanged(
+      string dp1, int x1,
+      string dp2, int x2,
+      string dp3, int x3,
+      string dp4, int x4,
+      string dp5, int x5   )
+{
+   string state;
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link21");
+   fwDU_convertValue("CODEXB_SOL40","cxsol01/Link21");
+   HwTypeGBTQ_SOL40_DU_valueChanged("CODEXB_SOL40", devdp,
+      x1,
+      x2,
+      x3,
+      x4,
+      x5, state );
+   fwDU_setState("CODEXB_SOL40", devdp, state);
+}
+
+cbCODEXB_SOL40_cxsol01_Link21_doCommand(string dp, string command)
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link21");
+   command = fwDU_convertCommand("CODEXB_SOL40","cxsol01/Link21","HwTypeGBTQ_SOL40_DU", HwTypeGBTQ_SOL40_DU_CurrDUActions, command);
+   HwTypeGBTQ_SOL40_DU_doCommand("CODEXB_SOL40", devdp, command);
+}
+
+CODEXB_SOL40_cxsol01_Link22_install()
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link22");
+   if(!globalExists("HwTypeGBTQ_SOL40_DU_CurrDUActions"))
+   {
+      addGlobal("HwTypeGBTQ_SOL40_DU_CurrDUActions",DYN_STRING_VAR);
+      fwDU_getAllActions("HwTypeGBTQ_SOL40_DU",HwTypeGBTQ_SOL40_DU_CurrDUActions);
+   }
+   HwTypeGBTQ_SOL40_DU_initialize("CODEXB_SOL40", devdp);
+   fwDU_setDefaultParameters("CODEXB_SOL40", devdp);
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link22_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect state");
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link22_doCommand",false,
+     "CODEXB_SOL40|cxsol01/Link22.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect command");
+}
+
+CODEXB_SOL40_cxsol01_Link22_uninstall(string dp, int running)
+{
+   string devdp;
+
+DebugTN("uninstalling CODEXB_SOL40 cxsol01/Link22");
+   if(running) return;
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link22");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link22_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpDisconnect state");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link22_doCommand",
+     "CODEXB_SOL40|cxsol01/Link22.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugN("Bad dpDisconnect command");
+}
+
+cbCODEXB_SOL40_cxsol01_Link22_valueChanged(
+      string dp1, int x1,
+      string dp2, int x2,
+      string dp3, int x3,
+      string dp4, int x4,
+      string dp5, int x5   )
+{
+   string state;
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link22");
+   fwDU_convertValue("CODEXB_SOL40","cxsol01/Link22");
+   HwTypeGBTQ_SOL40_DU_valueChanged("CODEXB_SOL40", devdp,
+      x1,
+      x2,
+      x3,
+      x4,
+      x5, state );
+   fwDU_setState("CODEXB_SOL40", devdp, state);
+}
+
+cbCODEXB_SOL40_cxsol01_Link22_doCommand(string dp, string command)
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link22");
+   command = fwDU_convertCommand("CODEXB_SOL40","cxsol01/Link22","HwTypeGBTQ_SOL40_DU", HwTypeGBTQ_SOL40_DU_CurrDUActions, command);
+   HwTypeGBTQ_SOL40_DU_doCommand("CODEXB_SOL40", devdp, command);
+}
+
+CODEXB_SOL40_cxsol01_Link23_install()
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link23");
+   if(!globalExists("HwTypeGBTQ_SOL40_DU_CurrDUActions"))
+   {
+      addGlobal("HwTypeGBTQ_SOL40_DU_CurrDUActions",DYN_STRING_VAR);
+      fwDU_getAllActions("HwTypeGBTQ_SOL40_DU",HwTypeGBTQ_SOL40_DU_CurrDUActions);
+   }
+   HwTypeGBTQ_SOL40_DU_initialize("CODEXB_SOL40", devdp);
+   fwDU_setDefaultParameters("CODEXB_SOL40", devdp);
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link23_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect state");
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link23_doCommand",false,
+     "CODEXB_SOL40|cxsol01/Link23.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect command");
+}
+
+CODEXB_SOL40_cxsol01_Link23_uninstall(string dp, int running)
+{
+   string devdp;
+
+DebugTN("uninstalling CODEXB_SOL40 cxsol01/Link23");
+   if(running) return;
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link23");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link23_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpDisconnect state");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link23_doCommand",
+     "CODEXB_SOL40|cxsol01/Link23.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugN("Bad dpDisconnect command");
+}
+
+cbCODEXB_SOL40_cxsol01_Link23_valueChanged(
+      string dp1, int x1,
+      string dp2, int x2,
+      string dp3, int x3,
+      string dp4, int x4,
+      string dp5, int x5   )
+{
+   string state;
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link23");
+   fwDU_convertValue("CODEXB_SOL40","cxsol01/Link23");
+   HwTypeGBTQ_SOL40_DU_valueChanged("CODEXB_SOL40", devdp,
+      x1,
+      x2,
+      x3,
+      x4,
+      x5, state );
+   fwDU_setState("CODEXB_SOL40", devdp, state);
+}
+
+cbCODEXB_SOL40_cxsol01_Link23_doCommand(string dp, string command)
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link23");
+   command = fwDU_convertCommand("CODEXB_SOL40","cxsol01/Link23","HwTypeGBTQ_SOL40_DU", HwTypeGBTQ_SOL40_DU_CurrDUActions, command);
+   HwTypeGBTQ_SOL40_DU_doCommand("CODEXB_SOL40", devdp, command);
+}
+
+CODEXB_SOL40_cxsol01_Link24_install()
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link24");
+   if(!globalExists("HwTypeGBTQ_SOL40_DU_CurrDUActions"))
+   {
+      addGlobal("HwTypeGBTQ_SOL40_DU_CurrDUActions",DYN_STRING_VAR);
+      fwDU_getAllActions("HwTypeGBTQ_SOL40_DU",HwTypeGBTQ_SOL40_DU_CurrDUActions);
+   }
+   HwTypeGBTQ_SOL40_DU_initialize("CODEXB_SOL40", devdp);
+   fwDU_setDefaultParameters("CODEXB_SOL40", devdp);
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link24_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect state");
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link24_doCommand",false,
+     "CODEXB_SOL40|cxsol01/Link24.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect command");
+}
+
+CODEXB_SOL40_cxsol01_Link24_uninstall(string dp, int running)
+{
+   string devdp;
+
+DebugTN("uninstalling CODEXB_SOL40 cxsol01/Link24");
+   if(running) return;
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link24");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link24_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpDisconnect state");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link24_doCommand",
+     "CODEXB_SOL40|cxsol01/Link24.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugN("Bad dpDisconnect command");
+}
+
+cbCODEXB_SOL40_cxsol01_Link24_valueChanged(
+      string dp1, int x1,
+      string dp2, int x2,
+      string dp3, int x3,
+      string dp4, int x4,
+      string dp5, int x5   )
+{
+   string state;
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link24");
+   fwDU_convertValue("CODEXB_SOL40","cxsol01/Link24");
+   HwTypeGBTQ_SOL40_DU_valueChanged("CODEXB_SOL40", devdp,
+      x1,
+      x2,
+      x3,
+      x4,
+      x5, state );
+   fwDU_setState("CODEXB_SOL40", devdp, state);
+}
+
+cbCODEXB_SOL40_cxsol01_Link24_doCommand(string dp, string command)
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link24");
+   command = fwDU_convertCommand("CODEXB_SOL40","cxsol01/Link24","HwTypeGBTQ_SOL40_DU", HwTypeGBTQ_SOL40_DU_CurrDUActions, command);
+   HwTypeGBTQ_SOL40_DU_doCommand("CODEXB_SOL40", devdp, command);
+}
+
+CODEXB_SOL40_cxsol01_Link25_install()
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link25");
+   if(!globalExists("HwTypeGBTQ_SOL40_DU_CurrDUActions"))
+   {
+      addGlobal("HwTypeGBTQ_SOL40_DU_CurrDUActions",DYN_STRING_VAR);
+      fwDU_getAllActions("HwTypeGBTQ_SOL40_DU",HwTypeGBTQ_SOL40_DU_CurrDUActions);
+   }
+   HwTypeGBTQ_SOL40_DU_initialize("CODEXB_SOL40", devdp);
+   fwDU_setDefaultParameters("CODEXB_SOL40", devdp);
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link25_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect state");
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link25_doCommand",false,
+     "CODEXB_SOL40|cxsol01/Link25.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect command");
+}
+
+CODEXB_SOL40_cxsol01_Link25_uninstall(string dp, int running)
+{
+   string devdp;
+
+DebugTN("uninstalling CODEXB_SOL40 cxsol01/Link25");
+   if(running) return;
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link25");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link25_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpDisconnect state");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link25_doCommand",
+     "CODEXB_SOL40|cxsol01/Link25.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugN("Bad dpDisconnect command");
+}
+
+cbCODEXB_SOL40_cxsol01_Link25_valueChanged(
+      string dp1, int x1,
+      string dp2, int x2,
+      string dp3, int x3,
+      string dp4, int x4,
+      string dp5, int x5   )
+{
+   string state;
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link25");
+   fwDU_convertValue("CODEXB_SOL40","cxsol01/Link25");
+   HwTypeGBTQ_SOL40_DU_valueChanged("CODEXB_SOL40", devdp,
+      x1,
+      x2,
+      x3,
+      x4,
+      x5, state );
+   fwDU_setState("CODEXB_SOL40", devdp, state);
+}
+
+cbCODEXB_SOL40_cxsol01_Link25_doCommand(string dp, string command)
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link25");
+   command = fwDU_convertCommand("CODEXB_SOL40","cxsol01/Link25","HwTypeGBTQ_SOL40_DU", HwTypeGBTQ_SOL40_DU_CurrDUActions, command);
+   HwTypeGBTQ_SOL40_DU_doCommand("CODEXB_SOL40", devdp, command);
+}
+
+CODEXB_SOL40_cxsol01_Link26_install()
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link26");
+   if(!globalExists("HwTypeGBTQ_SOL40_DU_CurrDUActions"))
+   {
+      addGlobal("HwTypeGBTQ_SOL40_DU_CurrDUActions",DYN_STRING_VAR);
+      fwDU_getAllActions("HwTypeGBTQ_SOL40_DU",HwTypeGBTQ_SOL40_DU_CurrDUActions);
+   }
+   HwTypeGBTQ_SOL40_DU_initialize("CODEXB_SOL40", devdp);
+   fwDU_setDefaultParameters("CODEXB_SOL40", devdp);
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link26_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect state");
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link26_doCommand",false,
+     "CODEXB_SOL40|cxsol01/Link26.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect command");
+}
+
+CODEXB_SOL40_cxsol01_Link26_uninstall(string dp, int running)
+{
+   string devdp;
+
+DebugTN("uninstalling CODEXB_SOL40 cxsol01/Link26");
+   if(running) return;
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link26");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link26_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpDisconnect state");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link26_doCommand",
+     "CODEXB_SOL40|cxsol01/Link26.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugN("Bad dpDisconnect command");
+}
+
+cbCODEXB_SOL40_cxsol01_Link26_valueChanged(
+      string dp1, int x1,
+      string dp2, int x2,
+      string dp3, int x3,
+      string dp4, int x4,
+      string dp5, int x5   )
+{
+   string state;
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link26");
+   fwDU_convertValue("CODEXB_SOL40","cxsol01/Link26");
+   HwTypeGBTQ_SOL40_DU_valueChanged("CODEXB_SOL40", devdp,
+      x1,
+      x2,
+      x3,
+      x4,
+      x5, state );
+   fwDU_setState("CODEXB_SOL40", devdp, state);
+}
+
+cbCODEXB_SOL40_cxsol01_Link26_doCommand(string dp, string command)
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link26");
+   command = fwDU_convertCommand("CODEXB_SOL40","cxsol01/Link26","HwTypeGBTQ_SOL40_DU", HwTypeGBTQ_SOL40_DU_CurrDUActions, command);
+   HwTypeGBTQ_SOL40_DU_doCommand("CODEXB_SOL40", devdp, command);
+}
+
+CODEXB_SOL40_cxsol01_Link27_install()
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link27");
+   if(!globalExists("HwTypeGBTQ_SOL40_DU_CurrDUActions"))
+   {
+      addGlobal("HwTypeGBTQ_SOL40_DU_CurrDUActions",DYN_STRING_VAR);
+      fwDU_getAllActions("HwTypeGBTQ_SOL40_DU",HwTypeGBTQ_SOL40_DU_CurrDUActions);
+   }
+   HwTypeGBTQ_SOL40_DU_initialize("CODEXB_SOL40", devdp);
+   fwDU_setDefaultParameters("CODEXB_SOL40", devdp);
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link27_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect state");
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link27_doCommand",false,
+     "CODEXB_SOL40|cxsol01/Link27.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect command");
+}
+
+CODEXB_SOL40_cxsol01_Link27_uninstall(string dp, int running)
+{
+   string devdp;
+
+DebugTN("uninstalling CODEXB_SOL40 cxsol01/Link27");
+   if(running) return;
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link27");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link27_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpDisconnect state");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link27_doCommand",
+     "CODEXB_SOL40|cxsol01/Link27.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugN("Bad dpDisconnect command");
+}
+
+cbCODEXB_SOL40_cxsol01_Link27_valueChanged(
+      string dp1, int x1,
+      string dp2, int x2,
+      string dp3, int x3,
+      string dp4, int x4,
+      string dp5, int x5   )
+{
+   string state;
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link27");
+   fwDU_convertValue("CODEXB_SOL40","cxsol01/Link27");
+   HwTypeGBTQ_SOL40_DU_valueChanged("CODEXB_SOL40", devdp,
+      x1,
+      x2,
+      x3,
+      x4,
+      x5, state );
+   fwDU_setState("CODEXB_SOL40", devdp, state);
+}
+
+cbCODEXB_SOL40_cxsol01_Link27_doCommand(string dp, string command)
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link27");
+   command = fwDU_convertCommand("CODEXB_SOL40","cxsol01/Link27","HwTypeGBTQ_SOL40_DU", HwTypeGBTQ_SOL40_DU_CurrDUActions, command);
+   HwTypeGBTQ_SOL40_DU_doCommand("CODEXB_SOL40", devdp, command);
+}
+
+CODEXB_SOL40_cxsol01_Link28_install()
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link28");
+   if(!globalExists("HwTypeGBTQ_SOL40_DU_CurrDUActions"))
+   {
+      addGlobal("HwTypeGBTQ_SOL40_DU_CurrDUActions",DYN_STRING_VAR);
+      fwDU_getAllActions("HwTypeGBTQ_SOL40_DU",HwTypeGBTQ_SOL40_DU_CurrDUActions);
+   }
+   HwTypeGBTQ_SOL40_DU_initialize("CODEXB_SOL40", devdp);
+   fwDU_setDefaultParameters("CODEXB_SOL40", devdp);
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link28_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect state");
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link28_doCommand",false,
+     "CODEXB_SOL40|cxsol01/Link28.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect command");
+}
+
+CODEXB_SOL40_cxsol01_Link28_uninstall(string dp, int running)
+{
+   string devdp;
+
+DebugTN("uninstalling CODEXB_SOL40 cxsol01/Link28");
+   if(running) return;
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link28");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link28_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpDisconnect state");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link28_doCommand",
+     "CODEXB_SOL40|cxsol01/Link28.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugN("Bad dpDisconnect command");
+}
+
+cbCODEXB_SOL40_cxsol01_Link28_valueChanged(
+      string dp1, int x1,
+      string dp2, int x2,
+      string dp3, int x3,
+      string dp4, int x4,
+      string dp5, int x5   )
+{
+   string state;
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link28");
+   fwDU_convertValue("CODEXB_SOL40","cxsol01/Link28");
+   HwTypeGBTQ_SOL40_DU_valueChanged("CODEXB_SOL40", devdp,
+      x1,
+      x2,
+      x3,
+      x4,
+      x5, state );
+   fwDU_setState("CODEXB_SOL40", devdp, state);
+}
+
+cbCODEXB_SOL40_cxsol01_Link28_doCommand(string dp, string command)
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link28");
+   command = fwDU_convertCommand("CODEXB_SOL40","cxsol01/Link28","HwTypeGBTQ_SOL40_DU", HwTypeGBTQ_SOL40_DU_CurrDUActions, command);
+   HwTypeGBTQ_SOL40_DU_doCommand("CODEXB_SOL40", devdp, command);
+}
+
+CODEXB_SOL40_cxsol01_Link29_install()
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link29");
+   if(!globalExists("HwTypeGBTQ_SOL40_DU_CurrDUActions"))
+   {
+      addGlobal("HwTypeGBTQ_SOL40_DU_CurrDUActions",DYN_STRING_VAR);
+      fwDU_getAllActions("HwTypeGBTQ_SOL40_DU",HwTypeGBTQ_SOL40_DU_CurrDUActions);
+   }
+   HwTypeGBTQ_SOL40_DU_initialize("CODEXB_SOL40", devdp);
+   fwDU_setDefaultParameters("CODEXB_SOL40", devdp);
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link29_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect state");
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link29_doCommand",false,
+     "CODEXB_SOL40|cxsol01/Link29.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect command");
+}
+
+CODEXB_SOL40_cxsol01_Link29_uninstall(string dp, int running)
+{
+   string devdp;
+
+DebugTN("uninstalling CODEXB_SOL40 cxsol01/Link29");
+   if(running) return;
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link29");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link29_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpDisconnect state");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link29_doCommand",
+     "CODEXB_SOL40|cxsol01/Link29.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugN("Bad dpDisconnect command");
+}
+
+cbCODEXB_SOL40_cxsol01_Link29_valueChanged(
+      string dp1, int x1,
+      string dp2, int x2,
+      string dp3, int x3,
+      string dp4, int x4,
+      string dp5, int x5   )
+{
+   string state;
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link29");
+   fwDU_convertValue("CODEXB_SOL40","cxsol01/Link29");
+   HwTypeGBTQ_SOL40_DU_valueChanged("CODEXB_SOL40", devdp,
+      x1,
+      x2,
+      x3,
+      x4,
+      x5, state );
+   fwDU_setState("CODEXB_SOL40", devdp, state);
+}
+
+cbCODEXB_SOL40_cxsol01_Link29_doCommand(string dp, string command)
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link29");
+   command = fwDU_convertCommand("CODEXB_SOL40","cxsol01/Link29","HwTypeGBTQ_SOL40_DU", HwTypeGBTQ_SOL40_DU_CurrDUActions, command);
+   HwTypeGBTQ_SOL40_DU_doCommand("CODEXB_SOL40", devdp, command);
+}
+
+CODEXB_SOL40_cxsol01_Link30_install()
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link30");
+   if(!globalExists("HwTypeGBTQ_SOL40_DU_CurrDUActions"))
+   {
+      addGlobal("HwTypeGBTQ_SOL40_DU_CurrDUActions",DYN_STRING_VAR);
+      fwDU_getAllActions("HwTypeGBTQ_SOL40_DU",HwTypeGBTQ_SOL40_DU_CurrDUActions);
+   }
+   HwTypeGBTQ_SOL40_DU_initialize("CODEXB_SOL40", devdp);
+   fwDU_setDefaultParameters("CODEXB_SOL40", devdp);
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link30_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect state");
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link30_doCommand",false,
+     "CODEXB_SOL40|cxsol01/Link30.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect command");
+}
+
+CODEXB_SOL40_cxsol01_Link30_uninstall(string dp, int running)
+{
+   string devdp;
+
+DebugTN("uninstalling CODEXB_SOL40 cxsol01/Link30");
+   if(running) return;
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link30");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link30_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpDisconnect state");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link30_doCommand",
+     "CODEXB_SOL40|cxsol01/Link30.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugN("Bad dpDisconnect command");
+}
+
+cbCODEXB_SOL40_cxsol01_Link30_valueChanged(
+      string dp1, int x1,
+      string dp2, int x2,
+      string dp3, int x3,
+      string dp4, int x4,
+      string dp5, int x5   )
+{
+   string state;
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link30");
+   fwDU_convertValue("CODEXB_SOL40","cxsol01/Link30");
+   HwTypeGBTQ_SOL40_DU_valueChanged("CODEXB_SOL40", devdp,
+      x1,
+      x2,
+      x3,
+      x4,
+      x5, state );
+   fwDU_setState("CODEXB_SOL40", devdp, state);
+}
+
+cbCODEXB_SOL40_cxsol01_Link30_doCommand(string dp, string command)
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link30");
+   command = fwDU_convertCommand("CODEXB_SOL40","cxsol01/Link30","HwTypeGBTQ_SOL40_DU", HwTypeGBTQ_SOL40_DU_CurrDUActions, command);
+   HwTypeGBTQ_SOL40_DU_doCommand("CODEXB_SOL40", devdp, command);
+}
+
+CODEXB_SOL40_cxsol01_Link31_install()
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link31");
+   if(!globalExists("HwTypeGBTQ_SOL40_DU_CurrDUActions"))
+   {
+      addGlobal("HwTypeGBTQ_SOL40_DU_CurrDUActions",DYN_STRING_VAR);
+      fwDU_getAllActions("HwTypeGBTQ_SOL40_DU",HwTypeGBTQ_SOL40_DU_CurrDUActions);
+   }
+   HwTypeGBTQ_SOL40_DU_initialize("CODEXB_SOL40", devdp);
+   fwDU_setDefaultParameters("CODEXB_SOL40", devdp);
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link31_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect state");
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link31_doCommand",false,
+     "CODEXB_SOL40|cxsol01/Link31.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect command");
+}
+
+CODEXB_SOL40_cxsol01_Link31_uninstall(string dp, int running)
+{
+   string devdp;
+
+DebugTN("uninstalling CODEXB_SOL40 cxsol01/Link31");
+   if(running) return;
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link31");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link31_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpDisconnect state");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link31_doCommand",
+     "CODEXB_SOL40|cxsol01/Link31.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugN("Bad dpDisconnect command");
+}
+
+cbCODEXB_SOL40_cxsol01_Link31_valueChanged(
+      string dp1, int x1,
+      string dp2, int x2,
+      string dp3, int x3,
+      string dp4, int x4,
+      string dp5, int x5   )
+{
+   string state;
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link31");
+   fwDU_convertValue("CODEXB_SOL40","cxsol01/Link31");
+   HwTypeGBTQ_SOL40_DU_valueChanged("CODEXB_SOL40", devdp,
+      x1,
+      x2,
+      x3,
+      x4,
+      x5, state );
+   fwDU_setState("CODEXB_SOL40", devdp, state);
+}
+
+cbCODEXB_SOL40_cxsol01_Link31_doCommand(string dp, string command)
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link31");
+   command = fwDU_convertCommand("CODEXB_SOL40","cxsol01/Link31","HwTypeGBTQ_SOL40_DU", HwTypeGBTQ_SOL40_DU_CurrDUActions, command);
+   HwTypeGBTQ_SOL40_DU_doCommand("CODEXB_SOL40", devdp, command);
+}
+
+CODEXB_SOL40_cxsol01_Link32_install()
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link32");
+   if(!globalExists("HwTypeGBTQ_SOL40_DU_CurrDUActions"))
+   {
+      addGlobal("HwTypeGBTQ_SOL40_DU_CurrDUActions",DYN_STRING_VAR);
+      fwDU_getAllActions("HwTypeGBTQ_SOL40_DU",HwTypeGBTQ_SOL40_DU_CurrDUActions);
+   }
+   HwTypeGBTQ_SOL40_DU_initialize("CODEXB_SOL40", devdp);
+   fwDU_setDefaultParameters("CODEXB_SOL40", devdp);
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link32_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect state");
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link32_doCommand",false,
+     "CODEXB_SOL40|cxsol01/Link32.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect command");
+}
+
+CODEXB_SOL40_cxsol01_Link32_uninstall(string dp, int running)
+{
+   string devdp;
+
+DebugTN("uninstalling CODEXB_SOL40 cxsol01/Link32");
+   if(running) return;
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link32");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link32_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpDisconnect state");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link32_doCommand",
+     "CODEXB_SOL40|cxsol01/Link32.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugN("Bad dpDisconnect command");
+}
+
+cbCODEXB_SOL40_cxsol01_Link32_valueChanged(
+      string dp1, int x1,
+      string dp2, int x2,
+      string dp3, int x3,
+      string dp4, int x4,
+      string dp5, int x5   )
+{
+   string state;
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link32");
+   fwDU_convertValue("CODEXB_SOL40","cxsol01/Link32");
+   HwTypeGBTQ_SOL40_DU_valueChanged("CODEXB_SOL40", devdp,
+      x1,
+      x2,
+      x3,
+      x4,
+      x5, state );
+   fwDU_setState("CODEXB_SOL40", devdp, state);
+}
+
+cbCODEXB_SOL40_cxsol01_Link32_doCommand(string dp, string command)
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link32");
+   command = fwDU_convertCommand("CODEXB_SOL40","cxsol01/Link32","HwTypeGBTQ_SOL40_DU", HwTypeGBTQ_SOL40_DU_CurrDUActions, command);
+   HwTypeGBTQ_SOL40_DU_doCommand("CODEXB_SOL40", devdp, command);
+}
+
+CODEXB_SOL40_cxsol01_Link33_install()
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link33");
+   if(!globalExists("HwTypeGBTQ_SOL40_DU_CurrDUActions"))
+   {
+      addGlobal("HwTypeGBTQ_SOL40_DU_CurrDUActions",DYN_STRING_VAR);
+      fwDU_getAllActions("HwTypeGBTQ_SOL40_DU",HwTypeGBTQ_SOL40_DU_CurrDUActions);
+   }
+   HwTypeGBTQ_SOL40_DU_initialize("CODEXB_SOL40", devdp);
+   fwDU_setDefaultParameters("CODEXB_SOL40", devdp);
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link33_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect state");
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link33_doCommand",false,
+     "CODEXB_SOL40|cxsol01/Link33.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect command");
+}
+
+CODEXB_SOL40_cxsol01_Link33_uninstall(string dp, int running)
+{
+   string devdp;
+
+DebugTN("uninstalling CODEXB_SOL40 cxsol01/Link33");
+   if(running) return;
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link33");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link33_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpDisconnect state");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link33_doCommand",
+     "CODEXB_SOL40|cxsol01/Link33.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugN("Bad dpDisconnect command");
+}
+
+cbCODEXB_SOL40_cxsol01_Link33_valueChanged(
+      string dp1, int x1,
+      string dp2, int x2,
+      string dp3, int x3,
+      string dp4, int x4,
+      string dp5, int x5   )
+{
+   string state;
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link33");
+   fwDU_convertValue("CODEXB_SOL40","cxsol01/Link33");
+   HwTypeGBTQ_SOL40_DU_valueChanged("CODEXB_SOL40", devdp,
+      x1,
+      x2,
+      x3,
+      x4,
+      x5, state );
+   fwDU_setState("CODEXB_SOL40", devdp, state);
+}
+
+cbCODEXB_SOL40_cxsol01_Link33_doCommand(string dp, string command)
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link33");
+   command = fwDU_convertCommand("CODEXB_SOL40","cxsol01/Link33","HwTypeGBTQ_SOL40_DU", HwTypeGBTQ_SOL40_DU_CurrDUActions, command);
+   HwTypeGBTQ_SOL40_DU_doCommand("CODEXB_SOL40", devdp, command);
+}
+
+CODEXB_SOL40_cxsol01_Link34_install()
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link34");
+   if(!globalExists("HwTypeGBTQ_SOL40_DU_CurrDUActions"))
+   {
+      addGlobal("HwTypeGBTQ_SOL40_DU_CurrDUActions",DYN_STRING_VAR);
+      fwDU_getAllActions("HwTypeGBTQ_SOL40_DU",HwTypeGBTQ_SOL40_DU_CurrDUActions);
+   }
+   HwTypeGBTQ_SOL40_DU_initialize("CODEXB_SOL40", devdp);
+   fwDU_setDefaultParameters("CODEXB_SOL40", devdp);
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link34_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect state");
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link34_doCommand",false,
+     "CODEXB_SOL40|cxsol01/Link34.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect command");
+}
+
+CODEXB_SOL40_cxsol01_Link34_uninstall(string dp, int running)
+{
+   string devdp;
+
+DebugTN("uninstalling CODEXB_SOL40 cxsol01/Link34");
+   if(running) return;
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link34");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link34_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpDisconnect state");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link34_doCommand",
+     "CODEXB_SOL40|cxsol01/Link34.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugN("Bad dpDisconnect command");
+}
+
+cbCODEXB_SOL40_cxsol01_Link34_valueChanged(
+      string dp1, int x1,
+      string dp2, int x2,
+      string dp3, int x3,
+      string dp4, int x4,
+      string dp5, int x5   )
+{
+   string state;
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link34");
+   fwDU_convertValue("CODEXB_SOL40","cxsol01/Link34");
+   HwTypeGBTQ_SOL40_DU_valueChanged("CODEXB_SOL40", devdp,
+      x1,
+      x2,
+      x3,
+      x4,
+      x5, state );
+   fwDU_setState("CODEXB_SOL40", devdp, state);
+}
+
+cbCODEXB_SOL40_cxsol01_Link34_doCommand(string dp, string command)
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link34");
+   command = fwDU_convertCommand("CODEXB_SOL40","cxsol01/Link34","HwTypeGBTQ_SOL40_DU", HwTypeGBTQ_SOL40_DU_CurrDUActions, command);
+   HwTypeGBTQ_SOL40_DU_doCommand("CODEXB_SOL40", devdp, command);
+}
+
+CODEXB_SOL40_cxsol01_Link35_install()
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link35");
+   if(!globalExists("HwTypeGBTQ_SOL40_DU_CurrDUActions"))
+   {
+      addGlobal("HwTypeGBTQ_SOL40_DU_CurrDUActions",DYN_STRING_VAR);
+      fwDU_getAllActions("HwTypeGBTQ_SOL40_DU",HwTypeGBTQ_SOL40_DU_CurrDUActions);
+   }
+   HwTypeGBTQ_SOL40_DU_initialize("CODEXB_SOL40", devdp);
+   fwDU_setDefaultParameters("CODEXB_SOL40", devdp);
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link35_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect state");
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link35_doCommand",false,
+     "CODEXB_SOL40|cxsol01/Link35.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect command");
+}
+
+CODEXB_SOL40_cxsol01_Link35_uninstall(string dp, int running)
+{
+   string devdp;
+
+DebugTN("uninstalling CODEXB_SOL40 cxsol01/Link35");
+   if(running) return;
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link35");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link35_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpDisconnect state");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link35_doCommand",
+     "CODEXB_SOL40|cxsol01/Link35.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugN("Bad dpDisconnect command");
+}
+
+cbCODEXB_SOL40_cxsol01_Link35_valueChanged(
+      string dp1, int x1,
+      string dp2, int x2,
+      string dp3, int x3,
+      string dp4, int x4,
+      string dp5, int x5   )
+{
+   string state;
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link35");
+   fwDU_convertValue("CODEXB_SOL40","cxsol01/Link35");
+   HwTypeGBTQ_SOL40_DU_valueChanged("CODEXB_SOL40", devdp,
+      x1,
+      x2,
+      x3,
+      x4,
+      x5, state );
+   fwDU_setState("CODEXB_SOL40", devdp, state);
+}
+
+cbCODEXB_SOL40_cxsol01_Link35_doCommand(string dp, string command)
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link35");
+   command = fwDU_convertCommand("CODEXB_SOL40","cxsol01/Link35","HwTypeGBTQ_SOL40_DU", HwTypeGBTQ_SOL40_DU_CurrDUActions, command);
+   HwTypeGBTQ_SOL40_DU_doCommand("CODEXB_SOL40", devdp, command);
+}
+
+CODEXB_SOL40_cxsol01_Link36_install()
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link36");
+   if(!globalExists("HwTypeGBTQ_SOL40_DU_CurrDUActions"))
+   {
+      addGlobal("HwTypeGBTQ_SOL40_DU_CurrDUActions",DYN_STRING_VAR);
+      fwDU_getAllActions("HwTypeGBTQ_SOL40_DU",HwTypeGBTQ_SOL40_DU_CurrDUActions);
+   }
+   HwTypeGBTQ_SOL40_DU_initialize("CODEXB_SOL40", devdp);
+   fwDU_setDefaultParameters("CODEXB_SOL40", devdp);
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link36_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect state");
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link36_doCommand",false,
+     "CODEXB_SOL40|cxsol01/Link36.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect command");
+}
+
+CODEXB_SOL40_cxsol01_Link36_uninstall(string dp, int running)
+{
+   string devdp;
+
+DebugTN("uninstalling CODEXB_SOL40 cxsol01/Link36");
+   if(running) return;
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link36");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link36_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpDisconnect state");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link36_doCommand",
+     "CODEXB_SOL40|cxsol01/Link36.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugN("Bad dpDisconnect command");
+}
+
+cbCODEXB_SOL40_cxsol01_Link36_valueChanged(
+      string dp1, int x1,
+      string dp2, int x2,
+      string dp3, int x3,
+      string dp4, int x4,
+      string dp5, int x5   )
+{
+   string state;
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link36");
+   fwDU_convertValue("CODEXB_SOL40","cxsol01/Link36");
+   HwTypeGBTQ_SOL40_DU_valueChanged("CODEXB_SOL40", devdp,
+      x1,
+      x2,
+      x3,
+      x4,
+      x5, state );
+   fwDU_setState("CODEXB_SOL40", devdp, state);
+}
+
+cbCODEXB_SOL40_cxsol01_Link36_doCommand(string dp, string command)
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link36");
+   command = fwDU_convertCommand("CODEXB_SOL40","cxsol01/Link36","HwTypeGBTQ_SOL40_DU", HwTypeGBTQ_SOL40_DU_CurrDUActions, command);
+   HwTypeGBTQ_SOL40_DU_doCommand("CODEXB_SOL40", devdp, command);
+}
+
+CODEXB_SOL40_cxsol01_Link37_install()
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link37");
+   if(!globalExists("HwTypeGBTQ_SOL40_DU_CurrDUActions"))
+   {
+      addGlobal("HwTypeGBTQ_SOL40_DU_CurrDUActions",DYN_STRING_VAR);
+      fwDU_getAllActions("HwTypeGBTQ_SOL40_DU",HwTypeGBTQ_SOL40_DU_CurrDUActions);
+   }
+   HwTypeGBTQ_SOL40_DU_initialize("CODEXB_SOL40", devdp);
+   fwDU_setDefaultParameters("CODEXB_SOL40", devdp);
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link37_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect state");
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link37_doCommand",false,
+     "CODEXB_SOL40|cxsol01/Link37.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect command");
+}
+
+CODEXB_SOL40_cxsol01_Link37_uninstall(string dp, int running)
+{
+   string devdp;
+
+DebugTN("uninstalling CODEXB_SOL40 cxsol01/Link37");
+   if(running) return;
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link37");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link37_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpDisconnect state");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link37_doCommand",
+     "CODEXB_SOL40|cxsol01/Link37.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugN("Bad dpDisconnect command");
+}
+
+cbCODEXB_SOL40_cxsol01_Link37_valueChanged(
+      string dp1, int x1,
+      string dp2, int x2,
+      string dp3, int x3,
+      string dp4, int x4,
+      string dp5, int x5   )
+{
+   string state;
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link37");
+   fwDU_convertValue("CODEXB_SOL40","cxsol01/Link37");
+   HwTypeGBTQ_SOL40_DU_valueChanged("CODEXB_SOL40", devdp,
+      x1,
+      x2,
+      x3,
+      x4,
+      x5, state );
+   fwDU_setState("CODEXB_SOL40", devdp, state);
+}
+
+cbCODEXB_SOL40_cxsol01_Link37_doCommand(string dp, string command)
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link37");
+   command = fwDU_convertCommand("CODEXB_SOL40","cxsol01/Link37","HwTypeGBTQ_SOL40_DU", HwTypeGBTQ_SOL40_DU_CurrDUActions, command);
+   HwTypeGBTQ_SOL40_DU_doCommand("CODEXB_SOL40", devdp, command);
+}
+
+CODEXB_SOL40_cxsol01_Link38_install()
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link38");
+   if(!globalExists("HwTypeGBTQ_SOL40_DU_CurrDUActions"))
+   {
+      addGlobal("HwTypeGBTQ_SOL40_DU_CurrDUActions",DYN_STRING_VAR);
+      fwDU_getAllActions("HwTypeGBTQ_SOL40_DU",HwTypeGBTQ_SOL40_DU_CurrDUActions);
+   }
+   HwTypeGBTQ_SOL40_DU_initialize("CODEXB_SOL40", devdp);
+   fwDU_setDefaultParameters("CODEXB_SOL40", devdp);
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link38_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect state");
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link38_doCommand",false,
+     "CODEXB_SOL40|cxsol01/Link38.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect command");
+}
+
+CODEXB_SOL40_cxsol01_Link38_uninstall(string dp, int running)
+{
+   string devdp;
+
+DebugTN("uninstalling CODEXB_SOL40 cxsol01/Link38");
+   if(running) return;
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link38");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link38_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpDisconnect state");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link38_doCommand",
+     "CODEXB_SOL40|cxsol01/Link38.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugN("Bad dpDisconnect command");
+}
+
+cbCODEXB_SOL40_cxsol01_Link38_valueChanged(
+      string dp1, int x1,
+      string dp2, int x2,
+      string dp3, int x3,
+      string dp4, int x4,
+      string dp5, int x5   )
+{
+   string state;
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link38");
+   fwDU_convertValue("CODEXB_SOL40","cxsol01/Link38");
+   HwTypeGBTQ_SOL40_DU_valueChanged("CODEXB_SOL40", devdp,
+      x1,
+      x2,
+      x3,
+      x4,
+      x5, state );
+   fwDU_setState("CODEXB_SOL40", devdp, state);
+}
+
+cbCODEXB_SOL40_cxsol01_Link38_doCommand(string dp, string command)
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link38");
+   command = fwDU_convertCommand("CODEXB_SOL40","cxsol01/Link38","HwTypeGBTQ_SOL40_DU", HwTypeGBTQ_SOL40_DU_CurrDUActions, command);
+   HwTypeGBTQ_SOL40_DU_doCommand("CODEXB_SOL40", devdp, command);
+}
+
+CODEXB_SOL40_cxsol01_Link39_install()
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link39");
+   if(!globalExists("HwTypeGBTQ_SOL40_DU_CurrDUActions"))
+   {
+      addGlobal("HwTypeGBTQ_SOL40_DU_CurrDUActions",DYN_STRING_VAR);
+      fwDU_getAllActions("HwTypeGBTQ_SOL40_DU",HwTypeGBTQ_SOL40_DU_CurrDUActions);
+   }
+   HwTypeGBTQ_SOL40_DU_initialize("CODEXB_SOL40", devdp);
+   fwDU_setDefaultParameters("CODEXB_SOL40", devdp);
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link39_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect state");
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link39_doCommand",false,
+     "CODEXB_SOL40|cxsol01/Link39.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect command");
+}
+
+CODEXB_SOL40_cxsol01_Link39_uninstall(string dp, int running)
+{
+   string devdp;
+
+DebugTN("uninstalling CODEXB_SOL40 cxsol01/Link39");
+   if(running) return;
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link39");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link39_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpDisconnect state");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link39_doCommand",
+     "CODEXB_SOL40|cxsol01/Link39.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugN("Bad dpDisconnect command");
+}
+
+cbCODEXB_SOL40_cxsol01_Link39_valueChanged(
+      string dp1, int x1,
+      string dp2, int x2,
+      string dp3, int x3,
+      string dp4, int x4,
+      string dp5, int x5   )
+{
+   string state;
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link39");
+   fwDU_convertValue("CODEXB_SOL40","cxsol01/Link39");
+   HwTypeGBTQ_SOL40_DU_valueChanged("CODEXB_SOL40", devdp,
+      x1,
+      x2,
+      x3,
+      x4,
+      x5, state );
+   fwDU_setState("CODEXB_SOL40", devdp, state);
+}
+
+cbCODEXB_SOL40_cxsol01_Link39_doCommand(string dp, string command)
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link39");
+   command = fwDU_convertCommand("CODEXB_SOL40","cxsol01/Link39","HwTypeGBTQ_SOL40_DU", HwTypeGBTQ_SOL40_DU_CurrDUActions, command);
+   HwTypeGBTQ_SOL40_DU_doCommand("CODEXB_SOL40", devdp, command);
+}
+
+CODEXB_SOL40_cxsol01_Link40_install()
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link40");
+   if(!globalExists("HwTypeGBTQ_SOL40_DU_CurrDUActions"))
+   {
+      addGlobal("HwTypeGBTQ_SOL40_DU_CurrDUActions",DYN_STRING_VAR);
+      fwDU_getAllActions("HwTypeGBTQ_SOL40_DU",HwTypeGBTQ_SOL40_DU_CurrDUActions);
+   }
+   HwTypeGBTQ_SOL40_DU_initialize("CODEXB_SOL40", devdp);
+   fwDU_setDefaultParameters("CODEXB_SOL40", devdp);
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link40_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect state");
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link40_doCommand",false,
+     "CODEXB_SOL40|cxsol01/Link40.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect command");
+}
+
+CODEXB_SOL40_cxsol01_Link40_uninstall(string dp, int running)
+{
+   string devdp;
+
+DebugTN("uninstalling CODEXB_SOL40 cxsol01/Link40");
+   if(running) return;
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link40");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link40_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpDisconnect state");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link40_doCommand",
+     "CODEXB_SOL40|cxsol01/Link40.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugN("Bad dpDisconnect command");
+}
+
+cbCODEXB_SOL40_cxsol01_Link40_valueChanged(
+      string dp1, int x1,
+      string dp2, int x2,
+      string dp3, int x3,
+      string dp4, int x4,
+      string dp5, int x5   )
+{
+   string state;
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link40");
+   fwDU_convertValue("CODEXB_SOL40","cxsol01/Link40");
+   HwTypeGBTQ_SOL40_DU_valueChanged("CODEXB_SOL40", devdp,
+      x1,
+      x2,
+      x3,
+      x4,
+      x5, state );
+   fwDU_setState("CODEXB_SOL40", devdp, state);
+}
+
+cbCODEXB_SOL40_cxsol01_Link40_doCommand(string dp, string command)
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link40");
+   command = fwDU_convertCommand("CODEXB_SOL40","cxsol01/Link40","HwTypeGBTQ_SOL40_DU", HwTypeGBTQ_SOL40_DU_CurrDUActions, command);
+   HwTypeGBTQ_SOL40_DU_doCommand("CODEXB_SOL40", devdp, command);
+}
+
+CODEXB_SOL40_cxsol01_Link41_install()
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link41");
+   if(!globalExists("HwTypeGBTQ_SOL40_DU_CurrDUActions"))
+   {
+      addGlobal("HwTypeGBTQ_SOL40_DU_CurrDUActions",DYN_STRING_VAR);
+      fwDU_getAllActions("HwTypeGBTQ_SOL40_DU",HwTypeGBTQ_SOL40_DU_CurrDUActions);
+   }
+   HwTypeGBTQ_SOL40_DU_initialize("CODEXB_SOL40", devdp);
+   fwDU_setDefaultParameters("CODEXB_SOL40", devdp);
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link41_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect state");
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link41_doCommand",false,
+     "CODEXB_SOL40|cxsol01/Link41.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect command");
+}
+
+CODEXB_SOL40_cxsol01_Link41_uninstall(string dp, int running)
+{
+   string devdp;
+
+DebugTN("uninstalling CODEXB_SOL40 cxsol01/Link41");
+   if(running) return;
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link41");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link41_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpDisconnect state");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link41_doCommand",
+     "CODEXB_SOL40|cxsol01/Link41.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugN("Bad dpDisconnect command");
+}
+
+cbCODEXB_SOL40_cxsol01_Link41_valueChanged(
+      string dp1, int x1,
+      string dp2, int x2,
+      string dp3, int x3,
+      string dp4, int x4,
+      string dp5, int x5   )
+{
+   string state;
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link41");
+   fwDU_convertValue("CODEXB_SOL40","cxsol01/Link41");
+   HwTypeGBTQ_SOL40_DU_valueChanged("CODEXB_SOL40", devdp,
+      x1,
+      x2,
+      x3,
+      x4,
+      x5, state );
+   fwDU_setState("CODEXB_SOL40", devdp, state);
+}
+
+cbCODEXB_SOL40_cxsol01_Link41_doCommand(string dp, string command)
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link41");
+   command = fwDU_convertCommand("CODEXB_SOL40","cxsol01/Link41","HwTypeGBTQ_SOL40_DU", HwTypeGBTQ_SOL40_DU_CurrDUActions, command);
+   HwTypeGBTQ_SOL40_DU_doCommand("CODEXB_SOL40", devdp, command);
+}
+
+CODEXB_SOL40_cxsol01_Link42_install()
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link42");
+   if(!globalExists("HwTypeGBTQ_SOL40_DU_CurrDUActions"))
+   {
+      addGlobal("HwTypeGBTQ_SOL40_DU_CurrDUActions",DYN_STRING_VAR);
+      fwDU_getAllActions("HwTypeGBTQ_SOL40_DU",HwTypeGBTQ_SOL40_DU_CurrDUActions);
+   }
+   HwTypeGBTQ_SOL40_DU_initialize("CODEXB_SOL40", devdp);
+   fwDU_setDefaultParameters("CODEXB_SOL40", devdp);
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link42_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect state");
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link42_doCommand",false,
+     "CODEXB_SOL40|cxsol01/Link42.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect command");
+}
+
+CODEXB_SOL40_cxsol01_Link42_uninstall(string dp, int running)
+{
+   string devdp;
+
+DebugTN("uninstalling CODEXB_SOL40 cxsol01/Link42");
+   if(running) return;
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link42");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link42_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpDisconnect state");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link42_doCommand",
+     "CODEXB_SOL40|cxsol01/Link42.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugN("Bad dpDisconnect command");
+}
+
+cbCODEXB_SOL40_cxsol01_Link42_valueChanged(
+      string dp1, int x1,
+      string dp2, int x2,
+      string dp3, int x3,
+      string dp4, int x4,
+      string dp5, int x5   )
+{
+   string state;
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link42");
+   fwDU_convertValue("CODEXB_SOL40","cxsol01/Link42");
+   HwTypeGBTQ_SOL40_DU_valueChanged("CODEXB_SOL40", devdp,
+      x1,
+      x2,
+      x3,
+      x4,
+      x5, state );
+   fwDU_setState("CODEXB_SOL40", devdp, state);
+}
+
+cbCODEXB_SOL40_cxsol01_Link42_doCommand(string dp, string command)
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link42");
+   command = fwDU_convertCommand("CODEXB_SOL40","cxsol01/Link42","HwTypeGBTQ_SOL40_DU", HwTypeGBTQ_SOL40_DU_CurrDUActions, command);
+   HwTypeGBTQ_SOL40_DU_doCommand("CODEXB_SOL40", devdp, command);
+}
+
+CODEXB_SOL40_cxsol01_Link43_install()
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link43");
+   if(!globalExists("HwTypeGBTQ_SOL40_DU_CurrDUActions"))
+   {
+      addGlobal("HwTypeGBTQ_SOL40_DU_CurrDUActions",DYN_STRING_VAR);
+      fwDU_getAllActions("HwTypeGBTQ_SOL40_DU",HwTypeGBTQ_SOL40_DU_CurrDUActions);
+   }
+   HwTypeGBTQ_SOL40_DU_initialize("CODEXB_SOL40", devdp);
+   fwDU_setDefaultParameters("CODEXB_SOL40", devdp);
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link43_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect state");
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link43_doCommand",false,
+     "CODEXB_SOL40|cxsol01/Link43.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect command");
+}
+
+CODEXB_SOL40_cxsol01_Link43_uninstall(string dp, int running)
+{
+   string devdp;
+
+DebugTN("uninstalling CODEXB_SOL40 cxsol01/Link43");
+   if(running) return;
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link43");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link43_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpDisconnect state");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link43_doCommand",
+     "CODEXB_SOL40|cxsol01/Link43.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugN("Bad dpDisconnect command");
+}
+
+cbCODEXB_SOL40_cxsol01_Link43_valueChanged(
+      string dp1, int x1,
+      string dp2, int x2,
+      string dp3, int x3,
+      string dp4, int x4,
+      string dp5, int x5   )
+{
+   string state;
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link43");
+   fwDU_convertValue("CODEXB_SOL40","cxsol01/Link43");
+   HwTypeGBTQ_SOL40_DU_valueChanged("CODEXB_SOL40", devdp,
+      x1,
+      x2,
+      x3,
+      x4,
+      x5, state );
+   fwDU_setState("CODEXB_SOL40", devdp, state);
+}
+
+cbCODEXB_SOL40_cxsol01_Link43_doCommand(string dp, string command)
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link43");
+   command = fwDU_convertCommand("CODEXB_SOL40","cxsol01/Link43","HwTypeGBTQ_SOL40_DU", HwTypeGBTQ_SOL40_DU_CurrDUActions, command);
+   HwTypeGBTQ_SOL40_DU_doCommand("CODEXB_SOL40", devdp, command);
+}
+
+CODEXB_SOL40_cxsol01_Link44_install()
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link44");
+   if(!globalExists("HwTypeGBTQ_SOL40_DU_CurrDUActions"))
+   {
+      addGlobal("HwTypeGBTQ_SOL40_DU_CurrDUActions",DYN_STRING_VAR);
+      fwDU_getAllActions("HwTypeGBTQ_SOL40_DU",HwTypeGBTQ_SOL40_DU_CurrDUActions);
+   }
+   HwTypeGBTQ_SOL40_DU_initialize("CODEXB_SOL40", devdp);
+   fwDU_setDefaultParameters("CODEXB_SOL40", devdp);
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link44_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect state");
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link44_doCommand",false,
+     "CODEXB_SOL40|cxsol01/Link44.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect command");
+}
+
+CODEXB_SOL40_cxsol01_Link44_uninstall(string dp, int running)
+{
+   string devdp;
+
+DebugTN("uninstalling CODEXB_SOL40 cxsol01/Link44");
+   if(running) return;
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link44");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link44_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpDisconnect state");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link44_doCommand",
+     "CODEXB_SOL40|cxsol01/Link44.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugN("Bad dpDisconnect command");
+}
+
+cbCODEXB_SOL40_cxsol01_Link44_valueChanged(
+      string dp1, int x1,
+      string dp2, int x2,
+      string dp3, int x3,
+      string dp4, int x4,
+      string dp5, int x5   )
+{
+   string state;
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link44");
+   fwDU_convertValue("CODEXB_SOL40","cxsol01/Link44");
+   HwTypeGBTQ_SOL40_DU_valueChanged("CODEXB_SOL40", devdp,
+      x1,
+      x2,
+      x3,
+      x4,
+      x5, state );
+   fwDU_setState("CODEXB_SOL40", devdp, state);
+}
+
+cbCODEXB_SOL40_cxsol01_Link44_doCommand(string dp, string command)
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link44");
+   command = fwDU_convertCommand("CODEXB_SOL40","cxsol01/Link44","HwTypeGBTQ_SOL40_DU", HwTypeGBTQ_SOL40_DU_CurrDUActions, command);
+   HwTypeGBTQ_SOL40_DU_doCommand("CODEXB_SOL40", devdp, command);
+}
+
+CODEXB_SOL40_cxsol01_Link45_install()
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link45");
+   if(!globalExists("HwTypeGBTQ_SOL40_DU_CurrDUActions"))
+   {
+      addGlobal("HwTypeGBTQ_SOL40_DU_CurrDUActions",DYN_STRING_VAR);
+      fwDU_getAllActions("HwTypeGBTQ_SOL40_DU",HwTypeGBTQ_SOL40_DU_CurrDUActions);
+   }
+   HwTypeGBTQ_SOL40_DU_initialize("CODEXB_SOL40", devdp);
+   fwDU_setDefaultParameters("CODEXB_SOL40", devdp);
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link45_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect state");
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link45_doCommand",false,
+     "CODEXB_SOL40|cxsol01/Link45.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect command");
+}
+
+CODEXB_SOL40_cxsol01_Link45_uninstall(string dp, int running)
+{
+   string devdp;
+
+DebugTN("uninstalling CODEXB_SOL40 cxsol01/Link45");
+   if(running) return;
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link45");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link45_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpDisconnect state");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link45_doCommand",
+     "CODEXB_SOL40|cxsol01/Link45.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugN("Bad dpDisconnect command");
+}
+
+cbCODEXB_SOL40_cxsol01_Link45_valueChanged(
+      string dp1, int x1,
+      string dp2, int x2,
+      string dp3, int x3,
+      string dp4, int x4,
+      string dp5, int x5   )
+{
+   string state;
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link45");
+   fwDU_convertValue("CODEXB_SOL40","cxsol01/Link45");
+   HwTypeGBTQ_SOL40_DU_valueChanged("CODEXB_SOL40", devdp,
+      x1,
+      x2,
+      x3,
+      x4,
+      x5, state );
+   fwDU_setState("CODEXB_SOL40", devdp, state);
+}
+
+cbCODEXB_SOL40_cxsol01_Link45_doCommand(string dp, string command)
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link45");
+   command = fwDU_convertCommand("CODEXB_SOL40","cxsol01/Link45","HwTypeGBTQ_SOL40_DU", HwTypeGBTQ_SOL40_DU_CurrDUActions, command);
+   HwTypeGBTQ_SOL40_DU_doCommand("CODEXB_SOL40", devdp, command);
+}
+
+CODEXB_SOL40_cxsol01_Link46_install()
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link46");
+   if(!globalExists("HwTypeGBTQ_SOL40_DU_CurrDUActions"))
+   {
+      addGlobal("HwTypeGBTQ_SOL40_DU_CurrDUActions",DYN_STRING_VAR);
+      fwDU_getAllActions("HwTypeGBTQ_SOL40_DU",HwTypeGBTQ_SOL40_DU_CurrDUActions);
+   }
+   HwTypeGBTQ_SOL40_DU_initialize("CODEXB_SOL40", devdp);
+   fwDU_setDefaultParameters("CODEXB_SOL40", devdp);
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link46_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect state");
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link46_doCommand",false,
+     "CODEXB_SOL40|cxsol01/Link46.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect command");
+}
+
+CODEXB_SOL40_cxsol01_Link46_uninstall(string dp, int running)
+{
+   string devdp;
+
+DebugTN("uninstalling CODEXB_SOL40 cxsol01/Link46");
+   if(running) return;
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link46");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link46_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpDisconnect state");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link46_doCommand",
+     "CODEXB_SOL40|cxsol01/Link46.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugN("Bad dpDisconnect command");
+}
+
+cbCODEXB_SOL40_cxsol01_Link46_valueChanged(
+      string dp1, int x1,
+      string dp2, int x2,
+      string dp3, int x3,
+      string dp4, int x4,
+      string dp5, int x5   )
+{
+   string state;
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link46");
+   fwDU_convertValue("CODEXB_SOL40","cxsol01/Link46");
+   HwTypeGBTQ_SOL40_DU_valueChanged("CODEXB_SOL40", devdp,
+      x1,
+      x2,
+      x3,
+      x4,
+      x5, state );
+   fwDU_setState("CODEXB_SOL40", devdp, state);
+}
+
+cbCODEXB_SOL40_cxsol01_Link46_doCommand(string dp, string command)
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link46");
+   command = fwDU_convertCommand("CODEXB_SOL40","cxsol01/Link46","HwTypeGBTQ_SOL40_DU", HwTypeGBTQ_SOL40_DU_CurrDUActions, command);
+   HwTypeGBTQ_SOL40_DU_doCommand("CODEXB_SOL40", devdp, command);
+}
+
+CODEXB_SOL40_cxsol01_Link47_install()
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link47");
+   if(!globalExists("HwTypeGBTQ_SOL40_DU_CurrDUActions"))
+   {
+      addGlobal("HwTypeGBTQ_SOL40_DU_CurrDUActions",DYN_STRING_VAR);
+      fwDU_getAllActions("HwTypeGBTQ_SOL40_DU",HwTypeGBTQ_SOL40_DU_CurrDUActions);
+   }
+   HwTypeGBTQ_SOL40_DU_initialize("CODEXB_SOL40", devdp);
+   fwDU_setDefaultParameters("CODEXB_SOL40", devdp);
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link47_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect state");
+   if(dpConnect("cbCODEXB_SOL40_cxsol01_Link47_doCommand",false,
+     "CODEXB_SOL40|cxsol01/Link47.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect command");
+}
+
+CODEXB_SOL40_cxsol01_Link47_uninstall(string dp, int running)
+{
+   string devdp;
+
+DebugTN("uninstalling CODEXB_SOL40 cxsol01/Link47");
+   if(running) return;
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link47");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link47_valueChanged",
+      devdp+".SOL40Commands.EC_READY:_online.._value",
+      devdp+".SOL40Commands.EC_RUNNING:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RST_INT:_online.._value",
+      devdp+".SOL40Counters.C_SYNCH:_online.._value",
+      devdp+".SOL40Counters.C_BXID_RESET:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpDisconnect state");
+   if(dpDisconnect("cbCODEXB_SOL40_cxsol01_Link47_doCommand",
+     "CODEXB_SOL40|cxsol01/Link47.fsm.sendCommand:_online.._value"
+     ) == -1 )
+      DebugN("Bad dpDisconnect command");
+}
+
+cbCODEXB_SOL40_cxsol01_Link47_valueChanged(
+      string dp1, int x1,
+      string dp2, int x2,
+      string dp3, int x3,
+      string dp4, int x4,
+      string dp5, int x5   )
+{
+   string state;
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link47");
+   fwDU_convertValue("CODEXB_SOL40","cxsol01/Link47");
+   HwTypeGBTQ_SOL40_DU_valueChanged("CODEXB_SOL40", devdp,
+      x1,
+      x2,
+      x3,
+      x4,
+      x5, state );
+   fwDU_setState("CODEXB_SOL40", devdp, state);
+}
+
+cbCODEXB_SOL40_cxsol01_Link47_doCommand(string dp, string command)
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("cxsol01/Link47");
+   command = fwDU_convertCommand("CODEXB_SOL40","cxsol01/Link47","HwTypeGBTQ_SOL40_DU", HwTypeGBTQ_SOL40_DU_CurrDUActions, command);
+   HwTypeGBTQ_SOL40_DU_doCommand("CODEXB_SOL40", devdp, command);
+}
+

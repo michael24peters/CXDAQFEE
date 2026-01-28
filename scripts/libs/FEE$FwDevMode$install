@@ -1,0 +1,45 @@
+#uses "FwDevMode.ctl"
+FEE_FEE_FWDM_install()
+{
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("FEE_FWDM");
+   if(!globalExists("FwDevMode_CurrDUActions"))
+   {
+      addGlobal("FwDevMode_CurrDUActions",DYN_STRING_VAR);
+      fwDU_getAllActions("FwDevMode",FwDevMode_CurrDUActions);
+   }
+   FwDevMode_initialize("FEE", devdp);
+   fwDU_setDefaultParameters("FEE", devdp);
+   if(dpConnect("cbFEE_FEE_FWDM_valueChanged",
+      devdp+".disabled:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpConnect state");
+}
+
+FEE_FEE_FWDM_uninstall(string dp, int running)
+{
+   string devdp;
+
+DebugTN("uninstalling FEE FEE_FWDM");
+   if(running) return;
+   devdp = ""+fwDU_getPhysicalName("FEE_FWDM");
+   if(dpDisconnect("cbFEE_FEE_FWDM_valueChanged",
+      devdp+".disabled:_online.._value"
+     ) == -1 )
+      DebugTN("Bad dpDisconnect state");
+}
+
+cbFEE_FEE_FWDM_valueChanged(
+      string dp1, dyn_string x1   )
+{
+   string state;
+   string devdp;
+
+   devdp = ""+fwDU_getPhysicalName("FEE_FWDM");
+   fwDU_convertValue("FEE","FEE_FWDM");
+   FwDevMode_valueChanged("FEE", devdp,
+      x1, state );
+   fwDU_setState("FEE", devdp, state);
+}
+

@@ -1,0 +1,4 @@
+
+=== SEVERE WARNING ============================================================
+ line 2:  object: TELL40 is_of_class TOP_DAQ_Domain_v2_CLASS
+  class TOP_DAQ_DOMAIN_V2_CLASS is not declared 

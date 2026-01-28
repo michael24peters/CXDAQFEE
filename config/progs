@@ -1,0 +1,33 @@
+version 1
+
+auth "" ""
+#Manager         | Start  | SecKill | Restart# | ResetMin | Options
+WCCILpmon        | manual |      30 |        3 |        1 |
+WCCILdataSQLite  | always |      30 |        3 |        1 |
+WCCOAnextgenarch | always |      30 |        2 |        2 |
+WCCILevent       | always |      30 |        3 |        1 |
+WCCILproxy       | manual |      30 |        2 |        2 |
+WCCOActrl        | always |      30 |        3 |        1 |-f pvss_scripts.lst
+WCCILsim         | always |      30 |        3 |        1 |
+WCCILdist        | always |      30 |        3 |        1 |
+WCCOAui          | manual |      30 |        3 |        1 |-m gedi +config config.gedi
+WCCOActrl        |   once |      30 |        1 |        1 |-f fwScripts.lst
+WCCOActrl        | always |      30 |        3 |        3 |-f fwInstallationAgent.lst
+WCCOActrl        | always |      30 |        3 |        2 |unDistributedControl.ctl
+WCCOActrl        | always |      30 |        3 |        5 |fwFSM/fwFsmSrvr.ctl
+WCCOAui          | manual |       5 |        3 |        5 |-p fwDeviceEditorNavigator/fwDeviceEditorNavigator.pnl -iconBar -menuBar
+WCCOAdim         | always |      30 |        2 |        2 |-dim_dp_config GbtConfig -num 2
+WCCOActrl        | always |      30 |        2 |        2 |fwGbtScript.ctl
+WCCOAui          | manual |      30 |        2 |        2 |-p fwGbt/GbtClient.pnl -iconBar -menuBar
+WCCOAui          | manual |      30 |        2 |        2 |-p fwHw/Hw.pnl -iconBar -menuBar
+WCCOActrl        | manual |      30 |        2 |        2 |fwTFC/fwSODIN.ctl
+WCCOActrl        | always |      30 |        2 |        2 |fwTFC/fwSOL40.ctl
+WCCOActrl        | always |      30 |        2 |        2 |fwTOP/fwTOP.ctl
+WCCOActrl        | always |      30 |        2 |        2 |fwTOP/fwLLITOP.ctl
+WCCOActrl        | manual |      30 |        2 |        2 |fwPRBS/fwPRBS.ctl
+WCCOAdim         | always |      30 |        2 |        2 |-num 1 -dim_dp_config GbtConfig_TOP
+WCCOAdim         | always |      30 |        2 |        2 |-num 3 -dim_dp_config GbtConfig_SOL40
+WCCOAdim         | always |      30 |        2 |        2 |-num 4 -dim_dp_config GbtConfig_Q_SOL40
+WCCOAdim         | always |      30 |        2 |        2 |-num 5 -dim_dp_config GbtConfig_LLITop
+WCCOAdim         | always |      30 |        2 |        2 |-num 6 -dim_dp_config GbtConfig_DCT
+WCCOAdim         | always |      30 |        2 |        2 |-num 7 -dim_dp_config GbtConfig_codexb_decoding_top

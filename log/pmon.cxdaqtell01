@@ -1,0 +1,69 @@
+WCCILpmon    (1), 2026.01.23 14:52:51.388, SYS,  INFO,        1, Manager Start, START_MODE
+WCCILpmon    (1), 2026.01.23 14:52:51.515, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCILdataSQLite" -PROJ "CXDAQFEE" -pmonIndex 1 
+WCCILpmon    (1), 2026.01.23 14:52:52.328, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOAnextgenarch" -PROJ "CXDAQFEE" -pmonIndex 2 
+WCCILpmon    (1), 2026.01.23 14:52:52.931, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCILevent" -PROJ "CXDAQFEE" -pmonIndex 3 
+WCCILpmon    (1), 2026.01.23 14:52:53.534, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOActrl" -PROJ "CXDAQFEE" -pmonIndex 5 -f pvss_scripts.lst
+WCCILpmon    (1), 2026.01.23 14:52:53.745, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCILsim" -PROJ "CXDAQFEE" -pmonIndex 6 
+WCCILpmon    (1), 2026.01.23 14:52:53.974, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCILdist" -PROJ "CXDAQFEE" -pmonIndex 7 
+WCCILpmon    (1), 2026.01.23 14:52:54.176, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOActrl" -PROJ "CXDAQFEE" -pmonIndex 9 -f fwScripts.lst
+WCCILpmon    (1), 2026.01.23 14:52:54.381, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOActrl" -PROJ "CXDAQFEE" -pmonIndex 10 -f fwInstallationAgent.lst
+WCCILpmon    (1), 2026.01.23 14:52:54.583, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOActrl" -PROJ "CXDAQFEE" -pmonIndex 11 unDistributedControl.ctl
+WCCILpmon    (1), 2026.01.23 14:52:54.740, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOActrl" -PROJ "CXDAQFEE" -pmonIndex 12 fwFSM/fwFsmSrvr.ctl
+WCCILpmon    (1), 2026.01.23 14:52:54.942, SYS,  INFO,        1, Manager Start, "/group/online/ecs/PVSSShortcutProjects319/GlobalProject/bin/WCCOAdim" -PROJ "CXDAQFEE" -pmonIndex 14 -dim_dp_config GbtConfig -num 2
+WCCILpmon    (1), 2026.01.23 14:52:55.143, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOActrl" -PROJ "CXDAQFEE" -pmonIndex 15 fwGbtScript.ctl
+WCCILpmon    (1), 2026.01.23 14:52:55.345, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOActrl" -PROJ "CXDAQFEE" -pmonIndex 19 fwTFC/fwSOL40.ctl
+WCCILpmon    (1), 2026.01.23 14:52:55.546, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOActrl" -PROJ "CXDAQFEE" -pmonIndex 20 fwTOP/fwTOP.ctl
+WCCILpmon    (1), 2026.01.23 14:52:55.749, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOActrl" -PROJ "CXDAQFEE" -pmonIndex 21 fwTOP/fwLLITOP.ctl
+WCCILpmon    (1), 2026.01.23 14:52:55.991, SYS,  INFO,        1, Manager Start, "/group/online/ecs/PVSSShortcutProjects319/GlobalProject/bin/WCCOAdim" -PROJ "CXDAQFEE" -pmonIndex 23 -num 1 -dim_dp_config GbtConfig_TOP
+WCCILpmon    (1), 2026.01.23 14:52:56.192, SYS,  INFO,        1, Manager Start, "/group/online/ecs/PVSSShortcutProjects319/GlobalProject/bin/WCCOAdim" -PROJ "CXDAQFEE" -pmonIndex 24 -num 3 -dim_dp_config GbtConfig_SOL40
+WCCILpmon    (1), 2026.01.23 14:52:56.494, SYS,  INFO,        1, Manager Start, "/group/online/ecs/PVSSShortcutProjects319/GlobalProject/bin/WCCOAdim" -PROJ "CXDAQFEE" -pmonIndex 25 -num 4 -dim_dp_config GbtConfig_Q_SOL40
+WCCILpmon    (1), 2026.01.23 14:52:56.702, SYS,  INFO,        1, Manager Start, "/group/online/ecs/PVSSShortcutProjects319/GlobalProject/bin/WCCOAdim" -PROJ "CXDAQFEE" -pmonIndex 26 -num 5 -dim_dp_config GbtConfig_LLITop
+WCCILpmon    (1), 2026.01.23 14:52:56.903, SYS,  INFO,        9/pmon, The project is up and running. Entering monitor mode
+WCCILpmon    (1), 2026.01.23 14:53:12.114, SYS,  INFO,       21/pmon, Got STOP_ALL command from ::1, stopping the project
+WCCILpmon    (1), 2026.01.23 14:53:12.114, SYS,  INFO,       17/pmon, Stopping Manager WCCOAdim(5) with signal SIGTERM
+WCCILpmon    (1), 2026.01.23 14:53:12.114, SYS,  INFO,       17/pmon, Stopping Manager WCCOAdim(4) with signal SIGTERM
+WCCILpmon    (1), 2026.01.23 14:53:12.114, SYS,  INFO,       17/pmon, Stopping Manager WCCOAdim(3) with signal SIGTERM
+WCCILpmon    (1), 2026.01.23 14:53:12.114, SYS,  INFO,       17/pmon, Stopping Manager WCCOAdim(1) with signal SIGTERM
+WCCILpmon    (1), 2026.01.23 14:53:12.115, SYS,  INFO,       17/pmon, Stopping Manager WCCOActrl(8) with signal SIGTERM
+WCCILpmon    (1), 2026.01.23 14:53:12.115, SYS,  INFO,       17/pmon, Stopping Manager WCCOActrl(7) with signal SIGTERM
+WCCILpmon    (1), 2026.01.23 14:53:12.115, SYS,  INFO,       17/pmon, Stopping Manager WCCOActrl(6) with signal SIGTERM
+WCCILpmon    (1), 2026.01.23 14:53:12.115, SYS,  INFO,       17/pmon, Stopping Manager WCCOActrl(5) with signal SIGTERM
+WCCILpmon    (1), 2026.01.23 14:53:12.115, SYS,  INFO,       17/pmon, Stopping Manager WCCOAdim(2) with signal SIGTERM
+WCCILpmon    (1), 2026.01.23 14:53:12.115, SYS,  INFO,       17/pmon, Stopping Manager WCCOActrl(4) with signal SIGTERM
+WCCILpmon    (1), 2026.01.23 14:53:12.115, SYS,  INFO,       17/pmon, Stopping Manager WCCOActrl(2) with signal SIGTERM
+WCCILpmon    (1), 2026.01.23 14:53:12.115, SYS,  INFO,       17/pmon, Stopping Manager WCCOActrl(3) with signal SIGTERM
+WCCILpmon    (1), 2026.01.23 14:53:12.115, SYS,  INFO,       17/pmon, Stopping Manager WCCILsim(1) with signal SIGTERM
+WCCILpmon    (1), 2026.01.23 14:53:12.115, SYS,  INFO,       17/pmon, Stopping Manager WCCOActrl(1) with signal SIGTERM
+WCCILpmon    (1), 2026.01.23 14:53:12.116, SYS,  INFO,       17/pmon, Stopping Manager WCCOAnextgenarch(1) with signal SIGTERM
+WCCILpmon    (1), 2026.01.23 14:53:13.663, SYS,  INFO,       17/pmon, Stopping Manager WCCILevent(0) with signal SIGTERM
+WCCILpmon    (1), 2026.01.23 14:53:16.735, SYS,  INFO,       17/pmon, Stopping Manager WCCILdataSQLite(0) with signal SIGTERM
+WCCILpmon    (1), 2026.01.23 14:53:18.798, SYS,  INFO,       13/pmon, Completely stopped the project - waiting for commands
+WCCILpmon    (1), 2026.01.23 14:54:07.960, SYS,  INFO,       20/pmon, Got START_ALL command from ::1, starting the project
+WCCILpmon    (1), 2026.01.23 14:54:07.961, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCILdataSQLite" -PROJ "CXDAQFEE" -pmonIndex 1 
+WCCILpmon    (1), 2026.01.23 14:54:08.698, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOAnextgenarch" -PROJ "CXDAQFEE" -pmonIndex 2 
+WCCILpmon    (1), 2026.01.23 14:54:09.300, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCILevent" -PROJ "CXDAQFEE" -pmonIndex 3 
+WCCILpmon    (1), 2026.01.23 14:54:09.803, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOActrl" -PROJ "CXDAQFEE" -pmonIndex 5 -f pvss_scripts.lst
+WCCILpmon    (1), 2026.01.23 14:54:10.004, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCILsim" -PROJ "CXDAQFEE" -pmonIndex 6 
+WCCILpmon    (1), 2026.01.23 14:54:10.206, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCILdist" -PROJ "CXDAQFEE" -pmonIndex 7 
+WCCILpmon    (1), 2026.01.23 14:54:10.408, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOActrl" -PROJ "CXDAQFEE" -pmonIndex 9 -f fwScripts.lst
+WCCILpmon    (1), 2026.01.23 14:54:10.615, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOActrl" -PROJ "CXDAQFEE" -pmonIndex 10 -f fwInstallationAgent.lst
+WCCILpmon    (1), 2026.01.23 14:54:10.804, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOActrl" -PROJ "CXDAQFEE" -pmonIndex 11 unDistributedControl.ctl
+WCCILpmon    (1), 2026.01.23 14:54:11.006, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOActrl" -PROJ "CXDAQFEE" -pmonIndex 12 fwFSM/fwFsmSrvr.ctl
+WCCILpmon    (1), 2026.01.23 14:54:11.207, SYS,  INFO,        1, Manager Start, "/group/online/ecs/PVSSShortcutProjects319/GlobalProject/bin/WCCOAdim" -PROJ "CXDAQFEE" -pmonIndex 14 -dim_dp_config GbtConfig -num 2
+WCCILpmon    (1), 2026.01.23 14:54:11.408, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOActrl" -PROJ "CXDAQFEE" -pmonIndex 15 fwGbtScript.ctl
+WCCILpmon    (1), 2026.01.23 14:54:11.610, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOActrl" -PROJ "CXDAQFEE" -pmonIndex 19 fwTFC/fwSOL40.ctl
+WCCILpmon    (1), 2026.01.23 14:54:11.811, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOActrl" -PROJ "CXDAQFEE" -pmonIndex 20 fwTOP/fwTOP.ctl
+WCCILpmon    (1), 2026.01.23 14:54:12.013, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOActrl" -PROJ "CXDAQFEE" -pmonIndex 21 fwTOP/fwLLITOP.ctl
+WCCILpmon    (1), 2026.01.23 14:54:12.215, SYS,  INFO,        1, Manager Start, "/group/online/ecs/PVSSShortcutProjects319/GlobalProject/bin/WCCOAdim" -PROJ "CXDAQFEE" -pmonIndex 23 -num 1 -dim_dp_config GbtConfig_TOP
+WCCILpmon    (1), 2026.01.23 14:54:12.416, SYS,  INFO,        1, Manager Start, "/group/online/ecs/PVSSShortcutProjects319/GlobalProject/bin/WCCOAdim" -PROJ "CXDAQFEE" -pmonIndex 24 -num 3 -dim_dp_config GbtConfig_SOL40
+WCCILpmon    (1), 2026.01.23 14:54:12.633, SYS,  INFO,        1, Manager Start, "/group/online/ecs/PVSSShortcutProjects319/GlobalProject/bin/WCCOAdim" -PROJ "CXDAQFEE" -pmonIndex 25 -num 4 -dim_dp_config GbtConfig_Q_SOL40
+WCCILpmon    (1), 2026.01.23 14:54:12.835, SYS,  INFO,        1, Manager Start, "/group/online/ecs/PVSSShortcutProjects319/GlobalProject/bin/WCCOAdim" -PROJ "CXDAQFEE" -pmonIndex 26 -num 5 -dim_dp_config GbtConfig_LLITop
+WCCILpmon    (1), 2026.01.23 14:54:13.035, SYS,  INFO,        9/pmon, The project is up and running. Entering monitor mode
+WCCILpmon    (1), 2026.01.26 15:57:23.796, SYS,  INFO,       24/pmon, Got START command from ::1, starting the manager WCCOActrl(2) at index 9
+WCCILpmon    (1), 2026.01.26 15:57:23.798, SYS,  INFO,        1, Manager Start, "/opt/WinCC_OA/3.19/bin/WCCOActrl" -PROJ "CXDAQFEE" -pmonIndex 9 -f fwScripts.lst
+WCCILpmon    (1), 2026.01.26 16:21:14.761, SYS,  INFO,       28/pmon, Got INS command from ::1, inserting new manager WCCOAdim at index 27
+WCCILpmon    (1), 2026.01.26 16:21:14.763, SYS,  INFO,       11/pmon, Detected stopped manager WCCOAdim(6) - restarting it #1
+WCCILpmon    (1), 2026.01.26 16:21:14.767, SYS,  INFO,        1, Manager Start, "/group/online/ecs/PVSSShortcutProjects319/GlobalProject/bin/WCCOAdim" -PROJ "CXDAQFEE" -pmonIndex 27 -num 6 -dim_dp_config GbtConfig_DCT
+WCCILpmon    (1), 2026.01.28 16:05:15.305, SYS,  INFO,       28/pmon, Got INS command from ::1, inserting new manager WCCOAdim at index 28
+WCCILpmon    (1), 2026.01.28 16:05:15.305, SYS,  INFO,       11/pmon, Detected stopped manager WCCOAdim(7) - restarting it #1
+WCCILpmon    (1), 2026.01.28 16:05:15.309, SYS,  INFO,        1, Manager Start, "/group/online/ecs/PVSSShortcutProjects319/GlobalProject/bin/WCCOAdim" -PROJ "CXDAQFEE" -pmonIndex 28 -num 7 -dim_dp_config GbtConfig_codexb_decoding_top

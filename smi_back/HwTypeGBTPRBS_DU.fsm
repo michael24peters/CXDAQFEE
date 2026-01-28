@@ -1,0 +1,19 @@
+class: $FWPART_$TOP$HwTypeGBTPRBS_DU_CLASS/associated
+!panel: HwTypeGBTPRBS|HwTypeGBTPRBS_DU.pnl
+    state: NOT_READY
+    !color: FwStateAttention1
+        action: Configure(int PART_ID = 0, string RUN_TYPE = "", int N_STEPS = 0, string RUN_INFO_DP = "")	!visible: 1
+        action: Reset	!visible: 1
+    state: READY
+    !color: FwStateOKNotPhysics
+        action: Start(int N_STEPS = 0, int RUN_NUMBER = 0, int N_TRIGGERS = 0)	!visible: 1
+        action: Reset	!visible: 1
+    state: RUNNING
+    !color: FwStateOKPhysics
+        action: Stop	!visible: 1
+        action: Reset	!visible: 1
+        action: Step(int STEP_NR = 0, string RUN_TYPE = "")	!visible: 1
+    state: ERROR
+    !color: FwStateAttention3
+        action: Recover	!visible: 1
+        action: Reset	!visible: 1

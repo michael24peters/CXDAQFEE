@@ -1,0 +1,26 @@
+
+ SMI++ State Manager Version - v67r2- Date : 25-September-2024:14:09
+
+Options:
+ -d 1 -u 1 -t 1 -dns cxecs01 -loopMaxChanges 25 -loopMaxChangesFatal 5000 -loopMinDuration -1
+
+    SMI Domain : SODIN
+    Input File : /opt/winccoa_projects/CXDAQFEE/smi/SODIN.sobj
+
+2026.01.20 11:22:41.607 - SMI++ Initiator started
+ Number of SMI Objects instantiated : 5
+ Number of SMI Classes instantiated : 4
+ Number of Object Sets instantiated : 2
+2026.01.20 11:22:41.608 - SMI++ Initiator Finished
+
+2026.01.20 11:22:41.608 - SMI++   Logic Engine started execution
+2026.01.20 11:22:41.609 - <&ALLOC> starting up in state <NOT_ALLOCATED>
+2026.01.20 11:22:41.609 - <&DOMAIN> starting up in state <READY>
+2026.01.20 11:22:41.609 - <SODIN> starting up in state <NOT_READY>
+2026.01.20 11:22:41.609 - <SODIN_FWCNM> starting up in state <COMPLETE>
+2026.01.20 11:22:41.609 - <SODIN_FWM> starting up in state <EXCLUDED>
+2026.01.20 11:22:41.609 - <&ALLOC> in state <NOT_ALLOCATED>
+2026.01.20 11:22:41.609 - <&DOMAIN> in state <READY>
+2026.01.20 11:22:41.609 - <SODIN> in state <NOT_READY>
+2026.01.20 11:22:41.609 - <SODIN_FWCNM> in state <COMPLETE>
+2026.01.20 11:22:41.609 - <SODIN_FWM> in state <EXCLUDED>

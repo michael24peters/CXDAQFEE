@@ -1,0 +1,47 @@
+
+ SMI++ State Manager Version - v67r2- Date : 25-September-2024:14:09
+
+Options:
+ -d 1 -u 1 -t 1 -dns cxecs01 -loopMaxChanges 25 -loopMaxChangesFatal 5000 -loopMinDuration -1
+
+    SMI Domain : TFC
+    Input File : /opt/winccoa_projects/CXDAQFEE/smi/TFC.sobj
+
+2026.01.20 11:22:41.751 - SMI++ Initiator started
+ Number of SMI Objects instantiated : 15
+ Number of SMI Classes instantiated : 10
+ Number of Object Sets instantiated : 9
+2026.01.20 11:22:41.762 - SMI++ Initiator Finished
+
+2026.01.20 11:22:41.763 - SMI++   Logic Engine started execution
+2026.01.20 11:22:41.763 - <&ALLOC> starting up in state <NOT_ALLOCATED>
+2026.01.20 11:22:41.763 - <&DOMAIN> starting up in state <READY>
+2026.01.20 11:22:41.763 - <SODIN_FWM> starting up in state <EXCLUDED>
+2026.01.20 11:22:41.763 - <SOL40_FWM> starting up in state <EXCLUDED>
+2026.01.20 11:22:41.764 - SODIN::SODIN starting up in state :&INITIAL
+2026.01.20 11:22:41.764 - SODIN::&ALLOC starting up in state :&INITIAL
+2026.01.20 11:22:41.764 - SODIN::SODIN_FWCNM starting up in state :&INITIAL
+2026.01.20 11:22:41.764 - SOL40::SOL40_FWCNM starting up in state :&INITIAL
+2026.01.20 11:22:41.764 - SOL40::&ALLOC starting up in state :&INITIAL
+2026.01.20 11:22:41.764 - <TFC_FWCNM> starting up in state <COMPLETE>
+2026.01.20 11:22:41.764 - SODIN::SODIN_FWM starting up in state :&INITIAL
+2026.01.20 11:22:41.764 - SOL40::SOL40_FWM starting up in state :&INITIAL
+2026.01.20 11:22:41.764 - <TFC_FWM> starting up in state <EXCLUDED>
+2026.01.20 11:22:41.764 - SOL40::SOL40 starting up in state :&INITIAL
+2026.01.20 11:22:41.764 - <TFC> starting up in state <NOT_READY>
+2026.01.20 11:22:41.764 - <&ALLOC> in state <NOT_ALLOCATED>
+2026.01.20 11:22:41.764 - <&DOMAIN> in state <READY>
+2026.01.20 11:22:41.764 - <SODIN_FWM> in state <EXCLUDED>
+2026.01.20 11:22:41.764 - <SOL40_FWM> in state <EXCLUDED>
+2026.01.20 11:22:41.764 - <TFC_FWCNM> in state <COMPLETE>
+2026.01.20 11:22:41.764 - <TFC_FWM> in state <EXCLUDED>
+2026.01.20 11:22:41.764 - <TFC> in state <NOT_READY>
+2026.01.20 11:22:41.764 - <TFC_FWCNM> in state <INCOMPLETE>
+2026.01.20 11:22:41.766 - <SODIN::SODIN> in state <NOT_READY>
+2026.01.20 11:22:41.766 - <SODIN::&ALLOC> in state <NOT_ALLOCATED>
+2026.01.20 11:22:41.766 - <SODIN::SODIN_FWCNM> in state <COMPLETE>
+2026.01.20 11:22:41.766 - <SODIN::SODIN_FWM> in state <EXCLUDED>
+2026.01.20 11:22:41.767 - <SOL40::SOL40_FWCNM> in state <COMPLETE>
+2026.01.20 11:22:41.767 - <SOL40::&ALLOC> in state <NOT_ALLOCATED>
+2026.01.20 11:22:41.767 - <SOL40::SOL40_FWM> in state <EXCLUDED>
+2026.01.20 11:22:41.767 - <SOL40::SOL40> in state <NOT_READY>

@@ -1,0 +1,18 @@
+class: $FWPART_$TOP$GbtFastStepRun_DU_CLASS/associated
+!panel: GbtFastStepRun|GbtFastStepRun_DU.pnl
+    state: NOT_READY
+    !color: FwStateAttention1
+        action: CONFIGURE(string RUN_TYPE = "PHYSICS", string RUN_INFO_DP = "")	!visible: 1
+    state: READY
+    !color: FwStateOKNotPhysics
+        action: START_RUN(string AUTO_STEP_FILE = "")	!visible: 0
+        action: START(string AUTO_STEP_FILE = "")	!visible: 1
+        action: RESET	!visible: 1
+    state: RUNNING
+    !color: FwStateOKPhysics
+        action: STOP_RUN	!visible: 0
+        action: STOP	!visible: 1
+        action: RESET	!visible: 1
+    state: ERROR
+    !color: FwStateAttention3
+        action: RECOVER	!visible: 1

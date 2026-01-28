@@ -1,0 +1,81 @@
+<?xml version="1.0" ?>
+<root>
+    <hwtype name="codexb_bypass_top" type="GBT">
+        <reg name="test" type="PCIe" offset="0x0" specific_type="4" size="1" poll="1" onchange="0"/>
+        <reg name="reset" type="PCIe" offset="0x4" specific_type="4" size="1" poll="1" onchange="0"/>
+        <reg name="mode" type="PCIe" offset="0x8" specific_type="4" size="1" poll="1" onchange="0"/>
+        <reg name="dct" type="PCIe" offset="0xc" specific_type="4" size="1" poll="1" onchange="0"/>
+        <reg name="limit" type="PCIe" offset="0x10" specific_type="4" size="1" poll="1" onchange="0"/>
+        <reg name="enable" type="PCIe" offset="0x14" specific_type="4" size="1" poll="1" onchange="0"/>
+        <reg name="count" type="PCIe" offset="0x18" specific_type="4" size="1" poll="1" onchange="0"/>
+        <reg name="elk_notready_count" type="PCIe" offset="0x1c" specific_type="4" size="1" poll="1" onchange="0"/>
+        <reg name="dec_notready_count" type="PCIe" offset="0x20" specific_type="4" size="1" poll="1" onchange="0"/>
+    </hwtype>
+    <hwtype name="codexb_processing_top" type="GBT">
+        <reg name="test" type="PCIe" offset="0x0" specific_type="4" size="1" poll="1" onchange="0"/>
+        <reg name="reset" type="PCIe" offset="0x4" specific_type="4" size="1" poll="1" onchange="0"/>
+    </hwtype>
+    <hwtype name="codexb_decoding_top" type="GBT">
+        <reg name="test" type="PCIe" offset="0x0" specific_type="4" size="1" poll="1" onchange="0"/>
+        <reg name="reset" type="PCIe" offset="0x4" specific_type="4" size="1" poll="1" onchange="0"/>
+        <reg name="format" type="PCIe" offset="0x8" specific_type="4" size="1" poll="1" onchange="0"/>
+        <reg name="enable" type="PCIe" offset="0xc" specific_type="4" size="1" poll="1" onchange="0"/>
+        <node name="dct_0" type="dct_top" address="0x1000"/>
+        <node name="dct_1" type="dct_top" address="0x2000"/>
+        <node name="dct_2" type="dct_top" address="0x3000"/>
+        <node name="dct_3" type="dct_top" address="0x4000"/>
+        <node name="dct_4" type="dct_top" address="0x5000"/>
+        <node name="dct_5" type="dct_top" address="0x6000"/>
+        <node name="dct_6" type="dct_top" address="0x7000"/>
+        <node name="decoder_0" type="dct_decoder" address="0x8000"/>
+        <node name="decoder_1" type="dct_decoder" address="0x8100"/>
+        <node name="decoder_2" type="dct_decoder" address="0x8200"/>
+        <node name="decoder_3" type="dct_decoder" address="0x8300"/>
+        <node name="decoder_4" type="dct_decoder" address="0x8400"/>
+        <node name="decoder_5" type="dct_decoder" address="0x8500"/>
+        <node name="decoder_6" type="dct_decoder" address="0x8600"/>
+    </hwtype>
+    <hwtype name="dct_decoder">
+        <reg name="reset" type="PCIe" offset="0x0" specific_type="4" size="1" poll="1" onchange="0"/>
+        <reg name="ready" type="PCIe" offset="0x4" specific_type="4" size="1" poll="1" onchange="0"/>
+        <reg name="valid_count" type="PCIe" offset="0x8" specific_type="4" size="1" poll="1" onchange="0"/>
+        <reg name="notready_count" type="PCIe" offset="0xc" specific_type="4" size="1" poll="1" onchange="0"/>
+        <reg name="last" type="PCIe" offset="0x10" specific_type="4" size="16" poll="1" onchange="0"/>
+    </hwtype>
+    <hwtype name="dct_top">
+        <reg name="reset" type="PCIe" offset="0x0" specific_type="4" size="1" poll="1" onchange="0"/>
+        <reg name="sem_word" type="PCIe" offset="0x4" specific_type="4" size="1" poll="1" onchange="0"/>
+        <reg name="xadc_do_out" type="PCIe" offset="0x8" specific_type="4" size="1" poll="1" onchange="0"/>
+        <reg name="fifo_out" type="PCIe" offset="0xc" specific_type="4" size="1" poll="1" onchange="0"/>
+        <reg name="fifo_in" type="PCIe" offset="0x10" specific_type="4" size="1" poll="1" onchange="0"/>
+        <reg name="channel_mask" type="PCIe" offset="0x14" specific_type="4" size="288" poll="1" onchange="0"/>
+        <reg name="bc_offset" type="PCIe" offset="0x500" specific_type="4" size="1" poll="1" onchange="0"/>
+        <reg name="dead_time" type="PCIe" offset="0x504" specific_type="4" size="1" poll="1" onchange="0"/>
+        <node name="offset_0" type="dct_offset" address="0x510"/>
+        <node name="offset_1" type="dct_offset" address="0x520"/>
+        <node name="offset_2" type="dct_offset" address="0x530"/>
+        <node name="offset_3" type="dct_offset" address="0x540"/>
+        <node name="offset_4" type="dct_offset" address="0x550"/>
+        <node name="offset_5" type="dct_offset" address="0x560"/>
+        <node name="offset_6" type="dct_offset" address="0x570"/>
+        <node name="offset_7" type="dct_offset" address="0x580"/>
+        <node name="offset_8" type="dct_offset" address="0x590"/>
+        <node name="offset_9" type="dct_offset" address="0x5A0"/>
+        <node name="offset_10" type="dct_offset" address="0x5B0"/>
+        <node name="offset_11" type="dct_offset" address="0x5C0"/>
+        <node name="offset_12" type="dct_offset" address="0x5D0"/>
+        <node name="offset_13" type="dct_offset" address="0x5E0"/>
+        <node name="offset_14" type="dct_offset" address="0x5F0"/>
+        <node name="offset_15" type="dct_offset" address="0x600"/>
+        <node name="offset_16" type="dct_offset" address="0x610"/>
+        <node name="offset_17" type="dct_offset" address="0x620"/>
+    </hwtype>
+    <hwtype name="dct_offset">
+        <reg name="timing_offset" type="PCIe" offset="0x4" specific_type="4" size="1" poll="1" onchange="0"/>
+        <reg name="coarse_time_offset" type="PCIe" offset="0x8" specific_type="4" size="1" poll="1" onchange="0"/>
+    </hwtype>
+    <hwtype name="codexb_top" type="GBT">
+        <reg name="test" type="PCIe" offset="0x0" specific_type="4" size="1" poll="1" onchange="0"/>
+        <reg name="reset" type="PCIe" offset="0x4" specific_type="4" size="1" poll="1" onchange="0"/>
+    </hwtype>
+</root>

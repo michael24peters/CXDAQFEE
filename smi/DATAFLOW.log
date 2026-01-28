@@ -1,0 +1,4 @@
+
+=== SEVERE WARNING ============================================================
+ line 2:  object: DATAFLOW is_of_class TOP_DATAFLOWTop_CLASS
+  class TOP_DATAFLOWTOP_CLASS is not declared 

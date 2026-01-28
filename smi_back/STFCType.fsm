@@ -1,0 +1,74 @@
+class: $FWPART_$TOP$STFCType_CLASS
+!panel: STFCType.pnl
+    state: NOT_READY
+    !color: FwStateAttention1
+        when ( $ANY$FwCHILDREN in_state ERROR ) move_to ERROR
+        when ( $ALL$FwCHILDREN in_state {READY,RUNNING} ) move_to READY
+        when ( $ALL$FwCHILDREN in_state RUNNING )  move_to RUNNING
+        action: CONFIGURE(string RUN_TYPE = "PHYSICS", string RUN_INFO_DP = "")	!visible: 1
+            do CONFIGURE(RUN_TYPE=RUN_TYPE,RUN_INFO_DP=RUN_INFO_DP) $ALL$FwCHILDREN
+            if ( $ALL$FwCHILDREN not_in_state READY ) then
+                move_to NOT_READY
+            endif
+            move_to READY
+        action: RESET	!visible: 1
+            do RESET $ALL$FwCHILDREN
+            if ( $ALL$FwCHILDREN not_in_state NOT_READY ) then
+                move_to READY
+            endif
+            move_to NOT_READY
+    state: READY
+    !color: FwStateOKNotPhysics
+        when ( $ANY$FwCHILDREN in_state ERROR ) move_to ERROR
+        when ( $ANY$FwCHILDREN in_state NOT_READY ) move_to NOT_READY
+        when ( $ALL$FwCHILDREN in_state RUNNING )  move_to RUNNING
+        action: START_RUN(int N_TRIGGERS = 0, string AUTO_STEP_FILE = "")	!visible: 0
+            do START_RUN(N_TRIGGERS=N_TRIGGERS, AUTO_STEP_FILE=AUTO_STEP_FILE) $ALL$FwCHILDREN
+            if ( $ALL$FwCHILDREN not_in_state RUNNING ) then
+                move_to READY
+            endif
+            move_to RUNNING
+        action: START(int N_TRIGGERS = 0, string AUTO_STEP_FILE = "")	!visible: 1
+            do START(N_TRIGGERS=N_TRIGGERS, AUTO_STEP_FILE=AUTO_STEP_FILE) $ALL$FwCHILDREN
+            if ( $ALL$FwCHILDREN not_in_state RUNNING ) then
+                move_to READY
+            endif
+            move_to RUNNING
+        action: RESET	!visible: 1
+            do RESET $ALL$FwCHILDREN
+            if ( $ALL$FwCHILDREN not_in_state NOT_READY ) then
+                move_to READY
+            endif
+            move_to NOT_READY
+    state: RUNNING
+    !color: FwStateOKPhysics
+        when ( $ANY$FwCHILDREN in_state ERROR ) move_to ERROR
+        when ( $ANY$FwCHILDREN in_state NOT_READY ) move_to NOT_READY
+        when ( $ANY$FwCHILDREN in_state READY ) move_to READY
+        action: STOP_RUN	!visible: 0
+            do STOP_RUN $ALL$FwCHILDREN
+            if ( $ALL$FwCHILDREN not_in_state READY ) then
+                move_to RUNNING
+            endif
+            move_to READY
+        action: STOP	!visible: 1
+            do STOP $ALL$FwCHILDREN
+            if ( $ALL$FwCHILDREN not_in_state READY ) then
+                move_to RUNNING
+            endif
+            move_to READY
+        action: RESET	!visible: 1
+            do RESET $ALL$FwCHILDREN
+            if ( $ALL$FwCHILDREN not_in_state NOT_READY ) then
+                move_to READY
+            endif
+            move_to NOT_READY
+    state: ERROR
+    !color: FwStateAttention3
+        when ( $ALL$FwCHILDREN not_in_state ERROR ) move_to NOT_READY
+        action: RECOVER	!visible: 1
+            do RECOVER $ALL$FwCHILDREN
+            if ( $ALL$FwCHILDREN not_in_state NOT_READY ) then
+            	move_to ERROR
+            endif
+            move_to NOT_READY

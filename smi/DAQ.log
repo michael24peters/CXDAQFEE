@@ -1,0 +1,12 @@
+
+=== SEVERE WARNING ============================================================
+ line 2:  object: DAQ is_of_class TOP_DAQ_Domain_v2_CLASS
+  class TOP_DAQ_DOMAIN_V2_CLASS is not declared 
+
+=== SEVERE WARNING ============================================================
+ line 913:  object: FEE::FEE is_of_class ASS_DAQ_Domain_v2_CLASS
+  class ASS_DAQ_DOMAIN_V2_CLASS is not declared 
+
+=== SEVERE WARNING ============================================================
+ line 915:  object: TELL40::TELL40 is_of_class ASS_DAQ_Domain_v2_CLASS
+  class ASS_DAQ_DOMAIN_V2_CLASS is not declared 

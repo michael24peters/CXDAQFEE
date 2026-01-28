@@ -1,0 +1,39 @@
+WCCILdataSQLite(0), 2026.01.20 10:56:20.605, SYS,  INFO,        1, Manager Start, PROJ, CXDAQFEE, V 3.19 - 3.19 P015 platform Linux x86_64 linked at Nov  4 2024 20:27:39 (d529474b86f)
+WCCILdataSQLite(0), 2026.01.20 10:56:20.652, SYS,  INFO,        0, , Initialize archive smoothing
+WCCILdataSQLite(0), 2026.01.20 10:56:20.652, SYS,  INFO,        0, , Loading DpIdentification
+WCCILdataSQLite(0), 2026.01.20 10:56:20.653, SYS,  INFO,        0, , Initializing last value cache
+WCCILdataSQLite(0), 2026.01.20 10:56:20.653, SYS,  INFO,        0, , Loading internal datapoints
+WCCILdataSQLite(0), 2026.01.20 10:56:20.653, SYS,  INFO,        0, , Initializing Alert Class cache
+WCCILdataSQLite(0), 2026.01.20 10:56:20.653, SYS,  INFO,        6, Initialization by Data Manager finished
+WCCILdataSQLite(0), 2026.01.20 10:56:20.798, SYS,  INFO,        4, Connected to (SYS: 1421 Event -num 0 CONN: 1) @ localhost (::1)
+WCCILdataSQLite(0), 2026.01.20 10:56:20.798, SYS,  INFO,        0, , Manager (SYS: 1421 Data -num 0 CONN: 1) initialised
+WCCILdataSQLite(0), 2026.01.20 10:56:20.799, SYS,  INFO,        0, , Manager (SYS: 1421 Event -num 0 CONN: 1) initialised
+WCCILdataSQLite(0), 2026.01.20 10:56:20.834, PARAM,WARNING,     7, Datapoint does not exist, UserTable, UserTable, _Users.UserId
+WCCILdataSQLite(0), 2026.01.20 10:56:20.834, PARAM,WARNING,     7, Datapoint does not exist, ManagerTable, ManagerTable, _Managers.Auth.ManType
+WCCILdataSQLite(0), 2026.01.20 10:56:20.853, SYS,  INFO,        4, Connected to (SYS: 1421 Driver -num 1 CONN: 1) @ localhost (::1)
+WCCILdataSQLite(0), 2026.01.20 10:56:20.854, SYS,  INFO,        0, , Manager (SYS: 1421 Driver -num 1 CONN: 1) initialised
+WCCILdataSQLite(0), 2026.01.20 10:56:20.884, SYS,  INFO,        4, Connected to (SYS: 1421 Ascii -num 1 CONN: 1) @ localhost (::1)
+WCCILdataSQLite(0), 2026.01.20 10:56:20.885, SYS,  INFO,        0, , Manager (SYS: 1421 Ascii -num 1 CONN: 1) initialised
+WCCILdataSQLite(0), 2026.01.20 10:56:20.886, SYS,  INFO,        0, , Manager (SYS: 1421 Ascii -num 1 CONN: 1) initialised
+WCCILdataSQLite(0), 2026.01.20 10:56:21.074, SYS,  INFO,       39, Connection lost, MAN: (SYS: 1421 Ascii -num 1 CONN: 1), Connection closed
+WCCILdataSQLite(0), 2026.01.20 10:56:21.100, SYS,  INFO,        4, Connected to (SYS: 1421 Ascii -num 1 CONN: 1) @ localhost (::1)
+WCCILdataSQLite(0), 2026.01.20 10:56:21.102, SYS,  INFO,        0, , Manager (SYS: 1421 Ascii -num 1 CONN: 1) initialised
+WCCILdataSQLite(0), 2026.01.20 10:56:21.106, SYS,  INFO,        0, , Manager (SYS: 1421 Ascii -num 1 CONN: 1) initialised
+WCCILdataSQLite(0), 2026.01.20 10:56:21.367, SYS,  INFO,       39, Connection lost, MAN: (SYS: 1421 Ascii -num 1 CONN: 1), Connection closed
+WCCILdataSQLite(0), 2026.01.20 10:56:21.392, SYS,  INFO,        4, Connected to (SYS: 1421 Ascii -num 1 CONN: 1) @ localhost (::1)
+WCCILdataSQLite(0), 2026.01.20 10:56:21.395, SYS,  INFO,        0, , Manager (SYS: 1421 Ascii -num 1 CONN: 1) initialised
+WCCILdataSQLite(0), 2026.01.20 10:56:21.399, SYS,  INFO,        0, , Manager (SYS: 1421 Ascii -num 1 CONN: 1) initialised
+WCCILdataSQLite(0), 2026.01.20 10:56:21.923, SYS,  INFO,       39, Connection lost, MAN: (SYS: 1421 Ascii -num 1 CONN: 1), Connection closed
+WCCILdataSQLite(0), 2026.01.20 10:56:21.949, SYS,  INFO,        4, Connected to (SYS: 1421 Ascii -num 1 CONN: 1) @ localhost (::1)
+WCCILdataSQLite(0), 2026.01.20 10:56:21.951, SYS,  INFO,        0, , Manager (SYS: 1421 Ascii -num 1 CONN: 1) initialised
+WCCILdataSQLite(0), 2026.01.20 10:56:21.955, SYS,  INFO,        0, , Manager (SYS: 1421 Ascii -num 1 CONN: 1) initialised
+WCCILdataSQLite(0), 2026.01.20 10:56:22.021, SYS,  INFO,       39, Connection lost, MAN: (SYS: 1421 Ascii -num 1 CONN: 1), Connection closed
+WCCILdataSQLite(0), 2026.01.20 10:56:22.044, SYS,  INFO,        4, Connected to (SYS: 1421 Ascii -num 1 CONN: 1) @ localhost (::1)
+WCCILdataSQLite(0), 2026.01.20 10:56:22.046, SYS,  INFO,        0, , Manager (SYS: 1421 Ascii -num 1 CONN: 1) initialised
+WCCILdataSQLite(0), 2026.01.20 10:56:22.049, SYS,  INFO,        0, , Manager (SYS: 1421 Ascii -num 1 CONN: 1) initialised
+WCCILdataSQLite(0), 2026.01.20 10:56:22.055, SYS,  INFO,       39, Connection lost, MAN: (SYS: 1421 Ascii -num 1 CONN: 1), Connection closed
+WCCILdataSQLite(0), 2026.01.20 10:56:22.078, SYS,  INFO,       39, Connection lost, MAN: (SYS: 1421 Driver -num 1 CONN: 1), Connection closed
+WCCILdataSQLite(0), 2026.01.20 10:56:23.059, SYS,  INFO,       39, Connection lost, MAN: (SYS: 1421 Event -num 0 CONN: 1), Connection closed
+WCCILdataSQLite(0), 2026.01.20 10:56:24.059, SYS,  INFO,        2, Manager Stop, received signal 15, exiting
+WCCILdataSQLite(0), 2026.01.20 10:56:24.059, SYS,  INFO,        0, , Closing databases
+WCCILdataSQLite(0), 2026.01.20 10:56:24.061, SYS,  INFO,        2, Manager Stop

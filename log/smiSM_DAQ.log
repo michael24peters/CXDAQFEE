@@ -1,0 +1,10 @@
+
+ SMI++ State Manager Version - v67r2- Date : 25-September-2024:14:09
+
+Options:
+ -d 1 -u 1 -t 1 -dns cxecs01 -loopMaxChanges 25 -loopMaxChangesFatal 5000 -loopMinDuration -1
+
+    SMI Domain : DAQ
+    Input File : /opt/winccoa_projects/CXDAQFEE/smi/DAQ.sobj
+
+2026.01.20 11:22:41.498 - SMI++ Initiator started

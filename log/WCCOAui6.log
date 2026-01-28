@@ -1,0 +1,837 @@
+2026.01.28 14:07:46.733["System Name: CXDAQFEE: System Number: 1421 - FwFsm: version is 3503"]
+["FwHw - version is 0611"]
+["The ID:"][0]
+["Errors:"][""][-1][-1]
+/opt/winccoa_projects/CXDAQFEE/data/codexb_daq.xml validates
+2026.01.28 14:13:27.978["XML file: /opt/winccoa_projects/CXDAQFEE/data/codexb_daq.xml"]["Schema file: /group/cx/wincc319/fwComponents_CXDAQFEE/bin/fwHwTypesSchema.xsd"]["ret: 0"]
+2026.01.28 14:13:27.978["/opt/winccoa_projects/CXDAQFEE/data/codexb_daq.xml is valid"]
+2026.01.28 14:13:27.978["*************************************************************************************************************************"]
+2026.01.28 14:13:27.978["***                                                  start                                                            ***"]
+2026.01.28 14:13:27.978["*************************************************************************************************************************"]
+2026.01.28 14:13:27.978["Mapping elements"]
+2026.01.28 14:13:27.983["Elements mapped"]
+2026.01.28 14:13:27.983["Main HW Type: GBT"]
+2026.01.28 14:13:27.984[dyn_string 2 items
+     1: "codexb_decoding_top"
+     2: "dct_top"
+][dyn_string 2 items
+     1: "hwtype"
+     2: "hwtype"
+][dyn_int 2 items
+     1: 3
+     2: 0
+][71]
+2026.01.28 14:13:27.984[dyn_string 0 items
+]
+2026.01.28 14:13:27.985[141]["test"]["PCIe"][dyn_anytype 5 items
+     1: ""
+     2: "4"
+     3: "1"
+     4: "1"
+     5: "0"
+]
+2026.01.28 14:13:27.986["WARNING: Some required specific settings for the register 'test' of type 'PCIe' are missing. Check your XML file"]
+2026.01.28 14:13:27.986[141]["reset"]["PCIe"][dyn_anytype 5 items
+     1: ""
+     2: "4"
+     3: "1"
+     4: "1"
+     5: "0"
+]
+2026.01.28 14:13:27.987["WARNING: Some required specific settings for the register 'reset' of type 'PCIe' are missing. Check your XML file"]
+2026.01.28 14:13:27.987[141]["mode"]["PCIe"][dyn_anytype 5 items
+     1: ""
+     2: "4"
+     3: "1"
+     4: "1"
+     5: "0"
+]
+2026.01.28 14:13:27.988["WARNING: Some required specific settings for the register 'mode' of type 'PCIe' are missing. Check your XML file"]
+2026.01.28 14:13:27.988[141]["dct"]["PCIe"][dyn_anytype 5 items
+     1: ""
+     2: "4"
+     3: "1"
+     4: "1"
+     5: "0"
+]
+2026.01.28 14:13:27.989["WARNING: Some required specific settings for the register 'dct' of type 'PCIe' are missing. Check your XML file"]
+2026.01.28 14:13:27.989[141]["limit"]["PCIe"][dyn_anytype 5 items
+     1: ""
+     2: "4"
+     3: "1"
+     4: "1"
+     5: "0"
+]
+2026.01.28 14:13:27.990["WARNING: Some required specific settings for the register 'limit' of type 'PCIe' are missing. Check your XML file"]
+2026.01.28 14:13:27.990[141]["enable"]["PCIe"][dyn_anytype 5 items
+     1: ""
+     2: "4"
+     3: "1"
+     4: "1"
+     5: "0"
+]
+2026.01.28 14:13:27.991["WARNING: Some required specific settings for the register 'enable' of type 'PCIe' are missing. Check your XML file"]
+2026.01.28 14:13:27.992[141]["count"]["PCIe"][dyn_anytype 5 items
+     1: ""
+     2: "4"
+     3: "1"
+     4: "1"
+     5: "0"
+]
+2026.01.28 14:13:27.992["WARNING: Some required specific settings for the register 'count' of type 'PCIe' are missing. Check your XML file"]
+2026.01.28 14:13:27.993[141]["elk_notready_count"]["PCIe"][dyn_anytype 5 items
+     1: ""
+     2: "4"
+     3: "1"
+     4: "1"
+     5: "0"
+]
+2026.01.28 14:13:27.993["WARNING: Some required specific settings for the register 'elk_notready_count' of type 'PCIe' are missing. Check your XML file"]
+2026.01.28 14:13:27.994[141]["dec_notready_count"]["PCIe"][dyn_anytype 5 items
+     1: ""
+     2: "4"
+     3: "1"
+     4: "1"
+     5: "0"
+]
+2026.01.28 14:13:27.994["WARNING: Some required specific settings for the register 'dec_notready_count' of type 'PCIe' are missing. Check your XML file"]
+2026.01.28 14:13:27.995["Create registers --> fwHw_createRegisters(codexb_bypass_top, regs, types, true);"]
+2026.01.28 14:13:27.995[141]["test"]["PCIe"][dyn_anytype 5 items
+     1: ""
+     2: "4"
+     3: "1"
+     4: "1"
+     5: "0"
+]
+2026.01.28 14:13:27.996["WARNING: Some required specific settings for the register 'test' of type 'PCIe' are missing. Check your XML file"]
+2026.01.28 14:13:27.996[141]["reset"]["PCIe"][dyn_anytype 5 items
+     1: ""
+     2: "4"
+     3: "1"
+     4: "1"
+     5: "0"
+]
+2026.01.28 14:13:27.997["WARNING: Some required specific settings for the register 'reset' of type 'PCIe' are missing. Check your XML file"]
+2026.01.28 14:13:27.997["Create registers --> fwHw_createRegisters(codexb_processing_top, regs, types, true);"]
+2026.01.28 14:13:27.998[141]["test"]["PCIe"][dyn_anytype 5 items
+     1: ""
+     2: "4"
+     3: "1"
+     4: "1"
+     5: "0"
+]
+2026.01.28 14:13:27.998["WARNING: Some required specific settings for the register 'test' of type 'PCIe' are missing. Check your XML file"]
+2026.01.28 14:13:27.999[141]["reset"]["PCIe"][dyn_anytype 5 items
+     1: ""
+     2: "4"
+     3: "1"
+     4: "1"
+     5: "0"
+]
+2026.01.28 14:13:27.999["WARNING: Some required specific settings for the register 'reset' of type 'PCIe' are missing. Check your XML file"]
+2026.01.28 14:13:28.000[141]["format"]["PCIe"][dyn_anytype 5 items
+     1: ""
+     2: "4"
+     3: "1"
+     4: "1"
+     5: "0"
+]
+2026.01.28 14:13:28.000["WARNING: Some required specific settings for the register 'format' of type 'PCIe' are missing. Check your XML file"]
+2026.01.28 14:13:28.001[141]["enable"]["PCIe"][dyn_anytype 5 items
+     1: ""
+     2: "4"
+     3: "1"
+     4: "1"
+     5: "0"
+]
+2026.01.28 14:13:28.001["WARNING: Some required specific settings for the register 'enable' of type 'PCIe' are missing. Check your XML file"]
+2026.01.28 14:13:28.002["Create registers --> fwHw_createRegisters(codexb_decoding_top, regs, types, true);"]
+2026.01.28 14:13:28.002[141]["reset"]["PCIe"][dyn_anytype 5 items
+     1: ""
+     2: "4"
+     3: "1"
+     4: "1"
+     5: "0"
+]
+2026.01.28 14:13:28.003["WARNING: Some required specific settings for the register 'reset' of type 'PCIe' are missing. Check your XML file"]
+2026.01.28 14:13:28.003[141]["ready"]["PCIe"][dyn_anytype 5 items
+     1: ""
+     2: "4"
+     3: "1"
+     4: "1"
+     5: "0"
+]
+2026.01.28 14:13:28.004["WARNING: Some required specific settings for the register 'ready' of type 'PCIe' are missing. Check your XML file"]
+2026.01.28 14:13:28.004[141]["valid_count"]["PCIe"][dyn_anytype 5 items
+     1: ""
+     2: "4"
+     3: "1"
+     4: "1"
+     5: "0"
+]
+2026.01.28 14:13:28.005["WARNING: Some required specific settings for the register 'valid_count' of type 'PCIe' are missing. Check your XML file"]
+2026.01.28 14:13:28.006[141]["notready_count"]["PCIe"][dyn_anytype 5 items
+     1: ""
+     2: "4"
+     3: "1"
+     4: "1"
+     5: "0"
+]
+2026.01.28 14:13:28.006["WARNING: Some required specific settings for the register 'notready_count' of type 'PCIe' are missing. Check your XML file"]
+2026.01.28 14:13:28.007[141]["last"]["PCIe"][dyn_anytype 5 items
+     1: ""
+     2: "4"
+     3: "16"
+     4: "1"
+     5: "0"
+]
+2026.01.28 14:13:28.007["WARNING: Some required specific settings for the register 'last' of type 'PCIe' are missing. Check your XML file"]
+2026.01.28 14:13:28.007["Create registers --> fwHw_createRegisters(dct_decoder, regs, types, true);"]
+2026.01.28 14:13:28.008[141]["reset"]["PCIe"][dyn_anytype 5 items
+     1: ""
+     2: "4"
+     3: "1"
+     4: "1"
+     5: "0"
+]
+2026.01.28 14:13:28.009["WARNING: Some required specific settings for the register 'reset' of type 'PCIe' are missing. Check your XML file"]
+2026.01.28 14:13:28.009[141]["sem_word"]["PCIe"][dyn_anytype 5 items
+     1: ""
+     2: "4"
+     3: "1"
+     4: "1"
+     5: "0"
+]
+2026.01.28 14:13:28.010["WARNING: Some required specific settings for the register 'sem_word' of type 'PCIe' are missing. Check your XML file"]
+2026.01.28 14:13:28.011[141]["xadc_do_out"]["PCIe"][dyn_anytype 5 items
+     1: ""
+     2: "4"
+     3: "1"
+     4: "1"
+     5: "0"
+]
+2026.01.28 14:13:28.011["WARNING: Some required specific settings for the register 'xadc_do_out' of type 'PCIe' are missing. Check your XML file"]
+2026.01.28 14:13:28.012[141]["fifo_out"]["PCIe"][dyn_anytype 5 items
+     1: ""
+     2: "4"
+     3: "1"
+     4: "1"
+     5: "0"
+]
+2026.01.28 14:13:28.012["WARNING: Some required specific settings for the register 'fifo_out' of type 'PCIe' are missing. Check your XML file"]
+2026.01.28 14:13:28.013[141]["fifo_in"]["PCIe"][dyn_anytype 5 items
+     1: ""
+     2: "4"
+     3: "1"
+     4: "1"
+     5: "0"
+]
+2026.01.28 14:13:28.013["WARNING: Some required specific settings for the register 'fifo_in' of type 'PCIe' are missing. Check your XML file"]
+2026.01.28 14:13:28.014[141]["channel_mask"]["PCIe"][dyn_anytype 5 items
+     1: ""
+     2: "4"
+     3: "288"
+     4: "1"
+     5: "0"
+]
+2026.01.28 14:13:28.014["WARNING: Some required specific settings for the register 'channel_mask' of type 'PCIe' are missing. Check your XML file"]
+2026.01.28 14:13:28.015[141]["bc_offset"]["PCIe"][dyn_anytype 5 items
+     1: ""
+     2: "4"
+     3: "1"
+     4: "1"
+     5: "0"
+]
+2026.01.28 14:13:28.016["WARNING: Some required specific settings for the register 'bc_offset' of type 'PCIe' are missing. Check your XML file"]
+2026.01.28 14:13:28.016[141]["dead_time"]["PCIe"][dyn_anytype 5 items
+     1: ""
+     2: "4"
+     3: "1"
+     4: "1"
+     5: "0"
+]
+2026.01.28 14:13:28.017["WARNING: Some required specific settings for the register 'dead_time' of type 'PCIe' are missing. Check your XML file"]
+2026.01.28 14:13:28.017["Create registers --> fwHw_createRegisters(dct_top, regs, types, true);"]
+2026.01.28 14:13:28.018[141]["timing_offset"]["PCIe"][dyn_anytype 5 items
+     1: ""
+     2: "4"
+     3: "1"
+     4: "1"
+     5: "0"
+]
+2026.01.28 14:13:28.018["WARNING: Some required specific settings for the register 'timing_offset' of type 'PCIe' are missing. Check your XML file"]
+2026.01.28 14:13:28.019[141]["coarse_time_offset"]["PCIe"][dyn_anytype 5 items
+     1: ""
+     2: "4"
+     3: "1"
+     4: "1"
+     5: "0"
+]
+2026.01.28 14:13:28.019["WARNING: Some required specific settings for the register 'coarse_time_offset' of type 'PCIe' are missing. Check your XML file"]
+2026.01.28 14:13:28.020["Create registers --> fwHw_createRegisters(dct_offset, regs, types, true);"]
+2026.01.28 14:13:28.020[141]["test"]["PCIe"][dyn_anytype 5 items
+     1: ""
+     2: "4"
+     3: "1"
+     4: "1"
+     5: "0"
+]
+2026.01.28 14:13:28.022["WARNING: Some required specific settings for the register 'test' of type 'PCIe' are missing. Check your XML file"]
+2026.01.28 14:13:28.022[141]["reset"]["PCIe"][dyn_anytype 5 items
+     1: ""
+     2: "4"
+     3: "1"
+     4: "1"
+     5: "0"
+]
+2026.01.28 14:13:28.023["WARNING: Some required specific settings for the register 'reset' of type 'PCIe' are missing. Check your XML file"]
+2026.01.28 14:13:28.023["Create registers --> fwHw_createRegisters(codexb_top, regs, types, true);"]
+2026.01.28 14:13:28.023["fwHw_insert(codexb_decoding_top, dct_top, dct_0);"]
+2026.01.28 14:13:28.025["***"]["dct_top"][dyn_string 1 items
+     1: "dct_top"
+][dyn_string 26 items
+     1: "reg"
+     2: "reg"
+     3: "reg"
+     4: "reg"
+     5: "reg"
+     6: "reg"
+     7: "reg"
+     8: "reg"
+     9: "node"
+    10: "node"
+    11: "node"
+    12: "node"
+    13: "node"
+    14: "node"
+    15: "node"
+    16: "node"
+    17: "node"
+    18: "node"
+    19: "node"
+    20: "node"
+    21: "node"
+    22: "node"
+    23: "node"
+    24: "node"
+    25: "node"
+    26: "node"
+]
+2026.01.28 14:13:28.025["*******"]["reset:dct_top"][""][""][""]["GBT"]["reset"]["dct_0"]["dct_0"]
+2026.01.28 14:13:28.026["*******"]["sem_word"][""][""][""]["GBT"]["sem_word"]["dct_0"]["dct_0"]
+2026.01.28 14:13:28.027["*******"]["xadc_do_out"][""][""][""]["GBT"]["xadc_do_out"]["dct_0"]["dct_0"]
+2026.01.28 14:13:28.027["*******"]["fifo_out"][""][""][""]["GBT"]["fifo_out"]["dct_0"]["dct_0"]
+2026.01.28 14:13:28.028["*******"]["fifo_in"][""][""][""]["GBT"]["fifo_in"]["dct_0"]["dct_0"]
+2026.01.28 14:13:28.029["*******"]["channel_mask"][""][""][""]["GBT"]["channel_mask"]["dct_0"]["dct_0"]
+2026.01.28 14:13:28.029["*******"]["bc_offset"][""][""][""]["GBT"]["bc_offset"]["dct_0"]["dct_0"]
+2026.01.28 14:13:28.030["*******"]["dead_time"][""][""][""]["GBT"]["dead_time"]["dct_0"]["dct_0"]
+2026.01.28 14:13:28.031["fwHw_insert(codexb_decoding_top, dct_top, dct_1);"]
+2026.01.28 14:13:28.032["***"]["dct_top"][dyn_string 1 items
+     1: "dct_top"
+][dyn_string 26 items
+     1: "reg"
+     2: "reg"
+     3: "reg"
+     4: "reg"
+     5: "reg"
+     6: "reg"
+     7: "reg"
+     8: "reg"
+     9: "node"
+    10: "node"
+    11: "node"
+    12: "node"
+    13: "node"
+    14: "node"
+    15: "node"
+    16: "node"
+    17: "node"
+    18: "node"
+    19: "node"
+    20: "node"
+    21: "node"
+    22: "node"
+    23: "node"
+    24: "node"
+    25: "node"
+    26: "node"
+]
+2026.01.28 14:13:28.032["*******"]["reset:dct_top"][""][""][""]["GBT"]["reset"]["dct_1"]["dct_1"]
+2026.01.28 14:13:28.033["*******"]["sem_word"][""][""][""]["GBT"]["sem_word"]["dct_1"]["dct_1"]
+2026.01.28 14:13:28.033["*******"]["xadc_do_out"][""][""][""]["GBT"]["xadc_do_out"]["dct_1"]["dct_1"]
+2026.01.28 14:13:28.034["*******"]["fifo_out"][""][""][""]["GBT"]["fifo_out"]["dct_1"]["dct_1"]
+2026.01.28 14:13:28.035["*******"]["fifo_in"][""][""][""]["GBT"]["fifo_in"]["dct_1"]["dct_1"]
+2026.01.28 14:13:28.035["*******"]["channel_mask"][""][""][""]["GBT"]["channel_mask"]["dct_1"]["dct_1"]
+2026.01.28 14:13:28.036["*******"]["bc_offset"][""][""][""]["GBT"]["bc_offset"]["dct_1"]["dct_1"]
+2026.01.28 14:13:28.036["*******"]["dead_time"][""][""][""]["GBT"]["dead_time"]["dct_1"]["dct_1"]
+2026.01.28 14:13:28.038["fwHw_insert(codexb_decoding_top, dct_top, dct_2);"]
+2026.01.28 14:13:28.039["***"]["dct_top"][dyn_string 1 items
+     1: "dct_top"
+][dyn_string 26 items
+     1: "reg"
+     2: "reg"
+     3: "reg"
+     4: "reg"
+     5: "reg"
+     6: "reg"
+     7: "reg"
+     8: "reg"
+     9: "node"
+    10: "node"
+    11: "node"
+    12: "node"
+    13: "node"
+    14: "node"
+    15: "node"
+    16: "node"
+    17: "node"
+    18: "node"
+    19: "node"
+    20: "node"
+    21: "node"
+    22: "node"
+    23: "node"
+    24: "node"
+    25: "node"
+    26: "node"
+]
+2026.01.28 14:13:28.039["*******"]["reset:dct_top"][""][""][""]["GBT"]["reset"]["dct_2"]["dct_2"]
+2026.01.28 14:13:28.040["*******"]["sem_word"][""][""][""]["GBT"]["sem_word"]["dct_2"]["dct_2"]
+2026.01.28 14:13:28.040["*******"]["xadc_do_out"][""][""][""]["GBT"]["xadc_do_out"]["dct_2"]["dct_2"]
+2026.01.28 14:13:28.041["*******"]["fifo_out"][""][""][""]["GBT"]["fifo_out"]["dct_2"]["dct_2"]
+2026.01.28 14:13:28.042["*******"]["fifo_in"][""][""][""]["GBT"]["fifo_in"]["dct_2"]["dct_2"]
+2026.01.28 14:13:28.042["*******"]["channel_mask"][""][""][""]["GBT"]["channel_mask"]["dct_2"]["dct_2"]
+2026.01.28 14:13:28.043["*******"]["bc_offset"][""][""][""]["GBT"]["bc_offset"]["dct_2"]["dct_2"]
+2026.01.28 14:13:28.044["*******"]["dead_time"][""][""][""]["GBT"]["dead_time"]["dct_2"]["dct_2"]
+2026.01.28 14:13:28.044["fwHw_insert(codexb_decoding_top, dct_top, dct_3);"]
+2026.01.28 14:13:28.045["***"]["dct_top"][dyn_string 1 items
+     1: "dct_top"
+][dyn_string 26 items
+     1: "reg"
+     2: "reg"
+     3: "reg"
+     4: "reg"
+     5: "reg"
+     6: "reg"
+     7: "reg"
+     8: "reg"
+     9: "node"
+    10: "node"
+    11: "node"
+    12: "node"
+    13: "node"
+    14: "node"
+    15: "node"
+    16: "node"
+    17: "node"
+    18: "node"
+    19: "node"
+    20: "node"
+    21: "node"
+    22: "node"
+    23: "node"
+    24: "node"
+    25: "node"
+    26: "node"
+]
+2026.01.28 14:13:28.045["*******"]["reset:dct_top"][""][""][""]["GBT"]["reset"]["dct_3"]["dct_3"]
+2026.01.28 14:13:28.046["*******"]["sem_word"][""][""][""]["GBT"]["sem_word"]["dct_3"]["dct_3"]
+2026.01.28 14:13:28.046["*******"]["xadc_do_out"][""][""][""]["GBT"]["xadc_do_out"]["dct_3"]["dct_3"]
+2026.01.28 14:13:28.047["*******"]["fifo_out"][""][""][""]["GBT"]["fifo_out"]["dct_3"]["dct_3"]
+2026.01.28 14:13:28.048["*******"]["fifo_in"][""][""][""]["GBT"]["fifo_in"]["dct_3"]["dct_3"]
+2026.01.28 14:13:28.048["*******"]["channel_mask"][""][""][""]["GBT"]["channel_mask"]["dct_3"]["dct_3"]
+2026.01.28 14:13:28.049["*******"]["bc_offset"][""][""][""]["GBT"]["bc_offset"]["dct_3"]["dct_3"]
+2026.01.28 14:13:28.049["*******"]["dead_time"][""][""][""]["GBT"]["dead_time"]["dct_3"]["dct_3"]
+2026.01.28 14:13:28.050["fwHw_insert(codexb_decoding_top, dct_top, dct_4);"]
+2026.01.28 14:13:28.051["***"]["dct_top"][dyn_string 1 items
+     1: "dct_top"
+][dyn_string 26 items
+     1: "reg"
+     2: "reg"
+     3: "reg"
+     4: "reg"
+     5: "reg"
+     6: "reg"
+     7: "reg"
+     8: "reg"
+     9: "node"
+    10: "node"
+    11: "node"
+    12: "node"
+    13: "node"
+    14: "node"
+    15: "node"
+    16: "node"
+    17: "node"
+    18: "node"
+    19: "node"
+    20: "node"
+    21: "node"
+    22: "node"
+    23: "node"
+    24: "node"
+    25: "node"
+    26: "node"
+]
+2026.01.28 14:13:28.051["*******"]["reset:dct_top"][""][""][""]["GBT"]["reset"]["dct_4"]["dct_4"]
+2026.01.28 14:13:28.052["*******"]["sem_word"][""][""][""]["GBT"]["sem_word"]["dct_4"]["dct_4"]
+2026.01.28 14:13:28.052["*******"]["xadc_do_out"][""][""][""]["GBT"]["xadc_do_out"]["dct_4"]["dct_4"]
+2026.01.28 14:13:28.053["*******"]["fifo_out"][""][""][""]["GBT"]["fifo_out"]["dct_4"]["dct_4"]
+2026.01.28 14:13:28.053["*******"]["fifo_in"][""][""][""]["GBT"]["fifo_in"]["dct_4"]["dct_4"]
+2026.01.28 14:13:28.054["*******"]["channel_mask"][""][""][""]["GBT"]["channel_mask"]["dct_4"]["dct_4"]
+2026.01.28 14:13:28.055["*******"]["bc_offset"][""][""][""]["GBT"]["bc_offset"]["dct_4"]["dct_4"]
+2026.01.28 14:13:28.055["*******"]["dead_time"][""][""][""]["GBT"]["dead_time"]["dct_4"]["dct_4"]
+2026.01.28 14:13:28.056["fwHw_insert(codexb_decoding_top, dct_top, dct_5);"]
+2026.01.28 14:13:28.057["***"]["dct_top"][dyn_string 1 items
+     1: "dct_top"
+][dyn_string 26 items
+     1: "reg"
+     2: "reg"
+     3: "reg"
+     4: "reg"
+     5: "reg"
+     6: "reg"
+     7: "reg"
+     8: "reg"
+     9: "node"
+    10: "node"
+    11: "node"
+    12: "node"
+    13: "node"
+    14: "node"
+    15: "node"
+    16: "node"
+    17: "node"
+    18: "node"
+    19: "node"
+    20: "node"
+    21: "node"
+    22: "node"
+    23: "node"
+    24: "node"
+    25: "node"
+    26: "node"
+]
+2026.01.28 14:13:28.057["*******"]["reset:dct_top"][""][""][""]["GBT"]["reset"]["dct_5"]["dct_5"]
+2026.01.28 14:13:28.057["*******"]["sem_word"][""][""][""]["GBT"]["sem_word"]["dct_5"]["dct_5"]
+2026.01.28 14:13:28.058["*******"]["xadc_do_out"][""][""][""]["GBT"]["xadc_do_out"]["dct_5"]["dct_5"]
+2026.01.28 14:13:28.059["*******"]["fifo_out"][""][""][""]["GBT"]["fifo_out"]["dct_5"]["dct_5"]
+2026.01.28 14:13:28.059["*******"]["fifo_in"][""][""][""]["GBT"]["fifo_in"]["dct_5"]["dct_5"]
+2026.01.28 14:13:28.060["*******"]["channel_mask"][""][""][""]["GBT"]["channel_mask"]["dct_5"]["dct_5"]
+2026.01.28 14:13:28.061["*******"]["bc_offset"][""][""][""]["GBT"]["bc_offset"]["dct_5"]["dct_5"]
+2026.01.28 14:13:28.061["*******"]["dead_time"][""][""][""]["GBT"]["dead_time"]["dct_5"]["dct_5"]
+2026.01.28 14:13:28.062["fwHw_insert(codexb_decoding_top, dct_top, dct_6);"]
+2026.01.28 14:13:28.063["***"]["dct_top"][dyn_string 1 items
+     1: "dct_top"
+][dyn_string 26 items
+     1: "reg"
+     2: "reg"
+     3: "reg"
+     4: "reg"
+     5: "reg"
+     6: "reg"
+     7: "reg"
+     8: "reg"
+     9: "node"
+    10: "node"
+    11: "node"
+    12: "node"
+    13: "node"
+    14: "node"
+    15: "node"
+    16: "node"
+    17: "node"
+    18: "node"
+    19: "node"
+    20: "node"
+    21: "node"
+    22: "node"
+    23: "node"
+    24: "node"
+    25: "node"
+    26: "node"
+]
+2026.01.28 14:13:28.063["*******"]["reset:dct_top"][""][""][""]["GBT"]["reset"]["dct_6"]["dct_6"]
+2026.01.28 14:13:28.063["*******"]["sem_word"][""][""][""]["GBT"]["sem_word"]["dct_6"]["dct_6"]
+2026.01.28 14:13:28.064["*******"]["xadc_do_out"][""][""][""]["GBT"]["xadc_do_out"]["dct_6"]["dct_6"]
+2026.01.28 14:13:28.065["*******"]["fifo_out"][""][""][""]["GBT"]["fifo_out"]["dct_6"]["dct_6"]
+2026.01.28 14:13:28.065["*******"]["fifo_in"][""][""][""]["GBT"]["fifo_in"]["dct_6"]["dct_6"]
+2026.01.28 14:13:28.066["*******"]["channel_mask"][""][""][""]["GBT"]["channel_mask"]["dct_6"]["dct_6"]
+2026.01.28 14:13:28.067["*******"]["bc_offset"][""][""][""]["GBT"]["bc_offset"]["dct_6"]["dct_6"]
+2026.01.28 14:13:28.067["*******"]["dead_time"][""][""][""]["GBT"]["dead_time"]["dct_6"]["dct_6"]
+2026.01.28 14:13:28.068["fwHw_insert(codexb_decoding_top, dct_decoder, decoder_0);"]
+2026.01.28 14:13:28.069["***"]["dct_decoder"][dyn_string 1 items
+     1: "dct_decoder"
+][dyn_string 5 items
+     1: "reg"
+     2: "reg"
+     3: "reg"
+     4: "reg"
+     5: "reg"
+]
+2026.01.28 14:13:28.069["*******"]["reset:dct_decoder"][""][""][""]["GBT"]["reset"]["decoder_0"]["decoder_0"]
+2026.01.28 14:13:28.069["*******"]["ready"][""][""][""]["GBT"]["ready"]["decoder_0"]["decoder_0"]
+2026.01.28 14:13:28.070["*******"]["valid_count"][""][""][""]["GBT"]["valid_count"]["decoder_0"]["decoder_0"]
+2026.01.28 14:13:28.071["*******"]["notready_count"][""][""][""]["GBT"]["notready_count"]["decoder_0"]["decoder_0"]
+2026.01.28 14:13:28.071["*******"]["last"][""][""][""]["GBT"]["last"]["decoder_0"]["decoder_0"]
+2026.01.28 14:13:28.072["fwHw_insert(codexb_decoding_top, dct_decoder, decoder_1);"]
+2026.01.28 14:13:28.073["***"]["dct_decoder"][dyn_string 1 items
+     1: "dct_decoder"
+][dyn_string 5 items
+     1: "reg"
+     2: "reg"
+     3: "reg"
+     4: "reg"
+     5: "reg"
+]
+2026.01.28 14:13:28.073["*******"]["reset:dct_decoder"][""][""][""]["GBT"]["reset"]["decoder_1"]["decoder_1"]
+2026.01.28 14:13:28.073["*******"]["ready"][""][""][""]["GBT"]["ready"]["decoder_1"]["decoder_1"]
+2026.01.28 14:13:28.074["*******"]["valid_count"][""][""][""]["GBT"]["valid_count"]["decoder_1"]["decoder_1"]
+2026.01.28 14:13:28.075["*******"]["notready_count"][""][""][""]["GBT"]["notready_count"]["decoder_1"]["decoder_1"]
+2026.01.28 14:13:28.076["*******"]["last"][""][""][""]["GBT"]["last"]["decoder_1"]["decoder_1"]
+2026.01.28 14:13:28.077["fwHw_insert(codexb_decoding_top, dct_decoder, decoder_2);"]
+2026.01.28 14:13:28.078["***"]["dct_decoder"][dyn_string 1 items
+     1: "dct_decoder"
+][dyn_string 5 items
+     1: "reg"
+     2: "reg"
+     3: "reg"
+     4: "reg"
+     5: "reg"
+]
+2026.01.28 14:13:28.078["*******"]["reset:dct_decoder"][""][""][""]["GBT"]["reset"]["decoder_2"]["decoder_2"]
+2026.01.28 14:13:28.079["*******"]["ready"][""][""][""]["GBT"]["ready"]["decoder_2"]["decoder_2"]
+2026.01.28 14:13:28.079["*******"]["valid_count"][""][""][""]["GBT"]["valid_count"]["decoder_2"]["decoder_2"]
+2026.01.28 14:13:28.080["*******"]["notready_count"][""][""][""]["GBT"]["notready_count"]["decoder_2"]["decoder_2"]
+2026.01.28 14:13:28.080["*******"]["last"][""][""][""]["GBT"]["last"]["decoder_2"]["decoder_2"]
+2026.01.28 14:13:28.081["fwHw_insert(codexb_decoding_top, dct_decoder, decoder_3);"]
+2026.01.28 14:13:28.082["***"]["dct_decoder"][dyn_string 1 items
+     1: "dct_decoder"
+][dyn_string 5 items
+     1: "reg"
+     2: "reg"
+     3: "reg"
+     4: "reg"
+     5: "reg"
+]
+2026.01.28 14:13:28.082["*******"]["reset:dct_decoder"][""][""][""]["GBT"]["reset"]["decoder_3"]["decoder_3"]
+2026.01.28 14:13:28.083["*******"]["ready"][""][""][""]["GBT"]["ready"]["decoder_3"]["decoder_3"]
+2026.01.28 14:13:28.083["*******"]["valid_count"][""][""][""]["GBT"]["valid_count"]["decoder_3"]["decoder_3"]
+2026.01.28 14:13:28.084["*******"]["notready_count"][""][""][""]["GBT"]["notready_count"]["decoder_3"]["decoder_3"]
+2026.01.28 14:13:28.084["*******"]["last"][""][""][""]["GBT"]["last"]["decoder_3"]["decoder_3"]
+2026.01.28 14:13:28.085["fwHw_insert(codexb_decoding_top, dct_decoder, decoder_4);"]
+2026.01.28 14:13:28.086["***"]["dct_decoder"][dyn_string 1 items
+     1: "dct_decoder"
+][dyn_string 5 items
+     1: "reg"
+     2: "reg"
+     3: "reg"
+     4: "reg"
+     5: "reg"
+]
+2026.01.28 14:13:28.086["*******"]["reset:dct_decoder"][""][""][""]["GBT"]["reset"]["decoder_4"]["decoder_4"]
+2026.01.28 14:13:28.086["*******"]["ready"][""][""][""]["GBT"]["ready"]["decoder_4"]["decoder_4"]
+2026.01.28 14:13:28.087["*******"]["valid_count"][""][""][""]["GBT"]["valid_count"]["decoder_4"]["decoder_4"]
+2026.01.28 14:13:28.088["*******"]["notready_count"][""][""][""]["GBT"]["notready_count"]["decoder_4"]["decoder_4"]
+2026.01.28 14:13:28.088["*******"]["last"][""][""][""]["GBT"]["last"]["decoder_4"]["decoder_4"]
+2026.01.28 14:13:28.089["fwHw_insert(codexb_decoding_top, dct_decoder, decoder_5);"]
+2026.01.28 14:13:28.090["***"]["dct_decoder"][dyn_string 1 items
+     1: "dct_decoder"
+][dyn_string 5 items
+     1: "reg"
+     2: "reg"
+     3: "reg"
+     4: "reg"
+     5: "reg"
+]
+2026.01.28 14:13:28.090["*******"]["reset:dct_decoder"][""][""][""]["GBT"]["reset"]["decoder_5"]["decoder_5"]
+2026.01.28 14:13:28.091["*******"]["ready"][""][""][""]["GBT"]["ready"]["decoder_5"]["decoder_5"]
+2026.01.28 14:13:28.091["*******"]["valid_count"][""][""][""]["GBT"]["valid_count"]["decoder_5"]["decoder_5"]
+2026.01.28 14:13:28.092["*******"]["notready_count"][""][""][""]["GBT"]["notready_count"]["decoder_5"]["decoder_5"]
+2026.01.28 14:13:28.093["*******"]["last"][""][""][""]["GBT"]["last"]["decoder_5"]["decoder_5"]
+2026.01.28 14:13:28.093["fwHw_insert(codexb_decoding_top, dct_decoder, decoder_6);"]
+2026.01.28 14:13:28.094["***"]["dct_decoder"][dyn_string 1 items
+     1: "dct_decoder"
+][dyn_string 5 items
+     1: "reg"
+     2: "reg"
+     3: "reg"
+     4: "reg"
+     5: "reg"
+]
+2026.01.28 14:13:28.094["*******"]["reset:dct_decoder"][""][""][""]["GBT"]["reset"]["decoder_6"]["decoder_6"]
+2026.01.28 14:13:28.095["*******"]["ready"][""][""][""]["GBT"]["ready"]["decoder_6"]["decoder_6"]
+2026.01.28 14:13:28.096["*******"]["valid_count"][""][""][""]["GBT"]["valid_count"]["decoder_6"]["decoder_6"]
+2026.01.28 14:13:28.096["*******"]["notready_count"][""][""][""]["GBT"]["notready_count"]["decoder_6"]["decoder_6"]
+2026.01.28 14:13:28.097["*******"]["last"][""][""][""]["GBT"]["last"]["decoder_6"]["decoder_6"]
+2026.01.28 14:13:28.098["fwHw_insert(dct_top, dct_offset, offset_0);"]
+2026.01.28 14:13:28.099["***"]["dct_offset"][dyn_string 1 items
+     1: "dct_offset"
+][dyn_string 2 items
+     1: "reg"
+     2: "reg"
+]
+2026.01.28 14:13:28.099["*******"]["timing_offset"][""][""][""]["GBT"]["timing_offset"]["offset_0"]["offset_0"]
+2026.01.28 14:13:28.099["*******"]["coarse_time_offset"][""][""][""]["GBT"]["coarse_time_offset"]["offset_0"]["offset_0"]
+2026.01.28 14:13:28.100["fwHw_insert(dct_top, dct_offset, offset_1);"]
+2026.01.28 14:13:28.101["***"]["dct_offset"][dyn_string 1 items
+     1: "dct_offset"
+][dyn_string 2 items
+     1: "reg"
+     2: "reg"
+]
+2026.01.28 14:13:28.101["*******"]["timing_offset"][""][""][""]["GBT"]["timing_offset"]["offset_1"]["offset_1"]
+2026.01.28 14:13:28.101["*******"]["coarse_time_offset"][""][""][""]["GBT"]["coarse_time_offset"]["offset_1"]["offset_1"]
+2026.01.28 14:13:28.102["fwHw_insert(dct_top, dct_offset, offset_2);"]
+2026.01.28 14:13:28.103["***"]["dct_offset"][dyn_string 1 items
+     1: "dct_offset"
+][dyn_string 2 items
+     1: "reg"
+     2: "reg"
+]
+2026.01.28 14:13:28.103["*******"]["timing_offset"][""][""][""]["GBT"]["timing_offset"]["offset_2"]["offset_2"]
+2026.01.28 14:13:28.104["*******"]["coarse_time_offset"][""][""][""]["GBT"]["coarse_time_offset"]["offset_2"]["offset_2"]
+2026.01.28 14:13:28.104["fwHw_insert(dct_top, dct_offset, offset_3);"]
+2026.01.28 14:13:28.105["***"]["dct_offset"][dyn_string 1 items
+     1: "dct_offset"
+][dyn_string 2 items
+     1: "reg"
+     2: "reg"
+]
+2026.01.28 14:13:28.105["*******"]["timing_offset"][""][""][""]["GBT"]["timing_offset"]["offset_3"]["offset_3"]
+2026.01.28 14:13:28.106["*******"]["coarse_time_offset"][""][""][""]["GBT"]["coarse_time_offset"]["offset_3"]["offset_3"]
+2026.01.28 14:13:28.106["fwHw_insert(dct_top, dct_offset, offset_4);"]
+2026.01.28 14:13:28.107["***"]["dct_offset"][dyn_string 1 items
+     1: "dct_offset"
+][dyn_string 2 items
+     1: "reg"
+     2: "reg"
+]
+2026.01.28 14:13:28.107["*******"]["timing_offset"][""][""][""]["GBT"]["timing_offset"]["offset_4"]["offset_4"]
+2026.01.28 14:13:28.108["*******"]["coarse_time_offset"][""][""][""]["GBT"]["coarse_time_offset"]["offset_4"]["offset_4"]
+2026.01.28 14:13:28.108["fwHw_insert(dct_top, dct_offset, offset_5);"]
+2026.01.28 14:13:28.109["***"]["dct_offset"][dyn_string 1 items
+     1: "dct_offset"
+][dyn_string 2 items
+     1: "reg"
+     2: "reg"
+]
+2026.01.28 14:13:28.109["*******"]["timing_offset"][""][""][""]["GBT"]["timing_offset"]["offset_5"]["offset_5"]
+2026.01.28 14:13:28.110["*******"]["coarse_time_offset"][""][""][""]["GBT"]["coarse_time_offset"]["offset_5"]["offset_5"]
+2026.01.28 14:13:28.110["fwHw_insert(dct_top, dct_offset, offset_6);"]
+2026.01.28 14:13:28.111["***"]["dct_offset"][dyn_string 1 items
+     1: "dct_offset"
+][dyn_string 2 items
+     1: "reg"
+     2: "reg"
+]
+2026.01.28 14:13:28.111["*******"]["timing_offset"][""][""][""]["GBT"]["timing_offset"]["offset_6"]["offset_6"]
+2026.01.28 14:13:28.112["*******"]["coarse_time_offset"][""][""][""]["GBT"]["coarse_time_offset"]["offset_6"]["offset_6"]
+2026.01.28 14:13:28.113["fwHw_insert(dct_top, dct_offset, offset_7);"]
+2026.01.28 14:13:28.113["***"]["dct_offset"][dyn_string 1 items
+     1: "dct_offset"
+][dyn_string 2 items
+     1: "reg"
+     2: "reg"
+]
+2026.01.28 14:13:28.113["*******"]["timing_offset"][""][""][""]["GBT"]["timing_offset"]["offset_7"]["offset_7"]
+2026.01.28 14:13:28.114["*******"]["coarse_time_offset"][""][""][""]["GBT"]["coarse_time_offset"]["offset_7"]["offset_7"]
+2026.01.28 14:13:28.115["fwHw_insert(dct_top, dct_offset, offset_8);"]
+2026.01.28 14:13:28.115["***"]["dct_offset"][dyn_string 1 items
+     1: "dct_offset"
+][dyn_string 2 items
+     1: "reg"
+     2: "reg"
+]
+2026.01.28 14:13:28.116["*******"]["timing_offset"][""][""][""]["GBT"]["timing_offset"]["offset_8"]["offset_8"]
+2026.01.28 14:13:28.116["*******"]["coarse_time_offset"][""][""][""]["GBT"]["coarse_time_offset"]["offset_8"]["offset_8"]
+2026.01.28 14:13:28.117["fwHw_insert(dct_top, dct_offset, offset_9);"]
+2026.01.28 14:13:28.118["***"]["dct_offset"][dyn_string 1 items
+     1: "dct_offset"
+][dyn_string 2 items
+     1: "reg"
+     2: "reg"
+]
+2026.01.28 14:13:28.118["*******"]["timing_offset"][""][""][""]["GBT"]["timing_offset"]["offset_9"]["offset_9"]
+2026.01.28 14:13:28.118["*******"]["coarse_time_offset"][""][""][""]["GBT"]["coarse_time_offset"]["offset_9"]["offset_9"]
+2026.01.28 14:13:28.119["fwHw_insert(dct_top, dct_offset, offset_10);"]
+2026.01.28 14:13:28.120["***"]["dct_offset"][dyn_string 1 items
+     1: "dct_offset"
+][dyn_string 2 items
+     1: "reg"
+     2: "reg"
+]
+2026.01.28 14:13:28.120["*******"]["timing_offset"][""][""][""]["GBT"]["timing_offset"]["offset_10"]["offset_10"]
+2026.01.28 14:13:28.120["*******"]["coarse_time_offset"][""][""][""]["GBT"]["coarse_time_offset"]["offset_10"]["offset_10"]
+2026.01.28 14:13:28.121["fwHw_insert(dct_top, dct_offset, offset_11);"]
+2026.01.28 14:13:28.122["***"]["dct_offset"][dyn_string 1 items
+     1: "dct_offset"
+][dyn_string 2 items
+     1: "reg"
+     2: "reg"
+]
+2026.01.28 14:13:28.122["*******"]["timing_offset"][""][""][""]["GBT"]["timing_offset"]["offset_11"]["offset_11"]
+2026.01.28 14:13:28.122["*******"]["coarse_time_offset"][""][""][""]["GBT"]["coarse_time_offset"]["offset_11"]["offset_11"]
+2026.01.28 14:13:28.123["fwHw_insert(dct_top, dct_offset, offset_12);"]
+2026.01.28 14:13:28.124["***"]["dct_offset"][dyn_string 1 items
+     1: "dct_offset"
+][dyn_string 2 items
+     1: "reg"
+     2: "reg"
+]
+2026.01.28 14:13:28.124["*******"]["timing_offset"][""][""][""]["GBT"]["timing_offset"]["offset_12"]["offset_12"]
+2026.01.28 14:13:28.125["*******"]["coarse_time_offset"][""][""][""]["GBT"]["coarse_time_offset"]["offset_12"]["offset_12"]
+2026.01.28 14:13:28.125["fwHw_insert(dct_top, dct_offset, offset_13);"]
+2026.01.28 14:13:28.126["***"]["dct_offset"][dyn_string 1 items
+     1: "dct_offset"
+][dyn_string 2 items
+     1: "reg"
+     2: "reg"
+]
+2026.01.28 14:13:28.126["*******"]["timing_offset"][""][""][""]["GBT"]["timing_offset"]["offset_13"]["offset_13"]
+2026.01.28 14:13:28.127["*******"]["coarse_time_offset"][""][""][""]["GBT"]["coarse_time_offset"]["offset_13"]["offset_13"]
+2026.01.28 14:13:28.127["fwHw_insert(dct_top, dct_offset, offset_14);"]
+2026.01.28 14:13:28.129["***"]["dct_offset"][dyn_string 1 items
+     1: "dct_offset"
+][dyn_string 2 items
+     1: "reg"
+     2: "reg"
+]
+2026.01.28 14:13:28.129["*******"]["timing_offset"][""][""][""]["GBT"]["timing_offset"]["offset_14"]["offset_14"]
+2026.01.28 14:13:28.129["*******"]["coarse_time_offset"][""][""][""]["GBT"]["coarse_time_offset"]["offset_14"]["offset_14"]
+2026.01.28 14:13:28.130["fwHw_insert(dct_top, dct_offset, offset_15);"]
+2026.01.28 14:13:28.131["***"]["dct_offset"][dyn_string 1 items
+     1: "dct_offset"
+][dyn_string 2 items
+     1: "reg"
+     2: "reg"
+]
+2026.01.28 14:13:28.131["*******"]["timing_offset"][""][""][""]["GBT"]["timing_offset"]["offset_15"]["offset_15"]
+2026.01.28 14:13:28.131["*******"]["coarse_time_offset"][""][""][""]["GBT"]["coarse_time_offset"]["offset_15"]["offset_15"]
+2026.01.28 14:13:28.133["fwHw_insert(dct_top, dct_offset, offset_16);"]
+2026.01.28 14:13:28.133["***"]["dct_offset"][dyn_string 1 items
+     1: "dct_offset"
+][dyn_string 2 items
+     1: "reg"
+     2: "reg"
+]
+2026.01.28 14:13:28.133["*******"]["timing_offset"][""][""][""]["GBT"]["timing_offset"]["offset_16"]["offset_16"]
+2026.01.28 14:13:28.134["*******"]["coarse_time_offset"][""][""][""]["GBT"]["coarse_time_offset"]["offset_16"]["offset_16"]
+2026.01.28 14:13:28.135["fwHw_insert(dct_top, dct_offset, offset_17);"]
+2026.01.28 14:13:28.135["***"]["dct_offset"][dyn_string 1 items
+     1: "dct_offset"
+][dyn_string 2 items
+     1: "reg"
+     2: "reg"
+]
+2026.01.28 14:13:28.136["*******"]["timing_offset"][""][""][""]["GBT"]["timing_offset"]["offset_17"]["offset_17"]
+2026.01.28 14:13:28.136["*******"]["coarse_time_offset"][""][""][""]["GBT"]["coarse_time_offset"]["offset_17"]["offset_17"]
+2026.01.28 14:14:01.790["Types to be created:"][dyn_string 7 items
+     1: "codexb_bypass_top"
+     2: "codexb_processing_top"
+     3: "codexb_decoding_top"
+     4: "dct_decoder"
+     5: "dct_top"
+     6: "dct_offset"
+     7: "codexb_top"
+]

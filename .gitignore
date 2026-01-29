@@ -1,8 +1,18 @@
-# Ignore sql wal/db files
+# WinCC / DCS runtime junk
+db/
+data/OnlineBackup/
+log/
+
+# SQLite
+*.sqlite
 *.sqlite-wal
 *.sqlite-shm
-*.db-wal
-*.db-shm
-# Ignore qch (too large file size)
-*.qch
+
+# InfluxDB
+*.wal
+*.tsm
+
+# Editor / temp
+*~
+
 
